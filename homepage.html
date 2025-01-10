@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lana's Portfolio</title>
+    <link rel="stylesheet" href="style/styles.css">
+   <script type="importmap">
+			{
+				"imports": {
+					"three": "https://cdn.jsdelivr.net/npm/three@0.131/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.131/examples/jsm/"
+        }
+			}
+		</script>
+</head>
+<body>
+    <header>
+        <div class="nav-container" style="display: none;">
+            <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="grid-container">
+                <div class="grid-item col-6" style="padding: var(--spacing-xs);">
+            <h1 class="site-name">Lana (Hoang)</h1>
+            <h2 class="site-title">'la Banane'</h2>
+        </div>
+        <div class="grid-item col-6" style="padding: var(--spacing-sm);">
+          <p class="site-description">From appealing digital to packaging designs,
+          Lana's work is always a-peel-ing. As a curious creative designer, she’s diving deeper 
+          into the world of inclusivity, learning how to peel back barriers and create designs that resonate with everyone.
+          Meet Lana, ‘la banane’ designer, growing her skills to make design a little sweeter for all!</p>
+        </div>
+        </div>
+        <div class="container">
+            <div class="grid-container">
+                <div class="column col-6" style="padding: 0px">
+                    <div class="content">
+                        <h1>Lana's Works</h1> 
+
+                    <!-- Image Slider Section -->
+                    <section class="slider-container">
+                            <!-- Slide 1 -->
+                            <div class="slide">
+                                <img src="images/thanhma-.png" alt="Original" 
+                                onmouseover="this.src='images/thanhma-hi.png'" 
+                                onmouseout="this.src='images/thanhma-.png'"
+                                onclick="document.getElementById('popup1').style.display='block'">
+                                <div class="slide-caption">Fintech Character Design</div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="slide">
+                              <img src="images/coffee-.png" alt="Original" 
+                              onmouseover="this.src='images/phinblend.png'" 
+                              onmouseout="this.src='images/coffee-.png'"
+                              onclick="document.getElementById('popup2').style.display='block'">
+                              <div class="slide-caption">Coffee Packaging Design</div>
+                          </div>
+                            <!-- Slide 3 -->
+                            <div class="slide">
+                              <img src="images/3dfoodstall-.png" alt="Original" 
+                              onmouseover="this.src='images/3dfoodstall-full.png'" 
+                              onmouseout="this.src='images/3dfoodstall-.png'"
+                              onclick="document.getElementById('popup3').style.display='block'">
+                              <div class="slide-caption">Nystagmus and 3D Model Design for Accessibility</div>
+                          </div>
+                            <!-- Slide 4 -->
+                            <div class="slide">
+                              <img src="images/foodwaste-.png" alt="Original" 
+                              onmouseover="this.src='images/foodwaste-hi.png'" 
+                              onmouseout="this.src='images/foodwaste-.png'"
+                              onclick="document.getElementById('popup4').style.display='block'">
+                              <div class="slide-caption">Food Waste Management Research</div>
+                          </div>
+                    </section>
+                </div>
+            </div>
+      </div>
+        </div>
+      </div>
+      <!-- Pop-ups -->
+      <div class="popup-container" id="popup1">
+        <div class="popup-content">
+          <span class="close-button">&times;</span>
+          <p>Fintech Character Design | Client: VNPAY | Campaign to Promote Product: VNPAY-QR | Date: 2021</p>
+          <p>Researched, Illustrated, and Designed by Lana Hoang | Researched by Khanh Nguyen</p>
+          <spam><br></spam>
+          <a href="https://vnpay.vn/dich-vu/0myhb8a9f2qm" target="_blank">[VNPAY-QR's Website]</a>
+          <h2>Context</h2>
+          <p>VNPay is a leading fintech company in providing all kinds of digital payment solutions. Before the pandemic, their main product, VNPAY-QR, was positioned for office workers and businesses. The brand positioned itself heavily with a traditional and old-fashioned image that did not appeal to a wider audience.</p>
+          <p>However, the pandemic brought a significant shift in consumer behavior, with a surge in demand for contactless payment options across all demographics. To adapt to this change, VNPAY-QR recognized the need to reinvent its brand image to appear more modern, relatable, and tech-savvy.</p>
+          <div class="image-row">
+            <img src="images/VNPAYQR-before1.jpg" class="nguyen">
+            <img src="images/VNPAYQR-before2.jpg" class="nguyen">
+            <img src="images/VNPAYQR-before3.jpg" class="nguyen">
+            </div>
+            <text>VNPAY-QR and its uses [Image sources: VNPAY's Website & Facebook]</text>
+            <h2>External influence</h2>
+            <p>The Covid-19 pandemic started to attract global attention in early 2020. Due to the contagious nature of the virus, which spreads mainly through direct contact with an infected person, governments around the world took several measures to reduce human-to-human contact. These included the closure of public places and public transportation, enforcement of social distancing, and public notices to maintain social distancing, stay indoors, and work from home.</p>
+            <p>This therefore means that people have gradually moved to digital solutions for all their needs. Technology and the Internet have made life easier by facilitating online learning, working, and shopping. The most prominent examples of this shift are seen in huge increases in digital payment systems.</p>
+            <p>Such apprehensions led public health bodies like the World Health Organization and various national governments to advise against cash transactions and the use of digital payments instead. The need for social distancing and mobility restrictions accelerated this shift toward digital platforms, where consumers could shop, make payments, and access services while minimizing physical contact.</p>
+            <p>The demand has been increasing, and as a result, service providers have changed their provision to meet these changing needs. This transition into digital methods of paying for a service is very multi-dimensional in nature, catering to the requirements of different consumers. The fourth wave of the Covid-19 pandemic has created an economic impact which is unprecedented in magnitude, with many industries being hit globally. However, the rapid growth of electronic payment systems in the banking industry has shown a bright side and helped make the financial ecosystem more robust and modernized.</p>
+            <p>Besides, demographic factors did not affect the change in spending behavior through electronic payments during the COVID-19 pandemic. Maybe the explanation is that the strict social distancing in Vietnam during the pandemic, and which required all people, irrespective of age, occupation, and gender, to stay confined within their homes, thus their personal necessities and spending would become more unified among different demographics.</p>
+              <a href="https://www.researchgate.net/publication/375639962_An_Empirical_Insight_into_Adoption_Spending_with_Digital_Payment_System_in_Vietnam_During_Covid_19_Era" target="_blank">[Source]</a>
+            <h2>Challenges and opportunities</h2>
+            <h3>Narrow target audience pre-pandemic</h3>
+            <h4>Challenge:</h4>
+            <p>Previously, before 2020, VNPAY-QR had targeted mainly office workers and business people, excluding other groups such as students, families, and the elderly. The narrow targeting, along with unappealing promotion strategies, has restricted the number of users for the platform. However, the rapid increase in digital payment adoption during the Covid-19 pandemic underlined the need for more inclusive strategies that could meet the diverse needs of consumers across all age groups and professions. As the cashless transition in Vietnam accelerated, VNPAY-QR was faced with the challenge of expanding its reach to engage a wider audience and stay competitive in the rapidly growing digital payment market.</p>
+            <span><br></span>
+            <h4>Digital payment usage growth:</h4>
+              <p>This trend is especially phenomenal in Vietnam, with a 170% surge in the volume of online payment transactions in 2020, according to the State Bank of Vietnam, and up to 40% more users making QR code payments. This reflects a broader regional movement in Southeast Asia, where many consumers have increasingly adopted cashless transactions. In fact, 84% of consumers in the region reported a shift toward cashless living, making Southeast Asia lead the transition into digital payments. On average, consumers in Southeast Asia can maintain a cashless lifestyle for 10.3 days-a figure matched by Malaysia and second in the region only to the Philippines at 12 days.</p>
+              <p>It is in this transformation that, particularly, Vietnam is setting the pace: rapid development, uptake of digital payment platforms through mobile banking applications, QR code, and e-wallets. Its government's thrust on financial inclusions and an increasing fintech innovation have accelerated the move toward digital payment modes, especially in both rural and urban populations. In particular, Vietnam's leading position acts as a driving force toward a cashless economy in the region; it will consequently lay the bedrock for the same increased digitization and deeper integration across Southeast Asia.</p>
+            <a href="https://www.visa.com.my/dam/VCOM/regional/ap/documents/visa-cpa-report-2021-smt.pdf?" target="_blank">[Source]</a>
+            <a href="https://www.statista.com/statistics/1315058/vietnam-qr-code-payment-usage/" target="_blank">[Source]</a>
+          <p></p>
+            <span><br></span>
+          <h3>Outdated branding strategy</h3>
+          <h4>Challenge:</h4>
+          <p>The outdated branding of the company and traditional promotional materials could not impress the potential young, more tech-savvy audience that was more likely to adopt digital payment solutions. Instead of using modern, dynamic marketing methods that would resonate with today's digital-first consumers, VNPAY-QR was doing conventional advertising, which was uncreative and failed to highlight the convenience and security of their services. This created a disconnect with potential users, particularly those unfamiliar with fintech solutions, who may view the platform as less appealing or less trustworthy than other, more agile competitors. In that respect, the company lost an opportunity to reach some key demographics such as students and young professionals-early adopters of digital technologies who play an important role in driving the cashless economy.</p>
+        <span><br></span>
+          <h4>Social media engagement:</h4>
+        <p>In 2020, Vietnam recorded an estimated 73.56 million social network users, about 75.6% of the country's total population. Of these users, about 23 million were between 18 and 34 years of age, nearly equally divided in terms of gender. Social media was dominated by Facebook, where users predominantly engaged with video and photo content, using tools such as Facebook Messenger for communication and buying goods online. It describes the high degree of social media use among Vietnamese customers, further down the road toward an economy with complete or minimal use of cash transactions and digital means of payment. Companies utilizing those platforms for marketing purposes, therefore, would achieve much better access to such a tech-savvy audience: for example, this could have significantly accelerated user acquisition for VNPAY-QR in the cashless economic transition.</p>
+          <a href="https://marketreport.io/social-media-report-vietnam-2020" target="_blank">[Source]</a>
+        
+        <h2>Design Process</h2>
+        <p>Every individual is unique, and so are brands. Making a brand more humanistic can make it stand out in the competitive marketplace. One of the methods through which this is done is by developing a brand mascot, thereby giving the brand an identity with which people can relate. A well-designed mascot makes a brand memorable to differentiate it from other businesses selling similar products.</p>
+        <p>Brands like VNPAY-QR can use mascots to increase audience engagement by giving a "face" to the brand. People naturally would feel more at ease interacting with a relatable persona rather than a faceless entity. Similar to how personal connections are stronger when there is a recognizable individual involved, consumers are more likely to participate in brand activities and conversations when a mascot is present.</p>
+        <a href="https://www.sketchy.digital/blog/brand-mascot-character-development" target="_blank">[Source]</a>
+        <p></p>
+        <span><br></span>
+        <h3>Defining the character</h3>
+        <p>Operating in this fast-growing digital payment market, VNPAY-QR has to develop a mascot that will be one of a kind and not only visually appealing but also memorable. It should not be just a technical figure representing the platform; it needs to reflect humanistic traits: humor, wisdom, friendliness. By integrating these facets, the character will be of great help in bridging the gap in advanced technology in the platform and making it close enough and relatable to ordinary people for wide usage in digitized payments.</p>
+        <span><br></span>
+        <h3>Inspirations and concept</h3>
+        <div class="image-single">
+          <img src="images/VNPAYQR-moodboard.png" class="moodboard">
+          </div>
+          <text>Mood inspiration board [Image sources: Behance, Pinterest]</text>
+        <p>The character was conceived as an otherworldly figure: larger than life, yet intrinsically friendly. This combination of heroism and friendliness positioned him as a guiding symbol for users, offering support and encouragement in navigating the complexities of digital payments during uncertain times. Whereas gods are generally held to be unreachable and incomprehensible, Thanh Ma was to be as personable and accessible as possible, thereby bridging the gap between technology and the end-user from every walk of life.</p>
+        <p>Relatability was a core design principle, ensuring the character resonated with diverse audiences:</p>
+        <p style="margin-left:3rem;">Young adults: The character is cool and tech-savvy; he just fit into the exact mold that digital lifestyle and comfort with online platforms have gotten them accustomed to.</p>
+        <p style="margin-left:3rem;">Older generations:  The character should also come across as friendly, non-threatening, approachable, and reassuring for the unfamiliar technological intervention known as cashless payments.</p>
+        <p style="margin-left:3rem;">Rural communities: By positioning the character as relatable and helpful, VNPAY-QR will be able to present cashless payment solutions as simple and practical tools to solve everyday problems even in areas that are not well exposed to fintech.</p>
+          <span><br></span>
+        <p>Beyond being just an icon for the brand, the character was created to be a character of storytelling, giving a face to digital payment technology. He could engage users through promotions, step-by-step instructions, and explaining the process in an understandable manner. A human touch for a digital service-the character built trust and engagement, making VNPAY-QR friendlier and closer to more people.</p>
+        <div class="image-single">
+          <img src="images/VNPAYQR-moodboard2.png" class="moodboard">
+          </div>
+          <text>Face and outfit inspiration board [Image sources: Google Image, Pinterest]</text>
+        <p>The character’s face and outfit were inspired by the appearance of an average, friendly, and casually dressed Vietnamese man, making him relatable to a broad audience across different regions of Vietnam.
+          His design reflects some common characteristics usually associated with the ordinary Vietnamese person: easygoing, industrious, and communal. The outfit is simple and practical, resembling what locals might wear in daily life, reinforcing his accessibility and down-to-earth persona.</p>
+        <span><br></span>
+          <p>To balance this relatability with the character's symbolic heroism, subtle elements were added to remind users of his superhuman qualities. A coat was added to give him a dynamic, heroic silhouette; a sleek mask and a pair of gloves lent a futuristic touch and hinted at his tech-savviness and problem-solving abilities.
+          These elements are subtle but help drive home the point that Thanh Ma is not a regular character but one who has the wisdom and strength to lead users through the maze of digital payments. This blend of familiarity and heroism helps position the character as both a trustworthy guide and an aspirational figure in VNPAY-QR's brand narrative.</p>
+          <h2>Result</h2>
+    <h3>Vision and symbolism:</h3>
+    <p>Thanh Ma, or "The God of Code," was envisioned as a heroic figure personifying the power of modern technology in simplifying life. As much as he embodies the strength, wisdom, and commanding presence associated with gods, he is approachable and friendly. Thanh Ma acts as a crucial bridge between the maze of fintech solutions and the user's practical needs, demystifying digital payments and building trust through a more relatable, humanized story.</p>
+    <span><br></span>
+    <h3>Core characteristics:</h3>
+    <p>Hero yet humble: Thanh Ma is confident but approachable to both the tech-savvy youth and the more cautious older generation.</p>
+    <p>Tech-oriented: The name denotes his relationship to coding and innovation, highlighting the advanced capabilities of VNPAY-QR.</p>
+    <p>Inclusive: Designed to appeal to both urban and rural users, Thanh Ma embodies the values of accessibility, education, and unity.</p>
+    <div class="image-single">
+      <img src="images/ThánhMã-(1).png" class="moodboard">
+      </div>
+      <text>Character design</text>
+      <h3>Thanh Ma and social media platforms</h3>
+    <p>Thanh Ma opens a wide door to VNPAY-QR for creating various types of content: entertaining, educational, and even instructive. The character can be used in various digital channels for humorous, educational, or motivational messages that increase user interaction and brand loyalty.</p>
+     <p>By featuring Thanh Ma prominently in social media posts, VNPAY-QR can make its communications more relatable and interactive. The mascot can present promotional offers, share practical tips on using digital payment services, and even respond to customer queries in a lighthearted yet professional manner. This approach humanizes the brand and fosters a more engaging, personalized relationship with users, helping to demystify fintech solutions and make digital payments more accessible to a broader audience.</p>
+    <div class="image-row">
+        <img src="images/VNPAYQR-2020-W3-P1.jpg" class="nguyen">
+        <img src="images/VNPAYQR-2020-W3-P2.jpg" class="nguyen">
+        <img src="images/VNPAYQR-2020-W7-P2-2.jpg" class="nguyen">
+        </div>
+        <text>Social media posts</text>
+    </div>
+      </div>
+      
+  <div class="popup-container" id="popup2">
+    <div class="popup-content">
+      <span class="close-button">&times;</span>
+      <p>Coffee Packaging Design | Client: Lacàph | Date: 2023</p>
+      <p>Researched, Illustrated, and Designed by Lana Hoang | Photographed by Kevin Lung | Coffee's Guided and Interviewed by Nguyen Nguyen</p>
+      <span><br></span>
+      <a href="https://www.lacaph.com/en/" target="_blank">[Lacàph's Website]</a>
+      <h2>Context</h2>
+      <p>The flavors of Lacàph's coffee and vivid stories of their cultural background remained underrepresented in the previous packaging designs. The illustrations on the former package did not provide depth and linkage to the characteristics of each flavor profile; hence, missing out on curiosity and connection.</p>
+      <p>Lacàph aims to make coffee culture a shared experience, uniting people, creating meaningful connections, and sparking joy in every cup. The previous design did not fully reflect this vision or resonate with the diverse audience they want to engage. The packaging fell short of delivering a visual experience that invites exploration and celebrates the cultural richness behind Lacàph's offerings.</p>
+      <div class="image-row">
+      <img src="images/LCP-olddesign1.jpg" class="olddesigns">
+      <img src="images/LCP-olddesign2.jpg" class="olddesigns">
+      <img src="images/LCP-olddesign3.jpg" class="olddesigns">
+      </div>
+      <text>Previous packaging designs</text>
+      <h2>Problems</h2>
+      <h3>In-store interview feedback: packaging and design perception</h3>
+      <p>At the shop, there is a bar where customers can enjoy the coffee while also purchasing the coffee beans. As part of the project, I enlisted the help of one of the baristas to gather feedback from customers through short interviews. The group consisted of regular buyers as well as customers who were there simply to enjoy the coffee but had never purchased the product before.</p>
+      <div class="image-row">
+        <img src="images/LCP-nguyen1.jpg" class="nguyen">
+        <img src="images/LCP-nguyen2.jpg" class="nguyen">
+        <img src="images/LCP-nguyen3.jpg" class="nguyen">
+        </div>
+        <text>Nguyen's coffee tasting service and interview</text>
+      <h4>Question: "What are your thoughts on our product's design?"</h4>
+      <p style="margin-left:3rem;">Regular customer 1: "I think the coffee is great, but the packaging doesn’t stand out much."</p>
+      <p style="margin-left:3rem;">Regular customer 2: "I enjoy the taste, but I’m not sure if the design really reflects the quality of the coffee inside. It looks basic."</p>
+      <p style="margin-left:3rem;">Potential customer 1: "I’ve noticed it on the shelf before, but honestly, it didn’t catch my eye. The packaging doesn't make it look like a coffee product."</p>
+      <p style="margin-left:3rem;">Potential customer 2: 
+     "I am not sure what to expect from the coffee just by looking at the packaging. It’s just not eye-catching enough to make me want to pick it up over other brands."</p>
+     <span><br></span>
+     <h4>Question: "What do you like and dislike about the packaging?"</h4> 
+      <p style="margin-left:3rem;">Regular customer 1:
+        "I like that it looks simple, but it could be more visually appealing. The illustrations don't help me differentiate between the flavors, and they don’t feel tied to the coffee’s identity."</p>
+      <p style="margin-left:3rem;">Regular customer 2:
+        "It doesn’t feel like it reflects the vibrancy of the coffee culture. I dislike that there’s nothing on the packaging to tell me about the cultural significance."</p>
+      <p style="margin-left:3rem;">Potential customer 1:
+        "I like the clean look, but it feels a bit generic. I would have appreciated something that tells me more about what makes the coffee special. I saw the bag in a supermarket before, but I got it confused for other tea products next to it. "</p>
+      <p style="margin-left:3rem;">Potential customer 2:
+        "I had trouble identifying the flavor from the images alone. I like the idea of having the coffee beans available in-store, but the packaging needs to be more engaging."</p>  
+      <span><br></span>
+        <h3>Key takeaways from the interviews</h3>
+        <h4>Lack of visual appeal:</h4>
+        <p>Customer feedback highlighted that the coffee packaging failed to capture attention or spark curiosity on the shelves. In a competitive market, where visual differentiation is crucial, the design did not stand out enough to leave a lasting impression.</p>
+        <p style="margin-left:3rem;">Inconsistent and generic imagery: The illustrations used on the packaging lacked a cohesive visual style and distinctive elements, making it difficult for the product to stand out. The absence of a unique artistic direction made the design feel impersonal and forgettable.</p>
+        <p style="margin-left: 3rem;">Missed opportunity for aesthetic appeal: Coffee drinkers often select products that align with their lifestyle, values, or taste. The packaging missed the opportunity to create a connection with consumers through a resonant design. </p>
+        <span><br></span>
+        <h4>Limited differentiation among blends:</h4>
+        <p>Customers noted significant challenges in distinguishing between the various coffee blends offered by the brand. The lack of clear visual cues on the packaging made it difficult to identify which blend was intended for specific brewing methods, such as phin brewing, espresso, or filter. This confusion affected the overall customer experience, especially for those seeking blends that matched their preferred preparation techniques.</p>  
+        <p style="margin-left:3rem;">Blend identification issues: There was no clear distinction between blends on the packaging, leading to uncertainty at the point of purchase. Customers expressed confusion with the difficulty of determining which product they need.</p>
+        <p style="margin-left: 3rem;">Inconsistency in image style across the product line: The illustrations used on the packaging failed to create a cohesive brand identity. There was no unified visual system that tied the different blends together, nor were there distinct design elements that differentiated one blend from another. This inconsistency diluted the brand’s visual presence and made it harder for customers to recognize and navigate the product range.</p>
+        <h2>Design Process</h2>
+        <h3>Understanding Lacàph’s coffee flavor profiles and brewing methods</h3>
+        <div class="image-row">
+          <img src="images/LCP-cfex1.jpg" class="nguyen">
+          <img src="images/LCP-cfex2.jpg" class="nguyen">
+          <img src="images/LCP-cfex3.jpg" class="nguyen">
+          </div>
+          <text>I joined Lacàph coffee experience classes to learn more about their coffee</text>
+        <h4>Phin Blend (80% Robusta, 20% Arabica)</h4>
+      <p>Flavor profile:</p>
+      <p>This blend is bold, full-bodied, and intense, just like the strong culture of Vietnamese coffee. High in Robusta, earthy, nutty flavors are present with a hint of bitterness, while Arabica balances out the cup with a touch of acidity and sweetness.</p>
+      <p>Best brewing method: Phin brew</p>
+      <p>The phin brew is the quintessential Vietnamese brewing method-a slow-drip process that allows the coffee to fully extract its rich, bold flavors. The phin filter is a small metal drip filter that sits directly over a cup, allowing for a unique brewing ritual that encourages patience and mindfulness.</p>
+      <p>The phin brew is more than a brewing method; it's a cultural icon of Vietnamese hospitality. It's common to see people sitting in local cafés, savoring each slow-dripped cup while engaging in conversation. This blend is perfect for traditional Cà Phê Sữa Đá (Vietnamese Iced Coffee with Condensed Milk) and Bạc Xỉu (Saigon's White Coffee).</p>
+      <p>Cultural significance of iconic drinks:</p>
+      <p>Cà Phê Sữa Đá (Vietnamese Iced Coffee):</p>
+      <p>Known for its strong, bold flavor, this drink combines phin-brewed coffee with sweetened condensed milk, creating a smooth and creamy balance. It’s typically served over ice, making it a refreshing beverage for Vietnam’s tropical climate.</p>
+      <p>Bạc Xỉu:</p>
+      <p>Originating from Saigon (Ho Chi Minh City), Bạc Xỉu is a lighter, milkier variation of Vietnamese coffee. Made with more condensed milk and less coffee, it appeals to those who prefer a sweeter, less intense coffee experience. Historically, it was popular among children accompanying their parents to coffee shops.</p>
+      <span><br></span>
+      <h4>Espresso Blend (80% Arabica, 20% Robusta)</h4>
+      <p>Flavor profile:</p>
+      <p>The Espresso Blend is classier and more versatile. The high Arabica content creates a smooth, aromatic cup with bright acidity, fruity or floral notes, and natural sweetness. The Robusta adds body, depth, and a rich crema; add more flavor to an espresso shot.</p>
+      <p>Best brewing method: Espresso machine</p>
+      <p>Espresso machines produce a concentrated, creamy shot of coffee that forms the base for a variety of espresso-based beverages.
+      This blend is ideal for making drinks like cappuccinos, lattes, and macchiatos, offering versatility for coffee lovers who enjoy experimenting with different styles. The robusta’s crema ensures a rich and visually appealing espresso shot, while the arabica’s complexity provides a delightful flavor profile.</p>
+      <p>Cultural influence:</p>
+      <p>In Vietnam, espresso-based drinks have become more popular in urban areas, especially among younger generations and coffee enthusiasts who seek international coffee experiences. Cafés in cities like Hanoi and Ho Chi Minh City often serve Italian-inspired espresso drinks.</p>
+      <span><br></span>
+      <h4>Filter Blend (100% Arabica)</h4>
+      <p>Flavor profile:</p>
+      <p>The Filter Blend is a light to medium-bodied coffee made with 100% Arabica beans. It offers bright acidity and complex flavor notes, ranging from fruity and floral to chocolatey, with a clean, crisp finish. This blend is best for highlighting the delicate, nuanced flavors of Arabica beans.</p>
+      <p>Best brewing method: Pour-over</p>
+      <p>The pour-over method is a refined and artisanal brewing technique that allows for precise control over water temperature and extraction time. Popular among third-wave coffee enthusiasts, pour-over brewing brings out the complex and delicate notes of Arabica coffee, creating a clean and flavorful cup.</p>
+      <p>This method involves pouring hot water over coffee grounds in a controlled, circular motion, typically using equipment like a V60 dripper, Chemex, or Kalita Wave. It’s perfect for people who enjoy experimenting with brewing techniques to achieve the ideal cup.</p>
+      <p>Cultural influence:</p>
+      <p>The filter blend resonates with specialty coffee drinkers who appreciate the artistry and craftsmanship of coffee-making. While the pour-over method is less traditional in Vietnam, it has gained popularity in recent years through the third-wave coffee movement. The filter blend is perfect for consumers seeking a more refined and artisanal coffee experience, where each sip reveals the unique characteristics of the coffee.</p>
+      <span><br></span>
+      <h3>Comparison:</h3>
+    <div id="table-container">
+      <table class="model-table">
+        <thead>
+          <tr>
+            <th>Blend</th>
+            <th>Phin Blend</th>
+            <th>Espresso Blend</th>
+            <th>Filter Blend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Flavor profile</td>
+            <td>Bold, intense, earthy, with balanced sweetness</td>
+            <td>Smooth, aromatic, bright acidity, rich crema</td>
+            <td>Light to medium body, fruity/floral notes</td>
+          </tr>
+          <tr>
+            <td>Brewing method</td>
+            <td>Phin filter</td>
+            <td>Espresso machine</td>
+            <td>Pour-over</td>
+          </tr>
+          <tr>
+            <td>Cultural influence</td>
+            <td>Traditional Vietnamese coffee culture, Bạc Xỉu (Saigon-style)</td>
+            <td>Urban café culture, Italian-inspired drinks with a local twist</td>
+            <td>Third-wave coffee movement, artisanal coffee experience</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span><br></span>
+      <p>Lacàph’s coffee blends are designed to reflect the rich coffee culture of Vietnam while embracing modern brewing trends. The Phin Blend preserves tradition through the iconic phin brew and classic drinks like Cà Phê Sữa Đá and Bạc Xỉu. The Espresso Blend caters to urban, modern consumers drawn to global coffee styles. The Filter Blend appeals to third-wave coffee enthusiasts, providing a clean, artisanal experience.</p>
+      <p>By highlighting the brewing methods and cultural influences, Lacàph can better connect with diverse audiences, from traditionalists who cherish the phin brewing ritual to modern coffee drinkers seeking innovation and sophistication.</p>
+     <span><br></span>
+        <h3>Inspired by coffee cultures</h3>
+        <div class="image-single">
+        <img src="images/LCP-moodboard.png" class="moodboard">
+        </div>
+        <text>Little inspiration about different brewing techniques</text>
+        <div class="image-single">
+          <img src="images/LCP-moodboard2.png" class="moodboard">
+          </div>
+          <text>Art style inspiration: Art Deco</text>
+        <h3>From hands-on experience to design</h3>
+        <p>Through interviews and further exploration into the world of coffee,  it became clear that brewing methods play a very critical role in bridging coffee drinkers to the taste and culture of the beans. Each brewing method-whether the Vietnamese phin filter, classic espresso machine, or delicate pour-over filter-is a direct bridge between the origin of the coffee and the drinker's experience.</p>
+        <span><br></span>
+        <p>Lacàph’s packaging should reflect the brand’s core values of tradition, craftsmanship, and modern elegance, drawing inspiration from Art Deco to visually tell its story. This style, rooted in Vietnam’s cultural heritage, particularly in Saigon’s colonial history, captures the fusion of East and West in art, architecture, and lifestyle.
+          And each brewing method embodies a piece of the coffee culture, and the Art Deco aesthetic transforms these stories into vibrant, engaging visuals that resonate with both local and global audiences.</p>
+        <span><br></span>
+        <p>To the coffee drinker, the brewing method represents much more than simply one more way to prepare a drink; it's actually almost a ritual for the revelation of the character of the coffee. The methodology can enhance certain flavor notes, make specific the origin of the bean, and contain traditions and culture about that type of coffee. The Art Deco illustrations on Lacàph's packaging capture this connection: each brewing method becomes a visual story of geometric shapes, bold patterns, and vibrant colors that recall early 20th-century Vietnamese culture with modern flair.</p>
+        <p>Phin filter brewing: tradition and intention</p>
+          <p style="margin-left: 3rem;">The slow, rich, and intentional process of brewing with a Vietnamese phin filter embodies the bold, earthy flavors of robusta-heavy blends, reflecting the heart of Vietnamese coffee culture. This method transforms coffee from a simple drink into a ritualistic experience, one that requires patience, mindfulness, and a deep appreciation for the craft. The phin’s slow drip encourages moments of pause, fostering a sense of connection and mindfulness, where the reward lies not only in the strong, flavorful brew but also in the cultural tradition it preserves.</p>
+        <p>Espresso machine: precision and modern sophistication</p>
+          <p style="margin-left: 3rem;">Espresso brewing represents intensity, precision, and sophistication. It suits blends with a balance of arabica’s complexity and robusta’s strength, creating a robust shot with a creamy crema, ideal for espresso lovers worldwide.</p>
+        <p>Pour-over method: clarity, nuance, and artisanal craft</p>
+          <p style="margin-left: 3rem;">Pour-over brewing really speaks of clarity and nuance, showcasing the beans of arabica to their fruity, floral, or bright acidity. It is targeted toward coffee aficionados who appreciate this culture of artisanal coffee, the intricacies, and, above all, the discovery of flavors.</p>
+        <h2>Result</h2>
+          <p>By centering the packaging design around these brewing methods, the illustrations provide customers with an intuitive understanding of the coffee’s identity. It simplifies their decision-making process and deepens their appreciation for the product. They can quickly connect the brewing method to the flavor they desire and the cultural experience they’re seeking.</p>
+          <p>The illustrations not only showcase the brewing methods in a simple way but also depict the flow of the coffee dripping through each method. For example, the slow drip of the phin brew symbolizes its rich, bold flavor and deliberate brewing process.</p>
+          <div class="image-row">
+            <img src="images/LCP-illus-phin.gif" class="olddesigns">
+            <img src="images/LCP-illus-filter.gif" class="olddesigns">
+            <img src="images/LCP-illus-espress.gif" class="olddesigns">
+            </div>
+            <text>Final illustrations from left to right: Phin, Filter, Espresso</text>
+      <div class="image-row">
+        <img src="images/LCP-phinbag.png" class="olddesigns">
+        <img src="images/LCP-filterbag.png" class="olddesigns">
+        <img src="images/LCP-espressobag.png" class="olddesigns">
+        </div>
+        <text>Redesigned labels from left to right: Phin, Filter, Espresso</text>
+        <p>"The final designs have a more consistent and cohesive look, with clear and intuitive visuals that precisely indicate the product inside each bag. The design elements work harmoniously to ensure customers can quickly identify the blend, brewing method, and flavor profile at a glance, making the packaging both aesthetically appealing and functional." — Lacàph's feedback</p>
+        <div class="image-row">
+          <img src="images/LCP-bag1.jpg" class="nguyen">
+          <img src="images/LCP-bag2.jpg" class="nguyen">
+          <img src="images/LCP-bag3.jpg" class="nguyen">
+          </div>
+          <text>Coffee for sale!</text>
+      </div>
+  </div>
+<div class="popup-container" id="popup3">
+  <div class="popup-content">
+    <span class="close-button">&times;</span>
+    <p>Understanding Nystagmus and the Role of 3D Model Design in Overcoming Challenges | Client: Personal Project | Date: 2024—</p>
+    <p>Researched and 3D Designed by Lana Hoang</p>
+    <span><br></span>
+    <p>*As I continue to deepen my understanding of the topic and refine my skills with the tools, this project remains a work in progress.*</p>
+    <h2>Context</h2>
+    <h3>Understanding nystagmus</h3>
+    <p>Nystagmus is a visual impairment characterized by involuntary, repetitive eye movements that can affect a person’s ability to focus on objects, perceive depth, and maintain spatial awareness. These challenges can lead to difficulties in daily tasks such as reading, navigating unfamiliar environments, and maintaining balance. For individuals with nystagmus, the world can feel unstable and disorienting, impacting their confidence and independence.</p>
+    <p>One of the lesser discussed struggles faced by individuals with nystagmus is the impact on proprioception, the body’s ability to sense its position and movement in space. Proprioception relies heavily on visual input to maintain balance and spatial orientation. However, for individuals with nystagmus, the brain receives distorted or incomplete visual information, making it harder to gauge distances, avoid obstacles, or perform tasks that require hand-eye coordination.</p>
+    <a href="https://www.rnib.org.uk/your-eyes/eye-conditions-az/nystagmus/" target="_blank">[Source]</a>
+    <p></p>
+    <span><br></span>
+    <h3>Why focus on nystagmus?</h3>
+    <p>Unlike more widely recognized visual impairments, nystagmus poses a distinct set of challenges that require specialized solutions. Individuals with nystagmus often struggle with tasks that rely on steady visual input, such as reading, driving, or navigating unfamiliar spaces. Despite these significant hurdles, there remains a lack of tailored assistive tools and technologies specifically designed to support this community.</p>
+    <p>Moreover, the prevalence of nystagmus is higher than many realize. According to the Royal National Institute of Blind People (RNIB), approximately 24 in every 10,000 people live with some form of nystagmus. Yet public awareness of this condition remains low, contributing to gaps in support services and technological advancements.</p>
+    <p>Addressing nystagmus through innovative design not only promotes inclusivity but also sets a precedent for how emerging technologies can cater to niche disabilities. It highlights the importance of thinking beyond generalized solutions and creating tools that cater to specific, nuanced needs in the broader context of accessibility and human-centered design.</p>
+    <a href="https://www.rnib.org.uk/your-eyes/eye-conditions-az/nystagmus/" target="_blank">[Source]</a>
+    <p></p>
+    <span><br></span>
+    <h3>Role of 3D model design</h3>
+    <p>3D models, especially those tailored for accessibility, provide opportunities to enhance depth perception, improve spatial awareness, and offer interactive, engaging experiences that adapt to individual needs.</p>
+    <p>By addressing the unique challenges of nystagmus through 3D model design, this approach not only fosters greater inclusivity but also opens new possibilities for learning and independence. As technology continues to evolve, digital 3D models will remain a powerful tool in breaking down barriers and improving the quality of life for individuals living with visual impairments.</p>
+    <h2>Understanding nystagmus</h2>
+    <p>Nystagmus is generally classified into two major types:</p>
+    <span><br></span>
+    <h3>Infantile (congenital) nystagmus</h3>
+    <p>This type appears early in life, typically within the first few months after birth. It is often associated with underlying genetic or developmental issues and tends to remain stable throughout life.</p>
+    <span><br></span>
+    <h4>Characteristics:</h4>
+    <p>Onset: Within the first 6 months of life.</p>
+    <p>Rhythm: Regular, rhythmic, involuntary eye movements (horizontal is most common, but can also be vertical or rotary).</p>
+    <p>Oscillations: Often jerk (fast and slow phases) or pendular (even back-and-forth) movements.</p> 
+    <p>Null point: A head position where eye movement is minimized, leading to a better vision posture (e.g., tilting the head to one side).</p>
+    <p>Vision impact: Reduced visual acuity and difficulty focusing.</p>
+    <span><br></span>
+    <h4>The role of the brain’s visual processing systems and ocular motor systems in causing nystagmus</h4>
+    <p>The visual processing system:</p>
+    <p>The brain’s visual processing system consists of the structures and pathways that interpret visual information from the eyes and translate it into what we perceive as vision. In people with nystagmus, abnormalities in this system disrupt the stability and clarity of the visual input.</p>
+    <p>Key areas involved in visual processing include:</p>
+    <p>Retina: The first point of contact for visual information. It converts light into electrical signals.</p>
+    <p>Optic nerve: Transmits visual signals from the retina to the brain.</p>
+    <p>Primary visual cortex (V1): The first brain region that processes visual information.</p>
+    <p>Oculomotor control centers: Areas of the brain responsible for controlling eye movements, including:</p>
+    <p style="text-indent: 3em;">Brainstem: Contains key nuclei (e.g., the oculomotor nucleus) that regulate eye muscles.</p>
+    <p style="text-indent: 3em;">Cerebellum: Helps fine-tune eye movements to ensure they are smooth and coordinated.</p>
+    <p style="text-indent: 3em;">Frontal eye fields: Involved in voluntary eye movements.</p>
+    <span><br></span>
+    <h4>How do abnormalities cause nystagmus?</h4>
+    <p>Infantile nystagmus occurs when feedback loops between the brain and eyes malfunction, leading to uncontrolled oscillations of the eyes.</p>
+    <p>There are two main feedback loops involved in normal eye control:</p>
+    <p style="text-indent: 3em;">The fixation loop – Keeps the eyes stable on a target.</p>
+    <p style="text-indent: 3em;">The gaze-holding loop – Ensures that the eyes stay aligned when looking in different directions.</p>
+    <p>In people with nystagmus, one or both loops are disrupted due to abnormalities in the brain’s control centers or how the eyes send feedback to the brain. As a result:</p>
+    <p style="text-indent: 3em;">The brain misinterprets visual feedback, causing the eyes to drift away from the target.</p>
+    <p style="text-indent: 3em;">The brain then overcorrects, leading to the characteristic rhythmic oscillations of nystagmus.</p>
+    <span><br></span>
+    <h4>Key brain structures implicated:</h4>
+    <p>Medial vestibular nucleus: Coordinates head and eye movements.</p>
+    <p>Nucleus of the optic tract: Helps stabilize gaze during movement.</p>
+    <p>Interpositus nucleus in the cerebellum: Modulates eye movement precision.</p>
+    <p>The brain structures responsible for maintaining stable gaze are often hyperactive or misregulated in infantile nystagmus.</p>
+    <p>Treatments focus on modulating these feedback loops to reduce oscillations.</p>
+    <span><br></span>
+    <h4>Insights from neuroimaging and genetic studies to identify specific abnormalities</h4>
+    <p>Recent genetic studies have identified specific mutations linked to infantile nystagmus. These genes affect ocular motor development and retinal function.</p>
+    <span><br></span>
+    <p>Key genes identified:</p>
+    <p>FRMD7</p>
+    <p>The most common gene associated with infantile nystagmus.</p>
+    <p>Mutations in FRMD7 affect the development of neurons in the brainstem responsible for eye movement control.</p>
+    <p>Interestingly, FRMD7 mutations are linked to X-linked inheritance, meaning it primarily affects males but can be passed down by mothers.</p>
+    <p>GPR143</p>
+    <p>Linked to ocular albinism, which often coexists with nystagmus.</p>
+    <p>The mutation disrupts melanin production in the retina, affecting the development of visual pathways.</p>
+    <p>CACNA1A and SLC38A8</p>
+    <p>Associated with abnormal calcium channels in neurons.</p>
+    <p>These mutations affect signal transmission in the brain and contribute to nystagmus.</p>
+    <span><br></span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/12234898/" target="_blank">[Source]</a>
+    <a href="https://www.aao.org/education/disease-review/clinical-guidelines-childhood-nystagmus-workup" target="_blank">[Source]</a>
+    <a href="https://www.barnesandnoble.com/w/advances-in-understanding-mechanisms-and-treatment-of-infantile-forms-of-nystagmus-r-john-leigh/1101399498?utm_source=chatgpt.com" target="_blank">[Book]</a>
+    <p></p>
+    <span><br></span>
+    <h3>Acquired nystagmus</h3>
+    <p>This type develops later in life due to underlying medical conditions or neurological damage. It is typically more problematic because patients experience oscillopsia (a sensation that the world is moving).</p>
+    <span><br></span>
+    <h4>Characteristics:</h4>
+    <p>Onset: Can occur at any age after infancy, depending on the cause.</p>
+    <p>Rhythm: Can be jerk, pendular, or mixed.</p>
+    <p>Oscillopsia: Common symptom – Patients feel as though their environment is moving, which can cause dizziness and disorientation.</p>
+    <p>Associated symptoms: May include dizziness, vertigo, and balance issues.</p>
+    <p>It is often progressive and can get worse over time.</p>
+    <p>It can improve with treatment of the underlying cause.</p>
+    <span><br></span>
+    <h4>Common causes</h4>
+    <p>Neurological disorders:</p>
+    <p style="text-indent: 3em;"> Multiple sclerosis (MS)</p>
+    <p style="text-indent: 3em;"> Stroke</p>
+    <p style="text-indent: 3em;"> Brainstem lesions</p>
+    <p>Inner ear disorders:</p>
+    <p style="text-indent: 3em;">Vestibular dysfunction</p>
+    <p style="text-indent: 3em;">Meniere’s disease</p>
+    <p>Medication side effects:</p>
+    <p style="text-indent: 3em;"> Antiepileptics, sedatives, or alcohol</p>
+    <p>Head trauma or brain injury.</p>
+    <span><br></span>
+    <a href="https://www.sciencedirect.com/science/article/pii/S1052305724004300" target="_blank">[Source]</a>
+      <a href="https://nystagmusnetwork.org/acquired-nystagmus/" target="_blank">[Source]</a>
+    <p></p>
+      <span><br></span>
+    <h3>Comparison:</h3>
+    <div id="table-container">
+      <table class="model-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Infantile nystagmus</th>
+            <th>Acquired nystagmus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Onset</td>
+            <td>Birth to 6 months</td>
+            <td>Later in life</td>
+          </tr>
+          <tr>
+            <td>Cause</td>
+            <td>Genetic/developmental</td>
+            <td>Neurological/inner ear issues</td>
+          </tr>
+          <tr>
+            <td>Oscillopsia (world moves)</td>
+            <td>Absent</td>
+            <td>Present</td>
+          </tr>
+          <tr>
+            <td>Null point (better head posture)</td>
+            <td>Present</td>
+            <td>Absent</td>
+          </tr>
+          <tr>
+            <td>Associated symptoms</td>
+            <td>None</td>
+            <td>Dizziness, vertigo, balance issues</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span><br></span>
+    <h3>Potential impact of nystagmus on mental health and social interaction</h3>
+  <p>People with nystagmus, a condition characterized by involuntary eye movements, often face challenges beyond vision impairment. These challenges can affect self-esteem, mental health, and social interactions, leading to emotional distress and social isolation.</p>
+  <span><br></span>
+  <h4>Emotional and Psychological Impact</h4>
+  <p>Self-consciousness about eye movements:</p>
+  <p>The visible nature of nystagmus can make individuals feel self-conscious or embarrassed, especially in social settings where eye contact is expected.</p>
+  <p>Difficulty maintaining eye contact:</p>
+  <p>Eye contact plays a critical role in non-verbal communication. Avoiding eye contact can affect their social confidence.</p>
+  <p>Reduced independence:</p>
+  <p>Nystagmus can impact reading, navigation, and participation in daily tasks, leading to feelings of helplessness or frustration.</p>
+  <h4>Social interaction challenges</h4>
+  <p>The involuntary eye movements caused by nystagmus can be misinterpreted by others. For example:</p>
+    <p>Lack of eye contact might be seen as disinterest or dishonesty.</p>
+    <p>Shifting gaze could be perceived as nervousness or lack of confidence.</p>
+    <p>This can result in social exclusion and awkward interactions, especially in job interviews, dating, and public speaking situations.</p>
+<span><br></span>
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1772873/#sec2" target="_blank">[Source]</a>
+  <a href="https://www.cdc.gov/vision-health/about-eye-disorders/vision-loss-mental-health.html#:~:text=Vision%20loss%2C%20depression%20and%20anxiety,in%20people%20with%20vision%20loss." target="_blank">[Source]</a>
+  <a href="https://www.sciencedirect.com/science/article/abs/pii/S1936657420301928#:~:text=15,and%20reduced%20well%2Dbeing." target="_blank">[Source]</a>
+
+  <h2>How 3D model design helps in accessibility</h2>
+    <h3>Improved spatial understanding and navigation</h3>
+    <p>One significant challenge for users with nystagmus is depth perception, which is achieved by understanding the relative positioning of objects in space. 3D models can aid in navigating environments by providing a realistic layout that mimics the real world. 3D models can incorporate texture mapping, shading, and lighting to clearly define spatial relationships, which is essential for users who struggle with accurate visual placement or orientation.</p>
+    <span><br></span>
+    <h3>Supporting spatial memory and recognition</h3>
+    <p>3D models enhance spatial memory, a crucial skill for recognizing and navigating environments. In space recognition learning, they can provide structured, consistent representations of objects, enabling users with visual impairments to identify landmarks and navigate using spatial cues more effectively.</p>
+    <span><br></span>
+    <h3>Potential applications of 3D Models for visual impairments and nystagmus</h3>
+    <h4>Virtual navigation and mapping</h4>
+    <p>3D models can be used to design interactive maps for urban or architectural navigation, providing users with a clear understanding of spatial layouts and context.</p>
+    <p style="margin-left: 3rem;">Real-time VR navigation:A 3D map can simulate a virtual cityscape, allowing users to explore environments at their own pace. The model can adapt to the user’s focus, featuring larger fonts for instructions, high-contrast paths, and distinct visual markers to highlight obstacles and key landmarks.</p>
+    <p style="margin-left: 3rem;">Accessible environment simulation: 3D models enable users with visual impairments to "experience" spaces through virtual exploration, helping them build familiarity and confidence in navigating real-world environments.</p>
+    <span><br></span>
+    <h3>Educational tools for space recognition</h3>
+    <p>In space recognition learning, interactive 3D models allow users to practice identifying spatial relationships and interact with objects in virtual spaces, improving their spatial awareness and memory.</p>
+    <p>These models help users learn to recognize objects by their shape, size, and position, reinforcing their ability to navigate environments. For instance, in geography or architecture education, users can explore cities, landmarks, or historical sites through 3D models, enhanced by auditory or haptic feedback, making the experience more immersive and accessible.</p>
+    <span><br></span>
+    <a href="https://www.researchgate.net/publication/319491874_3D_Simulation_of_Navigation_Problem_of_People_with_Cerebral_Visual_Impairment" target="_blank">[Source]</a>
+    <p></p>
+    <h2>Prototype idea</h2>
+    <p>3D models can be designed to accommodate individuals with nystagmus by incorporating the following features:</p>
+    <p>space and depth, good lighting, contrasting colours,  adjustable position, zooming option, and focus points.</p>
+    <p>Accessible 3D models and environments, that accommodate individuals with visual impairments such as nystagmus, can enhance their ability to navigate, learn, and interact with spatial information effectively.</p>
+    <span><br></span>
+    <h3>Space and depth perception</h3>
+    <p>Depth perception is crucial for users to distinguish between objects in the foreground and background:</p>
+    <p>Realistic shadows and dynamic lighting create a clear sense of depth.</p>
+    <p>Objects overlap appropriately convey which ones are in front and which are behind.</p>
+    <div class="image-single">
+      <img src="images/3dfoodstall.gif" class="moodboard">
+      </div>
+      <text>Creating 3D model with environment background to create depth and space</text>
+    <h3>Brightness adjustment</h3>
+    <p>People perceive visual information differently depending on lighting conditions and contrast levels. Users with visual impairments often struggle to distinguish objects and text if the environment is too dark or too bright. Brightness adjustment allows users to customize the lighting in a virtual space to meet their specific visual needs.</p>
+    <p>Brightness adjustment is an essential feature to make 3D models and virtual environments more accessible for users with visual impairments. It helps people with low contrast sensitivity, nystagmus, patchy vision, and other conditions that affect their ability to perceive objects in different lighting conditions.</p>
+    <p>For individuals with nystagmus, involuntary eye movements make it harder to focus on objects in low light environments. Therefore, brightness control can improve their ability to detect objects in fragmented visual fields 
+      help certain colors stand out more clearly and.</p>
+    <div class="image-row">
+      <img src="images/3dfoodstall-fullnight.jpg" class="twoimages">
+      <img src="images/3dfoodstall-fullday.jpg" class="twoimages">
+      </div>
+      <text>Good lighting makes it easier to see details in the scene</text>
+      <h3>Low contrast sensitivity</h3>
+      <p>People with low contrast sensitivity struggle to see objects that do not stand out distinctly from their background. Lighting and color schemes in the environment become essential for these individuals.</p>
+      <p>Color and contrast control: Offer options to change the background color, foreground text color, and text size. For instance, users can switch between different high-contrast schemes.</p>
+      <p>Contrast slider: Enable users to increase or decrease the contrast between the foreground (text, objects) and the background.</p>
+    <span><br></span>
+    <h3>Adjustable viewpoints and zooming</h3>
+    <p>Allow users to adjust their viewpoint or zoom to focus on specific areas of the model. This feature is particularly helpful for users with patchy vision or low contrast sensitivity.</p>
+    <p>Zoom and pan controls: Provide smooth zooming and panning controls that let users focus on details or step back to see the whole model.</p>
+    <div id="model-container"></div>
+    <text>Click to interact with the model. Click and drag to rotate the model. Double click to zoom in and out.</text>
+    <span><br></span>
+    <a href="https://www.youtube.com/watch?v=whQI4fWVUlw" target="_blank">[Video]</a>
+    <a href="https://xraccess.org/bcxr-report/" target="_blank">[Source]</a>
+    <a href="https://site.unibo.it/invisible-eplus/en/resources/in-visible-guidelines-for-the-realization-of-3d-models.pdf/@@download/file/In-VisiBLe%20Guidelines%20for%20the%20realization%20of%203D%20models.pdf" target="_blank">[Source]</a>
+    <p></p>
+    <span><br></span>
+    <h3>Using reality composer to customize 3D models for accessibility</h3>
+    <div class="image-single">
+      <img src="images/3dRC-mockup.jpg" class="moodboard">
+      </div>
+      <text>Reality Composer interface mockup [Image sources: AI generator, Photoshop]</text>
+    <p>One promising tool for creating accessible 3D models is Reality Composer. This augmented reality (AR) tool allows users to turn physical objects into digital 3D models by scanning real-world objects and integrating them into virtual environments. This process offers an invaluable opportunity to tailor 3D models to meet the unique needs of individuals with nystagmus.</p>
+    <p>By using Reality Composer, individuals with nystagmus can scan a physical object and customize it digitally to suit their specific visual requirements. This customization can include:</p>
+    <p style="margin-left: 3rem;">Adjusting contrast to make the object more distinguishable from its background.</p>
+    <p style="margin-left: 3rem;">Modifying lighting to reduce glare and improve visibility in different environments.</p>
+    <p style="margin-left: 3rem;">Changing colors and color contrasts to enhance visibility for users with specific color vision deficiencies.</p>
+    <p style="margin-left: 3rem;">Resizing or repositioning the object to make it easier to perceive and interact with.</p>
+    <p style="margin-left: 3rem;">Adding interactive elements, such as animations or labels, to improve comprehension and engagement.</p>
+    <p style="margin-left: 3rem;">Adding audio descriptions or haptic feedback to provide additional sensory cues for users with nystagmus.</p>
+    <p>Reality Composer’s intuitive interface makes it accessible to users with limited programming skills, encouraging broader adoption and fostering inclusivity in digital design. For example, a teacher could use Reality Composer to create an interactive 3D learning tool that students with nystagmus can adjust to their specific needs, improving their learning experience.</p>
+    <h2>What to do next?</h2>
+    <h3>Improve research and fact-check content with experts</h3>
+    <p>To ensure your 3D model design is based on accurate and up-to-date insights, collaborate with experts in relevant fields such as ophthalmology, vision science, inclusive design, and assistive technology.</p>
+    <p>Consult vision specialists:</p>
+      <p>Interviews with optometrists, ophthalmologists, or vision rehabilitation specialists to validate the specific needs of users with nystagmus and other visual impairments.</p>
+    <p>Engage inclusive design researchers and designers:</p>
+      <p>Reach out to professionals in inclusive design or human-computer interaction (HCI) to review your model’s accessibility features.</p>
+    <p>Review literature:</p>
+      <p>Continue reviewing peer-reviewed papers on nystagmus, eye movement disorders, and accessible 3D environments to ensure your design aligns with the latest research.</p>
+  <p>Potential helps: CNIB (Canadian National Institute for the Blind) or Vision Australia</p>
+  <span><br></span>
+  <h3>Add visual, sound, and haptic cues to improve the model</h3>
+  <p>Enhancing the multisensory experience of your 3D model will make it more accessible for users with a wide range of visual impairments.</p>
+  <p>Visual cues:</p>
+  <p>Implement dynamic brightness and contrast adjustments that users can customize.</p>
+  <p>Add visual indicators like arrows, markers, or highlights to direct attention to key areas in the model.</p>
+  <p>Sound cues:</p>
+  <p>Incorporate audio descriptions to provide spatial information.
+    For example: “The exit is 10 meters ahead on your left.”</p>
+  <p>Use sound effects to indicate when users are near an object or have completed a task.</p>
+  <p>Haptic cues:</p>
+  <p>In VR environments, use haptic feedback to convey proximity, texture, or object interactions.
+    For example: A slight vibration when users approach a virtual wall or touch an object.</p>
+  <span><br></span>
+  <h3>Iterate and test with users</h3>
+  <p>Recruit participants:</p>
+   <p>Connect with community organizations, support groups, or rehabilitation centers that work with individuals with nystagmus to recruit participants for testing.</p>
+  <p>Conduct usability testing:</p>
+  <p>Organize usability sessions where participants navigate the 3D environment. Observe how they interact with the model and identify areas for improvement.</p>
+  <p>Collect feedback:</p>
+  <p>Ask participants for detailed feedback through surveys or interviews to learn about their experience, challenges, and suggestions.</p> 
+  
+</div>
+</div>
+  <div class="popup-container" id="popup4">
+    <div class="popup-content">
+      <span class="close-button">&times;</span>
+      <p>Food Waste Management Research | Client: Group Project (George Brown College) | Date: 2024—</p>
+      <p>Researched, Interviewed and Web Designed by Lana Hoang | Researched, Interviewed, Wireframed and Content Organized by Siyu Wang | Researched and Content Rewritten by Lauren Chan | 3D Illustrated and Wireframed by Irina Dagunova</p>
+      <span><br></span>
+      <a href="https://lanhuonghoang.github.io/foodwaste/" target="_blank">[On-going report]</a>
+      <h2>Preliminary Research</h2>
+      <p>All of our group's members are curious about the technologies used in the food industry, in particular, we all have interested in environmental and sustainable aspects of the industry.</p>
+        <p>From list of emerging trends in the food industry: functional foods,
+        personalized meal kits,
+        blockchain,
+        smart packaging,
+        sustainable food production,
+        food delivery and Ghost kitchens,
+        food waste tracking,
+        3D food printing,
+        global flavors and fusion cuisines,
+        cellular agriculture,
+        precision agriculture,
+        nutritional tech,
+        food safety tech,
+        plant-based dairy alternatives,
+        food as medicine, and
+        alternative proteins,
+      we decided to choose sustainable food production and food waste tracking as our main focus for the research.</p>
+      <h3>Why we chose these trends?</h3>
+      <p>According to research conducted on household food waste in Canada by the National Zero Waste Council in 2022, 63% of food waste is avoidable. For Canada as a whole, that amounts to almost 2.3 million tonnes of edible food wasted each year, costing Canadians more than twenty billion dollars
+        <a href="https://lovefoodhatewaste.ca/about/food-waste/" target="_blank">[Source]</a>.
+      </p>
+      <h2>Context</h2>
+      <p>This research examines emerging technologies, such as smart sensors and AI-driven systems, to explore their potential to reduce food waste in the industry. The study aims to provide actionable solutions for improving sustainability and efficiency in food waste management by analyzing trends and expert insights.</p>
+      <p>Recognizing that many of these technologies are currently adopted primarily by large organizations, this research emphasizes making future tech trends more accessible and inclusive for small business owners. The study seeks to empower small-scale F&B operators to leverage these innovations, ensuring that the benefits of technological advancements extend to all levels of the industry.</p>
+      <h2>Global impacts</h2>
+      <p>
+        The world wastes over 1 billion tonnes of food annually—equivalent to one-fifth of all food available to consumers at the retail, food service, and household levels. Additionally, 13% of food is lost in the supply chain, according to the FAO
+      <a href="https://www.wrap.ngo/resources/report/global-action-drive-food-loss-and-waste-reduction" target="_blank">[Source]</a>.
+      </p>
+      <span><br></span>
+      <h3>Environmental impact</h3>
+      <p>Global food waste contribution to climate change: Food waste accounts for approximately 8-10% of global greenhouse gas emissions.</p>
+      <p>Technologies like AI and IoT can optimize supply chains and reduce excess production, lowering carbon footprints
+        <a href="https://www.fao.org/platform-food-loss-waste/en/" target="_blank">[Source]</a>.
+      </p>
+      <span><br></span>
+      <h3>Economic impact</h3>
+      <p>Implementing smart systems in food businesses can lead to significant cost savings by enhancing inventory management, accurately predicting demand, and minimizing spoilage. A report by WRAP highlights that foodservice operators can achieve a return of £6 for every £1 invested in food waste reduction initiatives
+        <a href="https://www.thegrocer.co.uk/news/wrap-report-shows-financial-benefits-of-food-waste-reduction/568613.article" target="_blank">[Source]</a>.
+      </p>
+      <p>These savings are realized through several key improvements:</p>
+      <p>Enhanced inventory tracking: Smart systems provide real-time data on stock levels, enabling businesses to order only what is necessary and reduce overstocking.</p>
+      <p>Demand forecasting: AI-driven analytics predict customer demand patterns, allowing for more precise purchasing and preparation, thereby decreasing the likelihood of excess food.</p>
+      <p>Spoilage reduction: Monitoring tools identify perishable items approaching their expiration, prompting timely utilization or discounts to prevent waste.</p>
+      <p>The WRAP report underscores the economic and environmental benefits of such investments, advocating for broader adoption across the foodservice industry
+        <a href="https://www.wrap.ngo/resources/report/benefits-reducing-global-food-waste" target="_blank">[Source]</a>.
+      </p>
+      <span><br></span>
+      <h3>Social impact</h3>
+      <p>According to the UN Food and Agriculture Organization (FAO), eliminating food waste could provide enough food to feed more than twice the global population of undernourished individuals.</p>
+      <p>How the UN World Food Programme (WFP) tackles food waste and loss?</p>
+      <p>Improved Food Storage
+        Small-scale farmers often lose up to half of their harvest due to inadequate storage facilities. WFP provides solutions like silos and air-tight bags, reducing post-harvest losses from 40% to just 2%.</p>
+      <p>Nonperishable Food Rations
+        WFP distributes durable staples such as flour, dried beans, salt, and cooking oil in sturdy packaging. These long-lasting foods minimize spoilage and waste while ensuring reliable nutrition.</p>
+      <p>Innovative Solutions
+        Through initiatives like hydroponic farming and virtual farmers' markets, WFP supports communities in growing, storing, and selling food sustainably, even in challenging environments.</p>
+      <p>Supportive Policies
+        WFP works on policies like the U.S. Farm Bill, which facilitates the redistribution of surplus American crops—such as rice, corn, and wheat—to feed hungry populations, ensuring excess food reaches those in need
+      <a href="https://www.wfpusa.org/articles/how-food-waste-affects-world-hunger/#:~:text=How%20Much%20Food%20Do%20We,undernourished%20people%20across%20the%20globe." target="_blank">[Source]</a>.
+      </p>
+      <h2>Challenges</h2>
+      <h3>What are people saying in the food industry</h3>
+      <p>We conducted interviews with food industry professionals to gain insights into their goals, challenges, and frustrations within the food service sector. Through these conversations, we explored their unique perspectives on the industry's evolving needs and identified common pain points in areas such as food waste management, operational efficiency, and customer engagement.</p>
+      <span><br></span>
+      <p>“Tracking daily waste is feasible, but maintaining accuracy while serving customers can be difficult. The challenge lies in determining a clear "end of the day" for counting, as last-minute sales often require recalculations. Additionally, manually logging everything on paper is a time-consuming process that adds to the complexity.” — Retail Supervisor
+        Taylor <a href="https://docs.google.com/document/d/1xzlxCrzFrjnV6ppEsUThQ9CXXpnXpHHH8qZXQYpba8k/edit?tab=t.0#heading=h.ybgi6we7cfh" target="_blank">[Full interview]</a>.
+      </p>
+      <p>Many businesses, particularly small restaurants and franchises, view the costs of new technologies as “prohibitive”. Without clear proof of return on investment, owners are hesitant to invest in these systems.</p>
+      <span><br></span>
+      <p>“I’ve been running this restaurant for many years, and over time, I’ve developed a strong sense of the patterns in customer demand and the quantities I need to order. I know exactly what sells and how much to stock, so I rely on my experience to gauge these amounts—essentially, I "eyeball" it. My intuition and familiarity with the business make me confident in my ability to make these decisions. However, this knowledge is something I’ve built up personally over the years, and my store staff don’t have the same level of understanding or insight into the nuances of what’s needed." — Family-Run Restaurant
+        Owner Kai
+      <a href="https://docs.google.com/document/d/1xzlxCrzFrjnV6ppEsUThQ9CXXpnXpHHH8qZXQYpba8k/edit?tab=t.0#heading=h.mp301kvfmdk" target="_blank">[Full interview]</a>.
+      </p>
+      <p>New tech often feels overwhelming and hard to learn. Experienced business owners often rely on traditional methods and feel these systems are unnecessary, while frequent staff turnover adds to training challenges. A small family-run restaurant, for instance, would normally prefer relying on personal experience for food inventory management rather than using software​.</p>
+      <span><br></span>
+      <p>“The food industry has been slow to embrace technology, largely due to high costs and liability concerns, which pose significant challenges—particularly for smaller franchise locations with limited resources. These barriers often prevent us from investing in modern solutions that could streamline operations and reduce waste.” — Franchise Restaurant
+        Founder Jay <a href="https://docs.google.com/document/d/1xzlxCrzFrjnV6ppEsUThQ9CXXpnXpHHH8qZXQYpba8k/edit?tab=t.0#heading=h.xcdf5eu8h5vq" target="_blank">[Full interview]</a>.
+        </p>
+        <p>The food industry as a whole is slower to adopt technology compared to other industries, partly because of strict government rules and the fact that food spoils quickly. Businesses need affordable, scalable, and user-friendly solutions to overcome these barriers. In particular, franchise owners face the challenge of maintaining quality and consistency across locations, which makes adopting new systems risky.</p>
+      <span><br></span>
+      <h3>Challenges faced by small businesses</h3>
+      <p>Limited Resources: Many small businesses operate with constrained budgets, making significant investments in technology difficult.</p>
+      <p>Lack of Technical Expertise: A shortage of in-house technical skills can impede the effective implementation and utilization of advanced tools.</p>
+      <p>Scalability Issues: Solutions designed for large enterprises may not be suitable or cost-effective for smaller operations
+        <a href="https://vorecol.com/blogs/blog-challenges-faced-by-small-businesses-in-adopting-digital-transformation-8836" target="_blank">[Source]</a>.
+      </p>
+      <h2>Food industry and technologies</h2>
+      <p>We examined the current technologies employed by restaurants and identified opportunities for innovation by mapping out potential solutions. Although our primary focus is on restaurant operations, these technologies hold the potential to revolutionize food waste management across the broader food industry. By addressing inefficiencies and enhancing sustainability, these advancements can create significant positive impacts at every stage of the food supply chain.</p>
+    <span><br></span>
+      <h3>IoT systems</h3>
+      <p>IoT integrates smart sensors and devices to monitor and manage food conditions in real time, ensuring quality and reducing waste throughout supply chain.</p>
+      <p>Examples:</p>
+      <p>Real-Time Environmental Monitoring: Monitoring conditions such as temperature and humidity to preserve food quality
+      <a href="https://www.sensorpush.com/" target="_blank">[SensorPush]</a>.
+      </p>
+      <p>IoT Digital Checklists & Quality Control App: Tracks temperature logs and equipment health, reducing human error
+      <a href="https://www.jolt.com/?srsltid=AfmBOop0kTWbGap2IZHNAmGtYiU4yr6NSgHQGQ4rqxyPE4koSt4XKGF8" target="_blank">[Jolt]</a>.
+      </p>
+      <p>Blockchain and IoT Monitoring System: Tracks real-time vehicle location, food product conditions, and reports safety issues
+      <a href="https://www.ibm.com/products/supply-chain-intelligence-suite/food-trust" target="_blank">[IBM Food Trust]</a>.
+      </p>
+      <p>IoT-Enabled Food Upcycling: Converts surplus food into animal feed through IoT systems
+      <a href="https://wastelink.co/" target="_blank">[Wastelink]</a></p>
+      <span><br></span>
+      <h3>Applied AI</h3>
+      <p>AI analyzes data to optimize processes like inventory management, menu design, and food waste recycling, helping businesses make smarter, data-driven decisions.</p>
+      <p>Examples:</p>
+      <p>Smart Scales: Equipped with AI and computer vision to monitor food waste directly at the bin
+      <a href="https://www.winnowsolutions.com//" target="_blank">[Winnow]</a>.
+      </p>
+      <p>AI-Powered Menu Optimization: Uses sales data, preferences, and waste reports to optimize restaurant menus
+        <a href="https://www.dyneapp.ca/" target="_blank">[DYNE]</a>.
+      </p>
+      <p>AI-Powered Inventory Management: Tracks inventory levels in real-time, prioritizing perishables for sale
+        <a href="https://tech.walmart.com/content/walmart-global-tech/en_us/blog/post/walmarts-ai-powered-inventory-system-brightens-the-holidays.html?clickid=3%3A-y2CW2KxyKWO1zPy3MDQ9GUkCXWVQC33xi380&irgwc=1&sourceid=imp_3%3A-y2CW2KxyKWO1zPy3MDQ9GUkCXWVQC33xi380&veh=aff&wmlspartner=imp_123201&affiliates_ad_id=565706&campaign_id=9383&sharedid=231384/" target="_blank">[Walmart AI]</a>.
+      </p>
+      <p>AI-Driven Food Waste Upcycling: Converts food waste into new products, like larvae feed
+        <a href="https://betterorigin.co.uk/" target="_blank">[Better Origin]</a>.
+      </p>
+      <span><br></span>
+      <h3>Food-saving apps</h3>
+      <p>Many restaurants use food-saving apps to connect consumers with surplus food, offering discounted prices while reducing waste.</p>
+      <p>Examples:</p>
+      <p>Too Good To Go & FlashFood: Apps that allow consumers to buy surplus food at a discount
+        <a href="https://www.toogoodtogo.com/en-us" target="_blank">[Too Good To Go]</a>
+        <a href="https://www.flashfood.com/" target="_blank">[FlashFood]</a>.
+      </p>
+      <p>Misfits Market & Odd Bunch: Subscription services selling "ugly" produce to reduce waste
+        <a href="https://www.misfitsmarket.com/" target="_blank">[Misfits Market]</a>
+        <a href="https://www.oddbox.co.uk/" target="_blank">[Odd Bunch]</a>.
+      </p>
+      <p>SuperCook: App suggesting recipes based on leftover ingredients
+        <a href="https://www.supercook.com/" target="_blank">[SuperCook]</a>.
+      </p>
+      <span><br></span>
+      <h3>Shared kitchen</h3>
+      <p>Shared kitchens allow multiple businesses to collaborate by sharing facilities and ingredients, minimizing over-purchasing and reducing waste.</p>
+      <p>Examples:</p>
+      <p>TasteMaker: Enables restaurants to share ingredients and facilities, reducing over-purchasing and spoilage
+        <a href="https://www.tastemaker.com/" target="_blank">[TasteMaker]</a>.
+      </p>
+      <span><br></span>
+      <h3>Robotics</h3>
+      <p>Automation and robotics streamline food preparation and handling, reducing errors, labor costs, and food waste.</p>
+      <p>Examples:</p>
+      <p>Robotics in Food Prep: Automated kitchen assistants to reduce labor and minimize errors
+        <a href="https://misorobotics.com/flippy/" target="_blank">[Miso Robotics' Flippy]</a>.
+      </p>
+      <span><br></span>
+      <h3>Sustainable agriculture</h3>
+      <p>Promotes sustainable practices and reduces waste at the food production level.</p>
+      <p>Examples:</p>
+      <p>AI-Driven Farming Apps: Provides strategies for regenerative farming
+        <a href="hhttps://en.reset.org/the-klim-mobile-app-making-regenerative-agriculture-simple-and-lucrative/" target="_blank">[Klim]</a>.
+      </p>
+      <p>Interactive Maps for Regenerative Farms: Promotes sustainable farming practices
+        <a href="https://regenerationcanada.org/en/map/" target="_blank">[Regeneration International]</a>.
+      </p>
+      <h2>The future of technologies in the food industry</h2>
+      <p>Based on our interviews with hospitality industry experts and research on potential trends, we’ve developed targeted solutions to address the key barriers to adopting food waste management technologies. These solutions aim to make technology more accessible, cost-effective, and user-friendly, empowering businesses to reduce waste and improve efficiency.</p>
+      <span><br></span>
+      <h3>"They are too expensive"</h3>
+      <p>Potential Solutions:</p>
+      <p>Custom systems tailored to the scale of individual restaurants: Smaller establishments might benefit from lightweight, cost-effective tools focused on simple inventory tracking and waste reduction, while larger operations could implement more advanced, integrated systems leveraging AI and IoT for real-time data analysis and predictive insights
+        <a href="https://www.leanpath.com/" target="_blank">[Leanpath]</a>.</p>
+      <p>Savings calculator and real-time ROI(Return on Investment) tracking: An AI-powered feature in food management systems that calculates potential and actual cost savings. Restaurant can learn how much they could save by reducing over-ordering, spoilage, and waste. The feature could also provide real-time insights and suggestions into cost savings from better inventory management (eg. tracking how much less food is wasted each week).</p>
+      <p>Freemium or subscription-based models: Introduce a tiered pricing system where businesses can start with basic features for free or at a low cost, and then scale up as they see value (eg. Flashfood).</p>
+      <p>Cost-sharing partnerships: Create partnerships with government or sustainability organizations to offer grants or subsidies for adopting food-saving technologies.</p>
+    <span><br></span>
+    <h3>"They are complicated and hard to switch"</h3>
+    <p>Potential Solutions:</p>
+    <p>AI-Powered Training Assistants: Use AI chatbots or interactive guides within the software to help employees and owners learn the system step-by-step (eg. AI trainers for inventory management or IoT sensor setup).</p>
+    <p>Plug-and-Play Devices: IoT sensors or smart scales that are easy to install and integrate into existing workflows without requirement of high technical expertise.</p>
+    <p>Simplified UI (User Interface): Prioritize clean, minimal UIs in software, with features like one-click inventory updates or automated waste tracking. A mobile-first approach can also help reach users more easily, since employees are more familiar with their phones.</p>
+    <span><br></span>
+    <h3>"They are not common enough yet because food industry is slow"</h3>
+    <p>Potential Solutions:</p>
+    <p>Industry-Wide Standards and Integration: Collaborate with industry stakeholders to create a standard protocol for integrating technologies, ensuring compatibility across platforms. For example, a universal dashboard could be designed for IoT devices, or a data visualization standard could be created for food waste metrics. These standards would present data in a clear, consistent, and user-friendly way, regardless of the hardware or software being used.</p>
+    <p>Community-Focused Features: Build platforms that allow small businesses to share resources or collaborate, such as shared kitchens or group purchasing of surplus food. For example, an app could facilitate food redistribution between nearby businesses.</p>
+    <p>Gamification for Awareness and Adoption: Use gamification to encourage use, for example ewarding businesses with points for reducing waste, completing training modules, or hitting sustainability goals. These points could translate into discounts or perks.</p>
+    </div>
+  </div>
+    </main>
+    <footer>
+        <div class="container">
+        <div class="grid-container"> 
+      <div class="grid-item col-2" style="padding: var(--spacing-md) var(--spacing-lg);">
+        <p style="font-weight: 600;">Experience</p>
+        <p>Intern Graphic Designer</p>
+        <p>Central studio Design-Communication, Lugano, Switzerland (2016)</p>
+        <p>Intern Graphic Designer</p>
+        <p>Forbes Viet Nam, Hochiminh, Vietnam (2017)</p>
+        <p>Graphic Designer</p>
+        <p>P2P Digital, Hochiminh, Vietnam (2018-2022)</p>
+        <p>Freelance Graphic Designer</p>
+        <p>KayPay, KMS, Hochiminh, Vietnam (2023)</p>
+        <p>Senior Graphic Designer</p>
+        <p>Lacàph, Collective, Hochiminh, Vietnam</p>
+        (2023-2024)
+      </div>
+      <div class="grid-item col-2" style="padding: var(--spacing-md) var(--spacing-lg);">
+        <p style="font-weight: 600;">Education</p>
+        <p>Graphic Design Program</p>
+        <p>CSIA Centro Scolastico per le industrie ​artistiche (School of Applied Arts), ​Lugano, Switzerland</p>
+        (2013 -2017)
+        <p>Interactive Media Management Program (Postgraduate)</p>
+        <p>Geogre Brown College, Toronto, Canada</p>
+        (2024-2025)
+      </div>
+      <div class="grid-item col-1"></div>
+    <div class="grid-item col-1" style="padding: var(--spacing-md);">
+        <p style="font-weight: 600;">Contact Lana</p>
+        <ul>
+        Email:
+          <li><a href="mailto:hglanahg@gmail.com">hglanahg@gmail.com</a></li>
+        Phone:  
+          <li><a href="tel:+1234567890">+1 (437) 808-5769</a></li>
+        LinkledIn 
+          <li><a href="https://www.linkedin.com/in/lana-hoang/">linkedin.com/in/lana-hoang</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+</div>
+</footer>
+<script src="scripts/homepage.js"></script>
+<script>
+// Select all pop-up triggers
+const popupTriggers = document.querySelectorAll('.popup-trigger');
+
+// Add event listeners to each trigger
+popupTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const popupId = trigger.getAttribute('data-popup');
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.style.display = 'flex';
+    }
+  });
+});
+
+// Close buttons functionality
+const closeButtons = document.querySelectorAll('.close-button');
+closeButtons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    const popup = event.target.closest('.popup-container');
+    popup.style.display = 'none';
+  });
+});
+
+// Close pop-up when clicking outside the content
+window.addEventListener('click', (event) => {
+  if (event.target.classList.contains('popup-container')) {
+    event.target.style.display = 'none';
+  }
+});
+
+</script>
+<script type="module" src="/main.js"></script>
+</body>
+</html>
