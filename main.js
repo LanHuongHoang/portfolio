@@ -152,14 +152,3 @@ camera.updateProjectionMatrix();  // Update the projection matrix after changing
 
 // Example usage: change background size 
 changeBackgroundSize(1150, 700);
-
-import modelPlayer from 'js-3d-model-viewer'
-const viewerElement = document.getElementById('viewer')
-const opts = {
-  grid: true,
-  trackball: false,
-  background: 'rgb(100, 100, 100)'
-}
-const scene = modelPlayer.prepareScene(viewerElement, opts)
-modelPlayer.loadObject(scene, './3dmodel/models/sfbase.obj')
-modelPlayer.loadObject(scene, './3dmodel/models/sfmain.obj')
