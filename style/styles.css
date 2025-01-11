@@ -15,49 +15,9 @@ body {
     overflow-y: auto;
 }
 
-/*header {
-    background-color: #282c34;
-    padding: 20px;
-    text-align: center;
-    flex-direction: column;
-}
-
-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: fixed;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    gap: 20px;
-    list-style-type: none;
-}
-
-nav ul li a {
-    color: #f0f0f0;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 1.1rem;
-    transition: color 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    color: #ff6b6b;
-}*/
-
 .site-name {
     font-family: 'Commerce', thick;
-    font-size: 10rem;
+    font-size: 9rem;
     line-height: 1;
     font-weight: 600;
     color: #61dafb;
@@ -70,14 +30,14 @@ nav ul li a:hover {
     text-align: center;
     font-weight: 400;
     color: #61dafb;
-    font-size: 7em;
+    font-size: 6em;
     line-height: 1;
     margin-right: 25px;
 }
 
 .site-description {
     font-family: 'IvyStyle TW', thin italic;
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: #f0f0f0;
     text-align: center;
     padding-left: 14rem;
@@ -131,7 +91,7 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     font-family: 'Commerce';
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: -20px;
 }
 /* Slider Container */
@@ -357,22 +317,6 @@ nav ul li a:hover {
     height: auto;
     position: relative;
     margin-bottom: -100px;
-}
-.button {
-    display: inline-block;
-    padding: var(--spacing-xs) var(--spacing-md);
-    background-color: #61dafb;
-    color: #282c34;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #ff6b6b;
-    color: #fdfff0;
 }
 
 #table-container {
