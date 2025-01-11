@@ -38,17 +38,17 @@ body {
 .site-description {
     font-family: 'IvyStyle TW', thin italic;
     font-size: 2rem;
+    font-weight: 200;
     color: #f0f0f0;
     text-align: center;
     padding-left: 14rem;
     padding-right: 14rem;
     padding-top: -5rem;
+    margin-top: -10px;
     margin-bottom: 10px;
    
 }
-.site-description a:hover {
-    color: #ff6b6b;
-}
+
 /* Grid Container */
 .grid-container {
     margin-top: 100px;
@@ -353,7 +353,10 @@ body {
     color: #fdfff0;
   }
   
-
+footer {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 @keyframes animateText {
     0% {
         left: -10px;
