@@ -354,8 +354,7 @@ body {
   }
   
 footer {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 20px;
 }
 @keyframes animateText {
     0% {
