@@ -385,11 +385,6 @@ footer {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns for larger tablets */
-        padding-left: 50px;
-    }
-
     .site-name {
         font-size: 6rem; /* Adjust site name size for tablet */
     }
@@ -406,24 +401,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .grid-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin: 0;
-
-    }
-.slider-container {
-    display: grid;
-}
-.grid-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
 
     .site-name {
         font-size: 4rem; /* Adjust site name size for smaller tablets */
