@@ -516,14 +516,10 @@ footer {
         font-size: 0.8rem;
     }
     .popup-container{
+        display: none;
+    }
+    .popup-container:active {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin: 0;
-        width: 100%;
-        margin-right: 5px;
-        padding: 5px;
     }
     .popup-content p{
         font-size: 0.6rem;
