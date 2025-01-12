@@ -3,11 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'IvyStyle TW', sans-serif;
+    font-family: 'IvyStyle-TW', sans-serif;
 }
 
 body {
-    font-family: 'IvyStyle TW', sans-serif;
+    font-family: 'IvyStyle-TW', sans-serif;
     background-color: #282c34;
     color: #f0f0f0;
     line-height: 1.6;
@@ -37,7 +37,7 @@ body {
 }
 
 .site-description {
-    font-family: 'IvyStyle TW', thin italic;
+    font-family: 'IvyStyle-TW-n4', 'IvyStyle-TW' sans-serif;
     font-size: 2.3rem;
     font-weight: 400;
     color: #f0f0f0;
