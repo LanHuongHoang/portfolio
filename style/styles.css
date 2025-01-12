@@ -446,29 +446,9 @@ footer {
 }
 
 @media (max-width: 480px) {
-    body{
-        margin-left: -5px;
-        margin-top: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    .slider-container {
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on touch devices */
-    }
-    .grid-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
+
+    .popup-container{
+        position: fixed;
     }
 
     .site-name {
