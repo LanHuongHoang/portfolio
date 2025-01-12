@@ -446,11 +446,12 @@ footer {
 
 @media (max-width: 480px) {
     body{
+        font-family: 'IvyStyle TW', sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin: 0;
+        margin-left: 0;
     }
     .grid-container {
         display: flex;
@@ -477,9 +478,11 @@ footer {
     }
 
     .site-name {
+        font-family: 'Commerce', thick;
         font-size: 2.5rem; /* Adjust site name size for mobile */
     }
     .site-title {
+        font-family: 'Commerce', thick;
         font-size: 2.5rem; /* Adjust site name size for mobile */
     }
 
