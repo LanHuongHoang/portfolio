@@ -454,12 +454,6 @@ footer {
         justify-content: center;
         flex-direction: column;
     }
-    .grid-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
     .slider-container {
         margin-top: 10px;
         display: flex;
