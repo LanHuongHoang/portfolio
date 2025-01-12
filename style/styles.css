@@ -450,7 +450,7 @@ footer {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin-left: 0;
+        margin-left: -20px;
     }
     .grid-container {
         display: flex;
@@ -487,6 +487,9 @@ footer {
         font-size: 1rem; /* Adjust font size for mobile */
         padding-left: 0.8rem;
         padding-right: 0.8rem;
+    }
+    .site-description p{
+        font-size: 1rem;
     }
     .content h1{
         font-size: 2rem;
