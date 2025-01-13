@@ -385,6 +385,7 @@ body {
     height: auto;
     position: relative;
     margin-bottom: -100px;
+    touch-action:auto;
 }
 .button {
     display: inline-block;
@@ -478,7 +479,19 @@ footer {
 }
 
 /* Media Queries for Responsiveness */
-
+@media (max-width: 1440px) {
+    .contain-slide {
+        margin-top: -10px;
+        flex-direction: column; /* Stack columns */
+        overflow-x: scroll;
+        scrollbar-width: none; /* Hide scrollbar for Firefox */
+        -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
+      }
+    .popup-content {
+        margin: 50px;
+        margin-left: 60px;
+    }
+}
 @media (max-width: 768px) {
     *{
         font-size: 0.9rem;
@@ -527,13 +540,6 @@ footer {
     footer{
         margin: 5px;
         margin-top: 100px;
-    }
-}
-@media (max-width: 1024px) {
-    .popup-content {
-        margin: 50px;
-        margin-left: 35px;
-        position:fixed;
     }
 }
 @media (max-width: 480px) {
