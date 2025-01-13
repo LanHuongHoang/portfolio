@@ -529,7 +529,13 @@ footer {
         margin-top: 100px;
     }
 }
-
+@media (max-width: 1024px) {
+    .popup-content {
+        margin: 50px;
+        margin-left: 35px;
+        position:fixed;
+    }
+}
 @media (max-width: 480px) {
     *{
         font-size: 0.8rem;
