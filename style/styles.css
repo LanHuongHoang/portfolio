@@ -10,7 +10,7 @@ body {
     background-color: #282c34;
     color: #f0f0f0;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: none;
     margin: 20px;
 }
 
