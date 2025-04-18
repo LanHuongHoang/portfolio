@@ -525,9 +525,12 @@ footer {
       .slide img {
         height: 35vh; /* Adjust image height */
       }
-    .popup-content {
-        margin: 50px;
-        margin-left: 40px;
+      .popup-content {
+        margin: 0;
+        padding: 20px;
+        width: 100%;
+        max-width: 90vw;
+        max-height: 85vh;
     }
     .site-name {
         font-size: 6rem; /* Adjust site name size for smaller tablets */
@@ -576,11 +579,12 @@ footer {
       .slide img {
         height: 25vh; /* Adjust image height */
       }
-    .popup-content {
-        margin: 35px;
-        margin-left: 15px;
+      .popup-content {
+        margin: 0;
         padding: 20px;
-        padding-right: 30px;
+        width: 100%;
+        max-width: 90vw;
+        max-height: 85vh;
     }
     
     .site-name {
