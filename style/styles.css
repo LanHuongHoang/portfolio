@@ -215,7 +215,8 @@ body {
     width: 6px;
 }
 .popup-content::-webkit-scrollbar-thumb {
-    background-color: #ccc;
+    border-top: 10px;
+    background-color: #282c34;
     border-radius: 10px;
 }
   .image-row {
@@ -258,7 +259,7 @@ body {
     right: 30px;
     font-size: 24px;
     font-weight: bold;
-    color: #f0f0f0;
+    color: #fdfff0;
     background-color: #282c34;
     border: none;
     padding: 10px 10px;
@@ -270,7 +271,7 @@ body {
 
 .close-button:hover {
     background-color: #ff6b6b;
-    color: #f0f0f0;
+    color: #fdfff0;
 }
 
 /* Grid Layout */
