@@ -253,14 +253,25 @@ body {
 }
   /* Close Button */
   .close-button {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 20px;
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 24px;
     font-weight: bold;
-    color: #382020;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 50%;
     cursor: pointer;
-  }
+    z-index: 10000; /* Ensure it sits on top */
+    transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+    background-color: #ff6b6b;
+    color: #ffffff;
+}
 
 /* Grid Layout */
 .grid-container {
