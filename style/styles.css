@@ -258,11 +258,11 @@ body {
     right: 30px;
     font-size: 24px;
     font-weight: bold;
-    color: #ffffff;
+    color: #f0f0f0;
     background-color: #282c34;
     border: none;
     padding: 10px 10px;
-    border-radius: 50%;
+    border-radius: 30%;
     cursor: pointer;
     z-index: 10000; /* Ensure it sits on top */
     transition: background-color 0.3s ease;
@@ -270,7 +270,7 @@ body {
 
 .close-button:hover {
     background-color: #ff6b6b;
-    color: #ffffff;
+    color: #f0f0f0;
 }
 
 /* Grid Layout */
