@@ -222,6 +222,7 @@ body {
     border: 2px solid #fdfff0; /* Matches background to create spacing illusion */
     margin: 5px;
 
+}
   .image-row {
     display: flex; /* Use flexbox for horizontal alignment */
     gap: 40px; /* Add space between images */
