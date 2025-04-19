@@ -551,10 +551,12 @@ footer {
       }
       .popup-content {
         margin: 0;
-        padding: 20px;
         width: 100%;
         max-width: 90vw;
         max-height: 85vh;
+    }
+    .popup-inner{
+        padding: 20px;
     }
     .site-name {
         font-size: 6rem; /* Adjust site name size for smaller tablets */
@@ -605,10 +607,12 @@ footer {
       }
       .popup-content {
         margin: 0;
-        padding: 20px;
         width: 100%;
         max-width: 90vw;
         max-height: 85vh;
+    }
+    .popup-inner{
+        padding: 20px;
     }
     
     .site-name {
