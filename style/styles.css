@@ -221,6 +221,21 @@ body {
     border-radius: 6px;
     border: 2px solid #fdfff0;
 }
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #282c34;
+  margin-bottom: 8px;
+}
+
+.project-tools {
+  font-size: 1rem;
+  font-style: italic;
+  color: #282c34;
+  margin-bottom: 20px;
+}
+
 .popup-tabs {
     display: flex;
     gap: 15px;
