@@ -222,6 +222,27 @@ body {
     border: 2px solid #fdfff0;
 }
 
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.popup-title-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+.popup-tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .project-title {
   font-size: 1.3rem;
   font-weight: 500;
