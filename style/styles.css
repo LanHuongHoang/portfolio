@@ -229,13 +229,6 @@ body {
   margin-bottom: 8px;
 }
 
-.project-tools {
-  font-size: 1rem;
-  font-style: italic;
-  color: #282c34;
-  margin-bottom: 20px;
-}
-
 .popup-tabs {
     display: flex;
     gap: 15px;
@@ -283,14 +276,6 @@ body {
   .slideshow {
     position: relative;
     width: 100%;
-  }
-  .slideshow text {
-      font-style: italic;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: -30px;
-      margin-bottom: 20px;
   }
   .slide-img {
     width: 100%;
@@ -348,15 +333,14 @@ body {
     cursor: pointer;
     font-size: 1.2rem;
   }
-  
-  
-  .image-row {
-    display: flex; /* Use flexbox for horizontal alignment */
-    gap: 40px; /* Add space between images */
-    justify-content: center; /* Center the images horizontally */
-    align-items: center; /* Align images vertically in the middle */
-    margin: 40px 0; /* Add some spacing around the row */
-}
+  .slide-caption {
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -30px;
+      margin-bottom: 20px;
+  }
 .popup-content img.olddesigns {
     width: 20%;
     height: auto;

@@ -98,7 +98,7 @@
           <div class="popup-inner">
           <span class="close-button">&times;</span>
           <p class="project-title">Fintech Character Design | Client: VNPAY | Campaign: VNPAY-QR | Date: 2021</p>
-          <p class="project-tools">Tools: Adobe Illustrator, Adobe Photoshop</p>
+          <p class="project-title">Tools: Adobe Illustrator, Adobe Photoshop</p>
           <spam><br></spam>
           <div class="popup-tabs">
             <button class="tab-button active" data-tab="section1">Overview</button>
@@ -131,10 +131,16 @@
 
   <!-- Slideshow -->
   <div class="popup-col2 popup-slideshow">
+    <!-- Section 1: single image -->
     <div class="slideshow tab-slideshow active" id="slideshow-section1">
-      <img src="images/thanhma-1.png" class="slide-img" />
+      <div class="slideshow-row">
+        <div class="slide-wrapper">
+          <img src="images/thanhma-1.png" class="slide-img active" />
+        </div>
       </div>
+    </div>
   
+    <!-- Section 2: slideshow with 3 images -->
     <div class="slideshow tab-slideshow" id="slideshow-section2">
       <div class="slideshow-row">
         <button class="prev-slide">&lt;</button>
@@ -145,14 +151,19 @@
         </div>
         <button class="next-slide">&gt;</button>
       </div>
-      <text>VNPAY-QR and its uses [Image sources: VNPAY's Website & Facebook].</text>
-    </div>
+      <p class="slide-caption">VNPAY-QR and its uses [Image sources: VNPAY's Website & Facebook].</p>
     </div>
   
+    <!-- Section 3: single image (gif) -->
     <div class="slideshow tab-slideshow" id="slideshow-section3">
-      <img src="images/VNPAYQR-sketch.gif" class="slide-img" />
+      <div class="slideshow-row">
+        <div class="slide-wrapper">
+          <img src="images/VNPAYQR-sketch.gif" class="slide-img active" />
+        </div>
+      </div>
     </div>
   
+    <!-- Section 4: slideshow with 3 images -->
     <div class="slideshow tab-slideshow" id="slideshow-section4">
       <div class="slideshow-row">
         <button class="prev-slide">&lt;</button>
@@ -163,9 +174,10 @@
         </div>
         <button class="next-slide">&gt;</button>
       </div>
-      <text>Social media posts with contexts that are relatable to most Vietnamese.</text>
+      <p class="slide-caption">Social media posts with contexts that are relatable to most Vietnamese.</p>
     </div>
   </div>
+  
     </div>
   </div>
 </div>

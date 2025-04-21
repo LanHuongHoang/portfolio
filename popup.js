@@ -83,3 +83,26 @@ document.querySelectorAll('.next-slide').forEach(btn => {
     updateActiveSlide();
   });
 });
+document.querySelectorAll('.slideshow-row').forEach(row => {
+  const slides = row.querySelectorAll('.slide-img');
+  if (slides.length <= 1) return; // skip if only one image
+
+  let current = 0;
+  const update = () => {
+    slides.forEach((img, i) => {
+      img.classList.toggle('active', i === current);
+    });
+  };
+
+  row.querySelector('.prev-slide')?.addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    update();
+  });
+
+  row.querySelector('.next-slide')?.addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    update();
+  });
+
+  update();
+});
