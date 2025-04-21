@@ -236,32 +236,23 @@ body {
   min-width: 250px;
 }
 
-.popup-tabs {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
 .project-title {
   font-size: 1 rem;
   font-weight: 500;
   color: #282c34;
-  margin-bottom: 8px;
 }
 
 .popup-tabs {
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
   }
   
   .tab-button {
-    padding: 8px 16px;
+    padding: 8px 20px;
     background-color: none;
-    border: 1px #282c34;
+    border: #282c34 1px;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 500;
@@ -286,10 +277,6 @@ body {
   .popup-col2 {
     flex: 2;
     min-width: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
   }
   .popup-description .tab-content {
     display: none;
