@@ -189,14 +189,7 @@ body {
   .popup-content a:hover{
     color: #ff6b6b;
   }
-  .popup-content text {
-    font-style: italic;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -30px;
-    margin-bottom: 20px;
-  }
+ 
   .popup-content h2 {
     font-weight: 400;
     margin-top: 20px;
@@ -275,6 +268,14 @@ body {
   .slideshow {
     position: relative;
     width: 100%;
+  }
+  .slideshow text {
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -30px;
+      margin-bottom: 20px;
   }
   .slide-img {
     width: 100%;
