@@ -28,31 +28,58 @@ document.querySelectorAll('.slide img').forEach((img, index) => {
       document.body.style.overflow = 'auto';
     }
   });
-  const tabButtons = document.querySelectorAll('.tab-button');
-  const tabContents = document.querySelectorAll('.tab-content');
-  const tabSlideshows = document.querySelectorAll('.tab-slideshow');
-  
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const target = button.dataset.tab;
-  
-      // Update tab button styles
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-  
-      // Show relevant text
-      tabContents.forEach(content => {
-        content.classList.toggle('active', content.id === target);
-      });
-  
-      // Show relevant slideshow
-      tabSlideshows.forEach(show => {
-        show.classList.toggle('active', show.id === `slideshow-${target}`);
-      });
-  
-      // Reset slideshow images (optional)
-      document.querySelectorAll('.slide-img').forEach(img => img.classList.remove('active'));
-      const visibleSlide = document.querySelector(`#slideshow-${target} .slide-img`);
-      if (visibleSlide) visibleSlide.classList.add('active');
+  let currentSlideIndex = 0;
+
+// TAB SWITCH LOGIC
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabContents = document.querySelectorAll('.tab-content');
+const tabSlideshows = document.querySelectorAll('.tab-slideshow');
+
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const target = button.dataset.tab;
+
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    tabContents.forEach(content => {
+      content.classList.toggle('active', content.id === target);
     });
-  });  
+
+    tabSlideshows.forEach(show => {
+      show.classList.toggle('active', show.id === `slideshow-${target}`);
+    });
+
+    // Reset slideshow index
+    currentSlideIndex = 0;
+    updateActiveSlide();
+  });
+});
+
+// SLIDE NAVIGATION LOGIC
+function updateActiveSlide() {
+  const activeSlideshow = document.querySelector('.tab-slideshow.active');
+  const slides = activeSlideshow.querySelectorAll('.slide-img');
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === currentSlideIndex);
+  });
+}
+
+document.querySelectorAll('.prev-slide').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const activeSlideshow = btn.closest('.tab-slideshow.active');
+    const slides = activeSlideshow.querySelectorAll('.slide-img');
+    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+    updateActiveSlide();
+  });
+});
+
+document.querySelectorAll('.next-slide').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const activeSlideshow = btn.closest('.tab-slideshow.active');
+    const slides = activeSlideshow.querySelectorAll('.slide-img');
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    updateActiveSlide();
+  });
+});
