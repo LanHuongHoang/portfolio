@@ -28,4 +28,37 @@ document.querySelectorAll('.slide img').forEach((img, index) => {
       document.body.style.overflow = 'auto';
     }
   });
+  // Tab switch logic
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const target = button.dataset.tab;
+
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      tabContents.forEach(content => {
+        content.classList.toggle('active', content.id === target);
+      });
+    });
+  });
+
+  // Slideshow logic
+  const slides = document.querySelectorAll('.slide-img');
+  let currentSlide = 0;
+
+  document.querySelector('.next-slide').onclick = () => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  };
+
+  document.querySelector('.prev-slide').onclick = () => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  };
+
   

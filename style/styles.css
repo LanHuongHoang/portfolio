@@ -614,7 +614,76 @@ footer {
     .popup-inner{
         padding: 20px;
     }
-    
+    .popup-tabs {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .tab-button {
+        padding: 8px 16px;
+        background-color: #ddd;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+      
+      .tab-button.active {
+        background-color: #61dafb;
+        color: #282c34;
+      }
+      
+      .popup-grid {
+        display: flex;
+        gap: 30px;
+      }
+      
+      .popup-col {
+        flex: 1;
+        min-width: 250px;
+      }
+      .popup-col2 {
+        flex: 2;
+        min-width: 500px;
+      }
+      .popup-description .tab-content {
+        display: none;
+      }
+      .popup-description .tab-content.active {
+        display: block;
+      }
+      
+      /* Slideshow */
+      .slideshow {
+        position: relative;
+        width: 100%;
+      }
+      .slide-img {
+        width: 100%;
+        height: auto;
+        display: none;
+      }
+      .slide-img.active {
+        display: block;
+      }
+      .slide-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 20px;
+      }
+      .slide-nav button {
+        padding: 6px 10px;
+        background-color: #61dafb;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
     .site-name {
         margin-top: 20px;
         font-size: 2.5rem; /* Adjust site name size for mobile */
