@@ -303,6 +303,35 @@ body {
   .tab-slideshow.active {
     display: block;
   }
+  .slideshow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .slide-wrapper {
+    flex: 1;
+    position: relative;
+  }
+  
+  .slide-img {
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+  .slide-img.active {
+    display: block;
+  }
+  
+  .slideshow-row button {
+    padding: 6px 10px;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
   
   
   .image-row {
