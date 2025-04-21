@@ -297,6 +297,13 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
+  .tab-slideshow {
+    display: none;
+  }
+  .tab-slideshow.active {
+    display: block;
+  }
+  
   
   .image-row {
     display: flex; /* Use flexbox for horizontal alignment */
