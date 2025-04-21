@@ -244,7 +244,7 @@ body {
 }
 
 .project-title {
-  font-size: 1.3rem;
+  font-size: 1 rem;
   font-weight: 500;
   color: #282c34;
   margin-bottom: 8px;
@@ -276,6 +276,7 @@ body {
   .popup-grid {
     display: flex;
     gap: 30px;
+    align-items: center;
   }
   
   .popup-col {
@@ -285,6 +286,10 @@ body {
   .popup-col2 {
     flex: 2;
     min-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
   .popup-description .tab-content {
     display: none;
