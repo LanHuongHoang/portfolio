@@ -258,6 +258,7 @@ body {
   background-color: #FADD9E;
   border-right: #FADD9E;
   border-radius: 0px 30px 0 0;
+  box-shadow: inset 0 -4px 6px -4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
