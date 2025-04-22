@@ -244,6 +244,7 @@ body {
 
 .popup-tabs {
     display: flex;
+    flex: 2;
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
