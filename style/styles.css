@@ -237,7 +237,8 @@ body {
 }
 
 .project-title {
-  font-size: xx-large;
+  font-family: 'Commerce', sans-serif;
+  font-size: x-large;
   font-weight: 500;
   color: #282c34;
 }
@@ -270,7 +271,7 @@ body {
   color: #004266;
   border: 0.9pt solid #004266;
   font-size: large;
-  font-weight: 700;
+  font-weight: 500;
   border-bottom: none;
   box-shadow: none;
 }
