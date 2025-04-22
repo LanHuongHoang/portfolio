@@ -260,8 +260,8 @@ body {
   background-color: #B8D0E0;
   border: 0.9pt solid #7FAAC7;
   border-bottom: 0.9pt solid #004266;
-  border-radius: 0px 30px 0 0;
-  box-shadow: inset -1px -4px 6px -4px rgba(46, 76, 93, 0.286);
+  border-radius: 0px 35px 0 0;
+  box-shadow: inset -1px -4px 6px -4px rgba(46, 76, 93, 0.4);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
