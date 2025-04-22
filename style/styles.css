@@ -256,8 +256,8 @@ body {
   text-align: center;
   padding: 14px 0;
   background-color: #FBE2B1;
-  box-shadow: 5px -5px 8px #F7C864; 
-  border-top-right-radius: 8px;
+  box-shadow: 3px -3px 6px #D4B87A; 
+  border-top-right-radius: 12px;
   border-bottom: none;
   border-radius: 0px 30px 0 0;
   cursor: pointer;
