@@ -243,26 +243,31 @@ body {
 }
 
 .popup-tabs {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .tab-button {
-    padding: 8px 20px;
-    background-color: none;
-    border: #282c34 1px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s;
-  }
-  
-  .tab-button.active {
-    background-color: #61dafb;
-    color: #282c34;
-  }
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  border-bottom: 2px solid #ccc;
+}
+
+.tab-button {
+  flex: 1;
+  text-align: center;
+  padding: 14px 0;
+  background-color: #ddd;
+  border: 2px solid #ccc;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #fdfff0;
+  color: #282c34;
+  border-bottom: 2px solid transparent;
+}
   
   .popup-grid {
     display: flex;
