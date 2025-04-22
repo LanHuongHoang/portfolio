@@ -251,14 +251,12 @@ body {
 
 .tab-button {
   flex: 1;
-  color: #FDF1D8;
+  color: #526976;
   font-size: medium;
-  font-style: italic;
   text-align: center;
   padding: 14px 0;
-  background-color: #FBE2B1;
-  box-shadow: 4px -4px 6px #d4b87d(0, 0, 0, 0.5);
-  border: none;
+  background-color: #FADD9E;
+  border-right: #FADD9E;
   border-bottom: none;
   border-radius: 0px 30px 0 0;
   cursor: pointer;
@@ -270,7 +268,6 @@ body {
   color: #282c34;
   font-size: large;
   font-weight: 700;
-  font-style: none;
   border-bottom: none;
 }
   
