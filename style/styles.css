@@ -172,7 +172,7 @@ body {
   
   /* Pop-up Content */
   .popup-content {
-    background-color: #fdfff0;
+    background-color: #FCEAC5;
     color: #282c34;
     border-radius: 10px;
     width: 100%;
@@ -219,7 +219,7 @@ body {
 .popup-inner::-webkit-scrollbar-thumb {
     background-color: #bbb;
     border-radius: 6px;
-    border: 2px solid #fdfff0;
+    border: 2px solid #FCEAC5;
 }
 
 .popup-header {
@@ -252,20 +252,20 @@ body {
 .tab-button {
   flex: 1;
   font-size: large;
+  font-style: italic;
   text-align: center;
   padding: 14px 0;
-  background-color: #ddd;
-  border: 2px solid #ccc;
+  background-color: #FEF8EC;
+  border: 2px solid #FEF8EC;
   border-bottom: none;
-  border-radius: 0px 10px 0 0;
+  border-radius: 0px 20px 0 0;
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s ease;
 }
 
 .tab-button.active {
-  background-color: #fdfff0;
-  padding: 16px 0;
+  background-color: #FCEAC5;
   color: #282c34;
   border-bottom: 2px solid transparent;
 }
