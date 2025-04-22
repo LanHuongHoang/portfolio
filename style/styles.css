@@ -255,9 +255,8 @@ body {
   font-size: medium;
   text-align: center;
   padding: 14px 0;
-  background-color: #FADD9E;
-  border-left: 1pt #FADD9E;
-  border-bottom: none;
+  background-color: linear-gradient(135deg, #FDF1D8, #FADD9E);
+  border-left: 0.7pt linear-gradient(135deg, #FDF1D8, #FADD9E);
   border-radius: 0px 30px 0 0;
   box-shadow: inset 0 -4px 6px -4px rgba(165, 147, 106, 0.25);
   cursor: pointer;
