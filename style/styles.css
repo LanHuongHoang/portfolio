@@ -156,96 +156,32 @@ body {
 }
 /* Pop-up Container */
 .popup-container {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  overflow: hidden;
-  padding: 1rem;
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+    padding: 1rem;
 }
-
-/* Pop-up Content - Folder Style */
-.popup-content {
-  background-color: #fdfff0;
-  color: #282c34;
-  border-radius: 10px 10px 0 0;
-  width: 100%;
-  max-width: 1100px;
-  max-height: 90vh;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
+  
+  /* Pop-up Content */
+  .popup-content {
+    background-color: #fdfff0;
+    color: #282c34;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1100px;
+    max-height: 90vh;
+    overflow: hidden; /* prevent scrolling here */
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
-
-/* Inner Scroll Area */
-.popup-inner {
-  padding: 40px;
-  overflow-y: auto;
-  max-height: 90vh;
-  box-sizing: border-box;
-}
-
-/* Scrollbar Styling */
-.popup-inner::-webkit-scrollbar {
-  width: 8px;
-}
-.popup-inner::-webkit-scrollbar-thumb {
-  background-color: #bbb;
-  border-radius: 6px;
-  border: 2px solid #fdfff0;
-}
-
-/* Popup Header Group */
-.popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  padding: 20px 40px 0 40px;
-  background-color: #fdfff0;
-  border-bottom: 2px solid #ccc;
-}
-
-.project-title {
-  font-size: xx-large;
-  font-weight: 500;
-  color: #282c34;
-  flex: 1;
-}
-
-/* Folder-style Tabs */
-.popup-tabs {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-
-.tab-button {
-  padding: 10px 20px;
-  background-color: #ddd;
-  border: 2px solid #ccc;
-  border-bottom: none;
-  border-radius: 5px 5px 0 0;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.tab-button.active {
-  background-color: #fdfff0;
-  color: #282c34;
-  border-bottom: 2px solid transparent;
-}
-
   .popup-content a{
     text-decoration: none;
     color: #282c34;
