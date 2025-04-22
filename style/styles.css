@@ -256,7 +256,7 @@ body {
   text-align: center;
   padding: 14px 0;
   background-color: #FBE2B1;
-  box-shadow: 3px -3px 6px #D4B87A;
+  box-shadow: 4px -4px 6px #d4b87d(0, 0, 0, 0.10);
   border: none;
   border-bottom: none;
   border-radius: 0px 30px 0 0;
@@ -268,7 +268,7 @@ body {
 .tab-button.active {
   background-color: #FDF1D8;
   color: #282c34;
-  border-bottom: 2px solid transparent;
+  border-bottom: none;
 }
   
   .popup-grid {
