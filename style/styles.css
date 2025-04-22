@@ -351,7 +351,8 @@ body {
   
   .slideshow-row button {
     padding: 6px 10px;
-    background-color: #61dafb;
+    background-color: none;
+    color: #004266;
     border: none;
     border-radius: 5px;
     cursor: pointer;
