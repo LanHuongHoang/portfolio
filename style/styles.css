@@ -252,6 +252,7 @@ body {
 .tab-button {
   flex: 1;
   color: #7FAAC7;
+  font-family: 'ivystyle-tw', sans-serif;
   font-size: medium;
   text-align: center;
   padding: 14px 0;
