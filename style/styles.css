@@ -224,7 +224,6 @@ body {
 
 .popup-header {
   display: flex;
-  flex: 2;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
