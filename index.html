@@ -794,40 +794,7 @@ Sources:
     </div>
 </div>
 </footer>
-<script>
-// Select all pop-up triggers
 
-const popupTriggers = document.querySelectorAll('[data-popup-target]');
-
-popupTriggers.forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const popupId = trigger.getAttribute('data-popup-target');
-    const popup = document.getElementById(popupId);
-    if (popup) {
-      popup.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Optional: lock scroll
-    }
-  });
-});
-
-
-// Close buttons functionality
-const closeButtons = document.querySelectorAll('.close-button');
-closeButtons.forEach(button => {
-  button.addEventListener('click', (event) => {
-    const popup = event.target.closest('.popup-container');
-    popup.style.display = 'none';
-  });
-});
-
-// Close pop-up when clicking outside the content
-window.addEventListener('click', (event) => {
-  if (event.target.classList.contains('popup-container')) {
-    event.target.style.display = 'none';
-  }
-});
-
-</script>
 <script type="module" src="./main.js"></script>
 <script src="./popup.js"></script>
 </body>
