@@ -780,11 +780,11 @@ footer {
   }
   .popup-col {
       flex: 1;
-      min-width: max-content;
+      min-width: min-content;
   }
   .popup-col2 {
       flex: 1;
-      min-width: max-content;
+      min-width: min-content;
   }
   .popup-description .tab-content {
       display: none;
