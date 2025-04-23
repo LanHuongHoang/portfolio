@@ -753,6 +753,7 @@ footer {
       border-radius: 5px;
       max-width: 90vw;
       max-height: 85vh;
+      padding: 5px;
       margin: 0;
   }
   .popup-inner{
