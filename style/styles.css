@@ -778,6 +778,7 @@ footer {
     font-size: 1rem;
   }
   .popup-grid {
+      max-width: 85vw;
       flex-direction: column;
       gap: 30px;
   }
