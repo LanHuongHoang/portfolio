@@ -354,7 +354,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .slide-caption {
       font-style: italic;
@@ -746,6 +746,7 @@ footer {
       height: 25vh;
   }
   .popup-content {
+    position: fixed;
       width: 100%;
       overflow-x: none;
       display:flex;
