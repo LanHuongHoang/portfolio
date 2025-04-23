@@ -54,18 +54,21 @@
                     <section class="slider-container">
                             <!-- Slide 1 -->
                             <div class="slide">
-                                <img src="images/thanhma.png" alt="Original" 
+                              <img 
+                                src="images/thanhma.png" 
+                                alt="Original"
                                 onmouseover="this.src='images/thanhma-hi.png'" 
                                 onmouseout="this.src='images/thanhma.png'"
-                                onclick="document.getElementById('popup1').style.display='block'">
-                                <div class="slide-caption">Fintech Character Design</div>
+                                data-popup-target="popup1"
+                              >
+                              <div class="slide-caption">Fintech Character Design</div>
                             </div>
                             <!-- Slide 2 -->
                             <div class="slide">
                               <img src="images/coffee.png" alt="Original" 
                               onmouseover="this.src='images/phinblend.png'" 
                               onmouseout="this.src='images/coffee.png'"
-                              onclick="document.getElementById('popup2').style.display='block'">
+                             data-popup-target="=popup2">
                               <div class="slide-caption">Coffee Packaging Redesign</div>
                           </div>
                             <!-- Slide 3 -->
