@@ -1,10 +1,10 @@
 // popup.js
 
 // Open popup based on data-popup-target
-document.querySelectorAll('[data-popup-target]').forEach(el => {
-  el.addEventListener('click', () => {
-    const targetId = el.getAttribute('data-popup-target');
-    const popup = document.getElementById(targetId);
+document.querySelectorAll('[data-popup-target]').forEach((trigger) => {
+  trigger.addEventListener('click', function () {
+    const popupId = this.getAttribute('data-popup-target');
+    const popup = document.getElementById(popupId);
     if (popup) {
       popup.style.display = 'flex';
       document.body.style.overflow = 'hidden';
@@ -12,16 +12,18 @@ document.querySelectorAll('[data-popup-target]').forEach(el => {
   });
 });
 
-// Close with close button
+// Close popup with close button
 document.querySelectorAll('.close-button').forEach(button => {
   button.addEventListener('click', (event) => {
     const popup = event.target.closest('.popup-container');
-    popup.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    if (popup) {
+      popup.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
   });
 });
 
-// Close when clicking outside popup-content
+// Close popup when clicking outside
 window.addEventListener('click', (event) => {
   if (event.target.classList.contains('popup-container')) {
     event.target.style.display = 'none';
