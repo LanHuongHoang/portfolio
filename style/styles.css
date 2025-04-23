@@ -757,6 +757,7 @@ footer {
   }
   .popup-inner{
       padding: 15px;
+      max-width: 85vw;
   }
   .popup-tabs {
       display: flex;
@@ -775,17 +776,14 @@ footer {
     font-size: 1rem;
   }
   .popup-grid {
-      max-width: 85vw;
       flex-direction: column;
       gap: 30px;
   }
-  .popup-col {
-      flex: 1;
-      min-width: min-content;
-  }
+  .popup-col,
   .popup-col2 {
       flex: 1;
-      min-width: min-content;
+      min-width:unset;
+      width: 100%;
   }
   .popup-description .tab-content {
       display: none;
