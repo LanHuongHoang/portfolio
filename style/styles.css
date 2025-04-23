@@ -749,9 +749,8 @@ footer {
       height: 25vh;
   }
   .popup-content {
-      width: 100vw;
-      height: 100vh;
-      border-radius: 0;
+      width: 100%;
+      border-radius: 5px;
       max-width: 90vw;
       max-height: 85vh;
       margin: 0;
@@ -770,9 +769,9 @@ footer {
       padding: 10px;
       font-size: 0.9rem;
       box-shadow: none;
+      border-bottom: #7FACC7;
   }
   .tab-button.active{
-    border-bottom: #00293D;
     font-size: 1rem;
   }
   .popup-grid {
@@ -781,11 +780,11 @@ footer {
   }
   .popup-col {
       flex: 1;
-      min-width: fit-content;
+      min-width: max-content;
   }
   .popup-col2 {
       flex: 1;
-      min-width: fit-content;
+      min-width: max-content;
   }
   .popup-description .tab-content {
       display: none;
