@@ -1,9 +1,14 @@
-
 // === Popup Trigger Logic ===
 document.querySelectorAll('[data-popup-target]').forEach(trigger => {
   trigger.addEventListener('click', () => {
-    const popupId = trigger.getAttribute('data-popup-target');
-    const popup = document.getElementById(popupId);
+    const targetId = trigger.getAttribute('data-popup-target');
+    
+    // Hide all popups first
+    document.querySelectorAll('.popup-container').forEach(popup => {
+      popup.style.display = 'none';
+    });
+
+    const popup = document.getElementById(targetId);
     if (popup) {
       popup.style.display = 'flex';
       document.body.style.overflow = 'hidden';
@@ -39,13 +44,16 @@ tabButtons.forEach(button => {
   button.addEventListener('click', () => {
     const target = button.dataset.tab;
 
+    // Activate the current tab
     tabButtons.forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
 
+    // Show correct text content
     tabContents.forEach(content => {
       content.classList.toggle('active', content.id === target);
     });
 
+    // Show correct slideshow
     tabSlideshows.forEach(show => {
       show.classList.toggle('active', show.id === `slideshow-${target}`);
     });
@@ -55,6 +63,7 @@ tabButtons.forEach(button => {
   });
 });
 
+// === Update Slide by Index ===
 function updateActiveSlide() {
   const activeSlideshow = document.querySelector('.tab-slideshow.active');
   if (!activeSlideshow) return;
@@ -65,6 +74,7 @@ function updateActiveSlide() {
   });
 }
 
+// === Manual Prev/Next Navigation ===
 document.querySelectorAll('.prev-slide').forEach(btn => {
   btn.addEventListener('click', () => {
     const activeSlideshow = btn.closest('.tab-slideshow.active');
@@ -81,28 +91,4 @@ document.querySelectorAll('.next-slide').forEach(btn => {
     currentSlideIndex = (currentSlideIndex + 1) % slides.length;
     updateActiveSlide();
   });
-});
-
-document.querySelectorAll('.slideshow-row').forEach(row => {
-  const slides = row.querySelectorAll('.slide-img');
-  if (slides.length <= 1) return;
-
-  let current = 0;
-  const update = () => {
-    slides.forEach((img, i) => {
-      img.classList.toggle('active', i === current);
-    });
-  };
-
-  row.querySelector('.prev-slide')?.addEventListener('click', () => {
-    current = (current - 1 + slides.length) % slides.length;
-    update();
-  });
-
-  row.querySelector('.next-slide')?.addEventListener('click', () => {
-    current = (current + 1) % slides.length;
-    update();
-  });
-
-  update();
 });
