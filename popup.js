@@ -1,16 +1,17 @@
 // === Popup Trigger Logic ===
 document.querySelectorAll('[data-popup-target]').forEach(trigger => {
   trigger.addEventListener('click', () => {
-    const targetId = trigger.getAttribute('data-popup-target');
+    const popupId = trigger.getAttribute('data-popup-target');
     
     // Hide all popups first
     document.querySelectorAll('.popup-container').forEach(popup => {
       popup.style.display = 'none';
     });
 
-    const popup = document.getElementById(targetId);
-    if (popup) {
-      popup.style.display = 'flex';
+    // Show only the targeted popup
+    const targetPopup = document.getElementById(popupId);
+    if (targetPopup) {
+      targetPopup.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
   });
