@@ -19,7 +19,7 @@ body {
     font-size: 9rem;
     line-height: 1;
     font-weight: 600;
-    color: #ABC7D9;
+    color: #8BC4E7;
     text-align: center;
     margin-top: 100px;
 }
@@ -27,7 +27,7 @@ body {
     font-family: 'Commerce', sans-serif;
     text-align: center;
     font-weight: 400;
-    color: #ABC7D9;
+    color: #8BC4E7;
     font-size: 7em;
     line-height: 1;
     margin-right: 25px;
@@ -64,7 +64,6 @@ body {
 
 .site-description a {
     text-decoration: none;
-    color: #7FACC7;
 }
 .content {
     width: 100%;
@@ -140,7 +139,7 @@ body {
     align-items:center;
     justify-content: center; /* Center content horizontally */
     width: 82%; /* Ensure captions take full width of the container */
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 1.2em;
     font-style: normal;
     font-weight: 400;
