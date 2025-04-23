@@ -1,32 +1,39 @@
 // popup.js
 
-// Open popup
-document.querySelectorAll('.slide img').forEach((img, index) => {
-  img.addEventListener('click', () => {
-    const popupId = `popup${index + 1}`;
-    const popup = document.getElementById(popupId);
-    if (popup) {
-      popup.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Prevent background scroll
+// Open popup using data-popup-target
+document.addEventListener('DOMContentLoaded', () => {
+  const popupTriggers = document.querySelectorAll('[data-popup-target]');
+  const closeButtons = document.querySelectorAll('.close-button');
+
+  popupTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const targetId = trigger.getAttribute('data-popup-target');
+      const popup = document.getElementById(targetId);
+      if (popup) {
+        popup.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Close popup with close button
+  closeButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      const popup = event.target.closest('.popup-container');
+      if (popup) {
+        popup.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+  });
+
+  // Close popup by clicking outside of popup-content
+  window.addEventListener('click', (event) => {
+    if (event.target.classList.contains('popup-container')) {
+      event.target.style.display = 'none';
+      document.body.style.overflow = 'auto';
     }
   });
-});
-
-// Close popup on close button
-document.querySelectorAll('.close-button').forEach(button => {
-  button.addEventListener('click', (event) => {
-    const popup = event.target.closest('.popup-container');
-    popup.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Restore scroll
-  });
-});
-
-// Close popup when clicking outside the content
-window.addEventListener('click', (event) => {
-  if (event.target.classList.contains('popup-container')) {
-    event.target.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
 });
 
 

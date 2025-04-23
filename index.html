@@ -59,8 +59,7 @@
                                 alt="Original"
                                 onmouseover="this.src='images/thanhma-hi.png'" 
                                 onmouseout="this.src='images/thanhma.png'"
-                                onclick="document.getElementById('popup1').style.display='block'">
-                              >
+                                data-popup-target="popup1">
                               <div class="slide-caption">Fintech Character Design</div>
                             </div>
                             <!-- Slide 2 -->
@@ -68,7 +67,7 @@
                               <img src="images/coffee.png" alt="Original" 
                               onmouseover="this.src='images/phinblend.png'" 
                               onmouseout="this.src='images/coffee.png'"
-                              onclick="document.getElementById('popup2').style.display='block'">
+                              data-popup-target="popup2">
                               <div class="slide-caption">Coffee Packaging Redesign</div>
                           </div>
                             <!-- Slide 3 -->
@@ -97,9 +96,9 @@
       <!-- Pop-ups -->
       <div class="popup-container" id="popup1">
         <div class="popup-content">
+          <span class="close-button">&#10539;</span>
           <!-- Inside popup-inner -->
           <div class="popup-inner">
-          <span class="close-button">&#10539;</span>
           <div class="popup-header">
             <div class="popup-title-group">
               <p class="project-title">Character Design for Social Media Posts: Thanh Ma</p>
@@ -192,9 +191,9 @@
       
   <div class="popup-container" id="popup2">
       <div class="popup-content">
+        <span class="close-button">&#10539;</span>
         <!-- Inside popup-inner -->
         <div class="popup-inner">
-        <span class="close-button">&#10539;</span>
         <div class="popup-header">
           <div class="popup-title-group">
             <p class="project-title">Coffee Packaging Redesign and Illustration: Lacàph</p>
