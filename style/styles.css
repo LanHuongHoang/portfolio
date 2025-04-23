@@ -723,7 +723,7 @@ footer {
 
 @media (max-width: 480px) {
   *{
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       margin-right: -10px;
   }
   .contain-slide {
@@ -769,10 +769,11 @@ footer {
   .tab-button {
       padding: 10px;
       font-size: 0.9rem;
+      box-shadow: none;
   }
-  .tab-button.active {
-      background-color: #7FACC7;
-      color: #00293D;
+  .tab-button.active{
+    border-bottom: #00293D;
+    font-size: 1rem;
   }
   .popup-grid {
       flex-direction: column;
@@ -780,11 +781,11 @@ footer {
   }
   .popup-col {
       flex: 1;
-      min-width: 250px;
+      min-width: fit-content;
   }
   .popup-col2 {
       flex: 1;
-      min-width: 500px;
+      min-width: fit-content;
   }
   .popup-description .tab-content {
       display: none;
@@ -798,6 +799,7 @@ footer {
   }
   .project-title {
       font-size: 1.5rem;
+      
   }
   .slide-img {
       width: 100%;
@@ -815,7 +817,6 @@ footer {
   }
   .slide-nav button {
       padding: 6px 10px;
-      background-color: #7FACC7;
       border: none;
       border-radius: 5px;
       cursor: pointer;
