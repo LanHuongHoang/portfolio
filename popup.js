@@ -1,10 +1,10 @@
 // popup.js
 
 // Open popup using data-popup-target
-document.querySelectorAll('[data-popup-target]').forEach(button => {
-  button.addEventListener('click', () => {
-    const popupId = button.getAttribute('data-popup-target');
-    const popup = document.getElementById(popupId);
+document.querySelectorAll('[data-popup-target]').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const targetId = trigger.getAttribute('data-popup-target');
+    const popup = document.getElementById(targetId);
     if (popup) {
       popup.style.display = 'flex';
       document.body.style.overflow = 'hidden'; // Prevent background scroll
