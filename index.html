@@ -795,35 +795,39 @@ Sources:
 </div>
 </footer>
 <script>
-// Select all pop-up triggers
-
-const popupTriggers = document.querySelectorAll('[data-popup-target]');
-
-popupTriggers.forEach(trigger => {
+// === Popup Trigger Logic ===
+document.querySelectorAll('[data-popup-target]').forEach(trigger => {
   trigger.addEventListener('click', () => {
     const popupId = trigger.getAttribute('data-popup-target');
-    const popup = document.getElementById(popupId);
-    if (popup) {
-      popup.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Optional: lock scroll
+    
+    // Hide all popups first
+    document.querySelectorAll('.popup-container').forEach(popup => {
+      popup.style.display = 'none';
+    });
+
+    // Show only the targeted popup
+    const targetPopup = document.getElementById(popupId);
+    if (targetPopup) {
+      targetPopup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
   });
 });
 
-
-// Close buttons functionality
-const closeButtons = document.querySelectorAll('.close-button');
-closeButtons.forEach(button => {
+// === Close Button Logic ===
+document.querySelectorAll('.close-button').forEach(button => {
   button.addEventListener('click', (event) => {
     const popup = event.target.closest('.popup-container');
     popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
   });
 });
 
-// Close pop-up when clicking outside the content
+// === Click Outside to Close ===
 window.addEventListener('click', (event) => {
   if (event.target.classList.contains('popup-container')) {
     event.target.style.display = 'none';
+    document.body.style.overflow = 'auto';
   }
 });
 
