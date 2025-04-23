@@ -1,5 +1,36 @@
 
-// TAB SWITCH LOGIC
+// === Popup Trigger Logic ===
+document.querySelectorAll('[data-popup-target]').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const popupId = trigger.getAttribute('data-popup-target');
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  });
+});
+
+// === Close Button Logic ===
+document.querySelectorAll('.close-button').forEach(button => {
+  button.addEventListener('click', (event) => {
+    const popup = event.target.closest('.popup-container');
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+});
+
+// === Click Outside to Close ===
+window.addEventListener('click', (event) => {
+  if (event.target.classList.contains('popup-container')) {
+    event.target.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+});
+
+// === Tab and Slideshow Sync Logic ===
+let currentSlideIndex = 0;
+
 const tabButtons = document.querySelectorAll('.tab-button');
 const tabContents = document.querySelectorAll('.tab-content');
 const tabSlideshows = document.querySelectorAll('.tab-slideshow');
@@ -19,15 +50,14 @@ tabButtons.forEach(button => {
       show.classList.toggle('active', show.id === `slideshow-${target}`);
     });
 
-    // Reset slideshow index
     currentSlideIndex = 0;
     updateActiveSlide();
   });
 });
 
-// SLIDE NAVIGATION LOGIC
 function updateActiveSlide() {
   const activeSlideshow = document.querySelector('.tab-slideshow.active');
+  if (!activeSlideshow) return;
   const slides = activeSlideshow.querySelectorAll('.slide-img');
 
   slides.forEach((slide, i) => {
@@ -52,9 +82,10 @@ document.querySelectorAll('.next-slide').forEach(btn => {
     updateActiveSlide();
   });
 });
+
 document.querySelectorAll('.slideshow-row').forEach(row => {
   const slides = row.querySelectorAll('.slide-img');
-  if (slides.length <= 1) return; // skip if only one image
+  if (slides.length <= 1) return;
 
   let current = 0;
   const update = () => {
