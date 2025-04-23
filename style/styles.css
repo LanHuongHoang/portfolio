@@ -757,7 +757,6 @@ footer {
   }
   .popup-inner{
       padding: 15px;
-      max-width: 85vw;
   }
   .popup-tabs {
       display: flex;
