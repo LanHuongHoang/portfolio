@@ -354,10 +354,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.2rem;
-  }
-  .slideshow-row button :hover{
-    background-color: #B8D0E0;
+    font-size: 1.5rem;
   }
   .slide-caption {
       font-style: italic;
