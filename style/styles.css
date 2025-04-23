@@ -7,7 +7,7 @@
 
 body {
     font-family: 'ivystyle-tw', sans-serif;
-    background-color: #00293D;
+    background-color: #001B29;
     color: #FDF1D8;
     line-height: 1.6;
     overflow-x: hidden;
@@ -653,218 +653,221 @@ footer {
     }
 }
 @media (max-width: 768px) {
-    *{
-        font-size: 0.9rem;
-    }
-    .contain-slide {
-        margin-top: -10px;
-        flex-direction: column; /* Stack columns */
-        overflow-x: scroll;
-        scrollbar-width: none; /* Hide scrollbar for Firefox */
-        -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
-      }
-    
-      /* Slider */
-      .slider-container {
-        height: 50vh; /* Reduce height for smaller screens */
-        gap: 40px;
-    }
-    .slide-caption {
-        font-size: 1rem;
-        width: 100%;
-    }
-    
-      .slide {
-        width: 50%;
-        flex-direction: column; /* Stack slides */
-      }
-      .slide img {
-        height: 35vh; /* Adjust image height */
-      }
-      .popup-content {
-        margin: 0;
-        width: 100%;
-        max-width: 90vw;
-        max-height: 85vh;
-    }
-    .popup-inner{
-        padding: 20px;
-    }
-    .site-name {
-        font-size: 6rem; /* Adjust site name size for smaller tablets */
-    }
-    .site-title {
-        font-size: 5em; 
-    }
-
-    .site-description {
-        font-size: 1.4rem; /* Adjust font size for smaller devices */
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    footer{
-        margin: 5px;
-        margin-top: 100px;
-    }
+  *{
+      font-size: 0.9rem;
+  }
+  .contain-slide {
+      margin-top: -10px;
+      flex-direction: column;
+      overflow-x: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+  }
+  .slider-container {
+      height: 50vh;
+      gap: 40px;
+  }
+  .slide-caption {
+      font-size: 1rem;
+      width: 100%;
+  }
+  .slide {
+      width: 50%;
+      flex-direction: column;
+  }
+  .slide img {
+      height: 35vh;
+  }
+  .popup-content {
+      width: 95vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      margin: 0;
+  }
+  .popup-inner {
+      padding: 20px;
+  }
+  .popup-tabs {
+      flex-direction: column;
+      gap: 8px;
+      padding: 0 10px;
+  }
+  .tab-button {
+      flex: none;
+      width: 100%;
+      text-align: center;
+  }
+  .popup-grid {
+      flex-direction: column;
+      gap: 20px;
+  }
+  .popup-col2, .popup-col {
+      min-width: 100%;
+  }
+  .site-name {
+      font-size: 6rem;
+  }
+  .site-title {
+      font-size: 5em;
+  }
+  .site-description {
+      font-size: 1.4rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+  footer{
+      margin: 5px;
+      margin-top: 100px;
+  }
 }
+
 @media (max-width: 480px) {
-    *{
-        font-size: 0.8rem;
-        margin-right: -10px;
-    }
-    .contain-slide {
-        margin-top: -10px;
-        flex-direction: column; /* Stack columns */
-        overflow-x: scroll;
-        scrollbar-width: none; /* Hide scrollbar for Firefox */
-        -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
-    }
-    
-      /* Slider */
-      .slider-container {
-        height: 40vh; /* Reduce height for smaller screens */
-        gap: 80px;
-    }
-    .slide-caption {
-        font-size: 1rem;
-        width: 100%;
-    }
-    
-      .slide {
-        width: 80%;
-        flex-direction: column; /* Stack slides */
-      }
-      .slide img {
-        height: 25vh; /* Adjust image height */
-      }
-      .popup-content {
-        margin: 0;
-        width: 100%;
-        max-width: 90vw;
-        max-height: 85vh;
-    }
-    .popup-inner{
-        padding: 20px;
-    }
-    .popup-tabs {
-        display: flex;
-        gap: 15px;
-        margin-bottom: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      
-      .tab-button {
-        padding: 8px 16px;
-        background-color: #ddd;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        font-weight: 500;
-        transition: background-color 0.3s;
-      }
-      
-      .tab-button.active {
-        background-color: #7FACC7;
-        color: #00293D;
-      }
-      
-      .popup-grid {
-        display: flex;
-        gap: 30px;
-      }
-      
-      .popup-col {
-        flex: 1;
-        min-width: 250px;
-      }
-      .popup-col2 {
-        flex: 1;
-        min-width: 500px;
-      }
-      .popup-description .tab-content {
-        display: none;
-      }
-      .popup-description .tab-content.active {
-        display: block;
-      }
-      
-      /* Slideshow */
-      .slideshow {
-        position: relative;
-        width: 100%;
-      }
-      .slide-img {
-        width: 100%;
-        height: auto;
-        display: none;
-      }
-      .slide-img.active {
-        display: block;
-      }
-      .slide-nav {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        gap: 20px;
-      }
-      .slide-nav button {
-        padding: 6px 10px;
-        background-color: #7FACC7;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      
-    .site-name {
-        margin-top: 20px;
-        font-size: 2.5rem; /* Adjust site name size for mobile */
-        margin-right: 10px;
-    }
-    .site-title {
-        font-size: 2rem; /* Adjust site name size for mobile */
-        margin-left: 5px;
-    }
-
-    .site-description {
-        margin-right: 10px;
-        font-size: 1rem; /* Adjust font size for mobile */
-        padding-left: 0.8rem;
-        padding-right: 0.8rem;
-    }
-    .container h1{
-        margin-top: 70px;
-        font-size: 2rem;
-    }
-    .grid-container ul{
-        font-size: 0.8rem;
-    }
-    .popup-content text{
-        font-size: 0.7rem;
-       text-align: center;
-    }
-    .popup-content a{
-        font-size: 0.7rem;
-        padding-right: 10px;
-    }
-    .popup-content h2{
-        font-size: 1.4rem;
-    }
-    .popup-content h3{
-        font-size: 1.1rem;
-    }
-    .popup-content h4{
-        font-size: 0.9rem;
-    }
-    .image-row{
-        width: 100%;
-        gap: 15px;
-    }  
-
-    .model-table th, .model-table td{
-        font-size: 0.65rem;
-    }
-    footer {
-        display: none;
-    }
+  *{
+      font-size: 0.8rem;
+      margin-right: -10px;
+  }
+  .contain-slide {
+      margin-top: -10px;
+      flex-direction: column;
+      overflow-x: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+  }
+  .slider-container {
+      height: 40vh;
+      gap: 80px;
+  }
+  .slide-caption {
+      font-size: 1rem;
+      width: 100%;
+  }
+  .slide {
+      width: 80%;
+      flex-direction: column;
+  }
+  .slide img {
+      height: 25vh;
+  }
+  .popup-content {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+      max-width: 90vw;
+      max-height: 85vh;
+      margin: 0;
+  }
+  .popup-inner{
+      padding: 15px;
+  }
+  .popup-tabs {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+  .tab-button {
+      padding: 10px;
+      font-size: 0.9rem;
+  }
+  .tab-button.active {
+      background-color: #7FACC7;
+      color: #00293D;
+  }
+  .popup-grid {
+      flex-direction: column;
+      gap: 30px;
+  }
+  .popup-col {
+      flex: 1;
+      min-width: 250px;
+  }
+  .popup-col2 {
+      flex: 1;
+      min-width: 500px;
+  }
+  .popup-description .tab-content {
+      display: none;
+  }
+  .popup-description .tab-content.active {
+      display: block;
+  }
+  .popup-title-group {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .project-title {
+      font-size: 1.5rem;
+  }
+  .slide-img {
+      width: 100%;
+      height: auto;
+      display: none;
+  }
+  .slide-img.active {
+      display: block;
+  }
+  .slide-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 20px;
+  }
+  .slide-nav button {
+      padding: 6px 10px;
+      background-color: #7FACC7;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  .site-name {
+      margin-top: 20px;
+      font-size: 2.5rem;
+      margin-right: 10px;
+  }
+  .site-title {
+      font-size: 2rem;
+      margin-left: 5px;
+  }
+  .site-description {
+      margin-right: 10px;
+      font-size: 1rem;
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+  }
+  .container h1{
+      margin-top: 70px;
+      font-size: 2rem;
+  }
+  .grid-container ul{
+      font-size: 0.8rem;
+  }
+  .popup-content text{
+      font-size: 0.7rem;
+      text-align: center;
+  }
+  .popup-content a{
+      font-size: 0.7rem;
+      padding-right: 10px;
+  }
+  .popup-content h2{
+      font-size: 1.4rem;
+  }
+  .popup-content h3{
+      font-size: 1.1rem;
+  }
+  .popup-content h4{
+      font-size: 0.9rem;
+  }
+  .image-row{
+      width: 100%;
+      gap: 15px;
+  }
+  .model-table th, .model-table td{
+      font-size: 0.65rem;
+  }
+  footer {
+      display: none;
+  }
 }
+
