@@ -2,10 +2,8 @@
 
 // Open popup using data-popup-target
 document.addEventListener('DOMContentLoaded', () => {
-  const popupTriggers = document.querySelectorAll('[data-popup-target]');
-  const closeButtons = document.querySelectorAll('.close-button');
-
-  popupTriggers.forEach(trigger => {
+  // Open popup
+  document.querySelectorAll('[data-popup-target]').forEach(trigger => {
     trigger.addEventListener('click', () => {
       const targetId = trigger.getAttribute('data-popup-target');
       const popup = document.getElementById(targetId);
@@ -16,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close popup with close button
-  closeButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-      const popup = event.target.closest('.popup-container');
+  // Close popup via close button
+  document.querySelectorAll('.close-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const popup = button.closest('.popup-container');
       if (popup) {
         popup.style.display = 'none';
         document.body.style.overflow = 'auto';
@@ -27,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close popup by clicking outside of popup-content
-  window.addEventListener('click', (event) => {
+  // Close when clicking outside the popup content
+  window.addEventListener('click', event => {
     if (event.target.classList.contains('popup-container')) {
       event.target.style.display = 'none';
       document.body.style.overflow = 'auto';
