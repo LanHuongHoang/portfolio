@@ -1,23 +1,19 @@
 // popup.js
 
 // Open popup using data-popup-target
-document.addEventListener('DOMContentLoaded', () => {
-  // Open the correct popup
-  document.querySelectorAll('[data-popup-target]').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const popupId = trigger.getAttribute('data-popup-target');
-      const popup = document.getElementById(popupId);
+document.querySelectorAll('[data-popup-target]').forEach(img => {
+  img.addEventListener('click', () => {
+    const popupId = img.getAttribute('data-popup-target');
+    const popup = document.getElementById(popupId);
+    
+    // Close all popups first
+    document.querySelectorAll('.popup-container').forEach(p => p.style.display = 'none');
 
-      // Close all open popups first
-      document.querySelectorAll('.popup-container').forEach(p => {
-        p.style.display = 'none';
-      });
-
-      if (popup) {
-        popup.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
-    });
+    // Then show the one you want
+    if (popup) {
+      popup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
   });
 
   // Close with close button
