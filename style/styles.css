@@ -139,7 +139,7 @@ body {
     align-items:center;
     justify-content: center; /* Center content horizontally */
     width: 82%; /* Ensure captions take full width of the container */
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 1.2em;
     font-style: normal;
     font-weight: 400;
@@ -746,7 +746,6 @@ footer {
       height: 25vh;
   }
   .popup-content {
-    position: fixed;
       width: 100%;
       overflow-x: none;
       display:flex;
@@ -757,7 +756,10 @@ footer {
       margin: 0;
   }
   .popup-inner{
+      width: 100%;
       padding: 15px;
+      overflow-y: auto;
+      flex-direction: column;
   }
   .popup-tabs {
       display: flex;
