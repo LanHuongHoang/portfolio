@@ -1,7 +1,6 @@
 // popup.js
 
 // Open popup based on data-popup-target
-window.addEventListener('DOMContentLoaded', () => {
 document.querySelectorAll('[data-popup-target]').forEach(el => {
   el.addEventListener('click', () => {
     const targetId = el.getAttribute('data-popup-target');
@@ -28,7 +27,6 @@ window.addEventListener('click', (event) => {
     event.target.style.display = 'none';
     document.body.style.overflow = 'auto';
   }
-});
 });
 
 // TAB SWITCH LOGIC
