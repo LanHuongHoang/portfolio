@@ -750,6 +750,9 @@ footer {
   }
   .popup-content {
       width: 100%;
+      overflow-x: none;
+      display:flex;
+      flex-direction: column;
       border-radius: 5px;
       max-width: 90vw;
       max-height: 85vh;
