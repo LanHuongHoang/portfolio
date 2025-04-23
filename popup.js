@@ -1,36 +1,35 @@
 // popup.js
 
-// Open popup using data-popup-target
-document.querySelectorAll('[data-popup-target]').forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const targetId = trigger.getAttribute('data-popup-target');
+// Open popup based on data-popup-target
+window.addEventListener('DOMContentLoaded', () => {
+document.querySelectorAll('[data-popup-target]').forEach(el => {
+  el.addEventListener('click', () => {
+    const targetId = el.getAttribute('data-popup-target');
     const popup = document.getElementById(targetId);
     if (popup) {
       popup.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Prevent background scroll
+      document.body.style.overflow = 'hidden';
     }
   });
 });
 
-// Close popup on close button
+// Close with close button
 document.querySelectorAll('.close-button').forEach(button => {
-  button.addEventListener('click', () => {
-    const popup = button.closest('.popup-container');
-    if (popup) {
-      popup.style.display = 'none';
-      document.body.style.overflow = 'auto'; // Restore scroll
-    }
+  button.addEventListener('click', (event) => {
+    const popup = event.target.closest('.popup-container');
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
   });
 });
 
-// Close popup when clicking outside the content
+// Close when clicking outside popup-content
 window.addEventListener('click', (event) => {
   if (event.target.classList.contains('popup-container')) {
     event.target.style.display = 'none';
     document.body.style.overflow = 'auto';
   }
 });
-
+});
 
 // TAB SWITCH LOGIC
 const tabButtons = document.querySelectorAll('.tab-button');
