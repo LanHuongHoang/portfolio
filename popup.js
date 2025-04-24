@@ -1,11 +1,10 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Open Popup
-  document.querySelectorAll('.popup-trigger').forEach(img => {
-    img.addEventListener('click', () => {
-      const popupId = img.getAttribute('data-popup');
-      document.querySelectorAll('.popup-container').forEach(popup => {
-        popup.style.display = 'none';
-      });
+  // === POPUP OPEN LOGIC ===
+  const triggers = document.querySelectorAll('.popup-trigger');
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const popupId = trigger.getAttribute('data-popup');
       const popup = document.getElementById(popupId);
       if (popup) {
         popup.style.display = 'flex';
@@ -14,26 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Hover image change
-  document.querySelectorAll('.hover-image').forEach(img => {
-    const original = img.src;
-    const hover = img.getAttribute('data-hover-src');
-    if (hover) {
-      img.addEventListener('mouseover', () => img.src = hover);
-      img.addEventListener('mouseout', () => img.src = original);
-    }
-  });
-
-  // Close popup on button
-  document.querySelectorAll('.close-button').forEach(button => {
+  // === POPUP CLOSE LOGIC ===
+  const closeButtons = document.querySelectorAll('.close-button');
+  closeButtons.forEach(button => {
     button.addEventListener('click', () => {
       const popup = button.closest('.popup-container');
-      popup.style.display = 'none';
-      document.body.style.overflow = 'auto';
+      if (popup) {
+        popup.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
     });
   });
 
-  // Close when clicking outside popup-content
+  // === CLICK OUTSIDE TO CLOSE ===
   window.addEventListener('click', event => {
     if (event.target.classList.contains('popup-container')) {
       event.target.style.display = 'none';
@@ -41,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
 
 // === TABS & SLIDESHOW FUNCTIONALITY ===
 
