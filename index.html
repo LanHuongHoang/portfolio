@@ -798,96 +798,108 @@ Sources:
     </div>
 </div>
 </footer>
-<script>document.addEventListener('DOMContentLoaded', () => {
+<script>
+  // 1. Get all elements with popup-trigger class
+const popupTriggers = document.querySelectorAll('.popup-trigger');
 
-  // Open popup logic
-  document.querySelectorAll('.popup-trigger').forEach(img => {
-    img.addEventListener('click', () => {
-      const popupID = img.getAttribute('data-popup');
-      const popup = document.getElementById(popupID);
-      
-      if (popup) {
-        document.querySelectorAll('.popup-container').forEach(p => p.classList.remove('active')); // Close others
-        popup.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  });
+// 2. Add an event listener on the triggers
+popupTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    // 3. Get the popupId attribute
+    const popupId = trigger.getAttribute('data-popup');
+    // 4. Get the corresponding popup element
+    const popup = document.getElementById(popupId);
 
-  // Close popup logic (button & outside click)
-  document.querySelectorAll('.close-button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.closest('.popup-container').classList.remove('active');
-      document.body.style.overflow = 'auto';
-    });
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('popup-container')) {
-      e.target.classList.remove('active');
-      document.body.style.overflow = 'auto';
+    if (popup) {
+      // 5. If the popup is found display it
+      popup.style.display = 'block'; 
     }
   });
+});
 
-  // Image hover effect (no conflicts)
-  document.querySelectorAll('.hover-image').forEach(img => {
-    const originalSrc = img.dataset.originalSrc;
-    const hoverSrc = img.dataset.hoverSrc;
+// Close button
+const closeButtons = document.querySelectorAll('.close-button');
 
-    img.addEventListener('mouseover', () => img.src = hoverSrc);
-    img.addEventListener('mouseout', () => img.src = originalSrc);
+closeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Get the popup-content container
+    const popupContent = button.closest('.popup-content');
+    // Get the popup-container
+    const popupContainer = popupContent.closest('.popup-container');
+    // Hide the popup
+    popupContainer.style.display = 'none';
   });
+});
 
-  // Tabs logic within popups
-  document.querySelectorAll('.popup-container').forEach(popup => {
-    const tabs = popup.querySelectorAll('.tab-button');
-    const contents = popup.querySelectorAll('.tab-content');
-    const slideshows = popup.querySelectorAll('.tab-slideshow');
+// Manage the tabs
+const tabButtons = document.querySelectorAll('.tab-button');
 
-    let slideIndex = 0;
+tabButtons.forEach(tabButton => {
+  tabButton.addEventListener('click', () => {
+    // Remove the active class on all tabs
+    tabButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    // Add the active class on the tab clicked
+    tabButton.classList.add('active');
 
-    const updateSlide = (slideshow, index) => {
-      const images = slideshow.querySelectorAll('.slide-img');
-      images.forEach((img, i) => img.classList.toggle('active', i === index));
-    };
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.tab;
-
-        tabs.forEach(t => t.classList.toggle('active', t === tab));
-        contents.forEach(c => c.classList.toggle('active', c.id === target));
-        slideshows.forEach(s => {
-          const isActive = s.id === `slideshow-${target}`;
-          s.classList.toggle('active', isActive);
-          if (isActive) {
-            slideIndex = 0;
-            updateSlide(s, slideIndex);
-          }
-        });
-      });
+    // Remove the active class on all content
+    const allTabContents = document.querySelectorAll('.tab-content');
+    allTabContents.forEach(content => {
+      content.classList.remove('active');
     });
 
-    popup.querySelectorAll('.next-slide').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const slideshow = popup.querySelector('.tab-slideshow.active');
-        const images = slideshow.querySelectorAll('.slide-img');
-        slideIndex = (slideIndex + 1) % images.length;
-        updateSlide(slideshow, slideIndex);
-      });
+    // Remove the active class on all slideshow
+    const allSlideshows = document.querySelectorAll('.tab-slideshow');
+    allSlideshows.forEach(content => {
+      content.classList.remove('active');
     });
 
-    popup.querySelectorAll('.prev-slide').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const slideshow = popup.querySelector('.tab-slideshow.active');
-        const images = slideshow.querySelectorAll('.slide-img');
-        slideIndex = (slideIndex - 1 + images.length) % images.length;
-        updateSlide(slideshow, slideIndex);
-      });
-    });
+    // Get the target attribute
+    const targetId = tabButton.getAttribute('data-tab');
+    // Get the tab content and add the active class
+    const targetTabContent = document.getElementById(targetId);
+    targetTabContent.classList.add('active');
 
-    // Initialize first tab and slideshow properly
-    tabs[0]?.click();
+    // Get the slideshow related to the target
+    const targetSlideshow = document.getElementById(`slideshow-${targetId}`);
+    targetSlideshow.classList.add('active');
+  });
+});
+
+// Manage the slideshow
+const prevButtons = document.querySelectorAll('.prev-slide');
+const nextButtons = document.querySelectorAll('.next-slide');
+
+prevButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const slideshowRow = button.closest('.slideshow-row');
+    const slideWrapper = slideshowRow.querySelector('.slide-wrapper');
+    const activeSlide = slideWrapper.querySelector('.slide-img.active');
+    const prevSlide = activeSlide.previousElementSibling;
+
+    activeSlide.classList.remove('active');
+    if (prevSlide) {
+      prevSlide.classList.add('active');
+    } else {
+      slideWrapper.lastElementChild.classList.add('active');
+    }
+  });
+});
+
+nextButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const slideshowRow = button.closest('.slideshow-row');
+    const slideWrapper = slideshowRow.querySelector('.slide-wrapper');
+    const activeSlide = slideWrapper.querySelector('.slide-img.active');
+    const nextSlide = activeSlide.nextElementSibling;
+
+    activeSlide.classList.remove('active');
+    if (nextSlide) {
+      nextSlide.classList.add('active');
+    } else {
+      slideWrapper.firstElementChild.classList.add('active');
+    }
   });
 });
 </script>
