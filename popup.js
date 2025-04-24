@@ -1,115 +1,88 @@
-// ==== Popup Opening Logic ====
-function openPopup(popupId) {
-  // Close any currently open popups
-  document.querySelectorAll('.popup-container').forEach(popup => {
-    popup.style.display = 'none';
-  });
-
-  // Open the targeted popup
-  const popup = document.getElementById(popupId);
-  if (popup) {
-    popup.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // Disable background scrolling
-  }
-}
-
-// Attach event listeners for popup close buttons
-document.querySelectorAll('.close-button').forEach(button => {
-  button.addEventListener('click', event => {
-    const popup = event.target.closest('.popup-container');
+// Handle popup opening
+document.querySelectorAll('.popup-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const popupId = trigger.getAttribute('data-popup');
+    const popup = document.getElementById(popupId);
     if (popup) {
-      popup.style.display = 'none';
-      document.body.style.overflow = 'auto'; // Re-enable scrolling
+      popup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
   });
 });
 
-// Close popup when clicking outside the popup content
-window.addEventListener('click', event => {
+// Close Popup
+document.querySelectorAll('.close-button').forEach(button => {
+  button.addEventListener('click', () => {
+    button.closest('.popup-container').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+});
+
+// Close popup on outside click
+window.addEventListener('click', (event) => {
   if (event.target.classList.contains('popup-container')) {
     event.target.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
+    document.body.style.overflow = 'auto';
   }
 });
 
-// ==== Hover Effect for Images (Improved) ====
-document.querySelectorAll('.slide img').forEach(img => {
-  const originalSrc = img.getAttribute('src');
-  const hoverSrc = img.getAttribute('data-hover-src');
-
-  img.addEventListener('mouseover', () => {
-    if (hoverSrc) img.src = hoverSrc;
+// Hover image swap functionality
+document.querySelectorAll('.hover-image').forEach(img => {
+  img.addEventListener('mouseenter', () => {
+    img.src = img.getAttribute('data-hover-src');
   });
-
-  img.addEventListener('mouseout', () => {
-    img.src = originalSrc;
+  img.addEventListener('mouseleave', () => {
+    img.src = img.getAttribute('data-original-src');
   });
 });
 
-// ==== Tabs Logic ====
-document.querySelectorAll('.popup-tabs').forEach(tabContainer => {
-  const tabButtons = tabContainer.querySelectorAll('.tab-button');
-  
+// Scoped popup tab and slideshow functionality
+document.querySelectorAll('.popup-container').forEach(popup => {
+  const tabButtons = popup.querySelectorAll('.tab-button');
+  const tabContents = popup.querySelectorAll('.tab-content');
+  const tabSlideshows = popup.querySelectorAll('.tab-slideshow');
+
   tabButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const targetId = button.getAttribute('data-tab');
+      const target = button.dataset.tab;
 
-      // Update buttons
       tabButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
 
-      const popupContent = button.closest('.popup-inner');
-      
-      // Update content tabs
-      popupContent.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.toggle('active', content.id === targetId);
+      tabContents.forEach(content => {
+        content.classList.toggle('active', content.id === target);
       });
 
-      // Update slideshows
-      popupContent.querySelectorAll('.tab-slideshow').forEach(slideshow => {
-        slideshow.classList.toggle('active', slideshow.id === `slideshow-${targetId}`);
+      tabSlideshows.forEach(slideshow => {
+        slideshow.classList.toggle('active', slideshow.id === `slideshow-${target}`);
+        resetSlideshow(slideshow);
       });
-
-      // Reset slides to first
-      resetSlideshow(popupContent);
     });
   });
-});
 
-// ==== Slideshow Logic ====
-function resetSlideshow(popupContent) {
-  popupContent.querySelectorAll('.tab-slideshow.active').forEach(slideshow => {
+  function resetSlideshow(slideshow) {
     const slides = slideshow.querySelectorAll('.slide-img');
-    slides.forEach((slide, index) => {
-      slide.classList.toggle('active', index === 0);
-    });
-  });
-}
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === 0));
+  }
 
-document.querySelectorAll('.slideshow-row').forEach(row => {
-  const slides = row.querySelectorAll('.slide-img');
-  if (slides.length <= 1) return;
-
-  let currentIndex = 0;
-
-  const showSlide = (index) => {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-    });
-  };
-
-  // Previous button
-  row.querySelector('.prev-slide')?.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
+  popup.querySelectorAll('.prev-slide').forEach(btn => {
+    btn.addEventListener('click', () => navigateSlide(btn, -1));
   });
 
-  // Next button
-  row.querySelector('.next-slide')?.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
+  popup.querySelectorAll('.next-slide').forEach(btn => {
+    btn.addEventListener('click', () => navigateSlide(btn, 1));
   });
 
-  // Initialize first slide
-  showSlide(currentIndex);
+  function navigateSlide(button, direction) {
+    const slideWrapper = button.closest('.slideshow-row').querySelector('.slide-wrapper');
+    const slides = slideWrapper.querySelectorAll('.slide-img');
+    let currentIndex = [...slides].findIndex(slide => slide.classList.contains('active'));
+    
+    slides[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + direction + slides.length) % slides.length;
+    slides[currentIndex].classList.add('active');
+  }
+
+  // Auto-click the first tab to initialize
+  if (tabButtons.length) tabButtons[0].click();
 });
