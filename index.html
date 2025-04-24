@@ -785,6 +785,58 @@ Sources:
     </div>
 </div>
 </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+// === Open Popup ===
+document.querySelectorAll('.slide img').forEach(img => {
+  img.addEventListener('click', () => {
+    const popupId = img.getAttribute('data-popup');
+    document.querySelectorAll('.popup-container').forEach(popup => {
+      popup.style.display = 'none';
+    });
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  });
+});
+
+// === Hover image effect ===
+document.querySelectorAll('.slide img').forEach(img => {
+  const originalSrc = img.src;
+  const hoverSrc = img.getAttribute('data-hover-src');
+
+  img.addEventListener('mouseover', () => {
+    if (hoverSrc) img.src = hoverSrc;
+  });
+
+  img.addEventListener('mouseout', () => {
+    img.src = originalSrc;
+  });
+});
+
+// === Close buttons ===
+document.querySelectorAll('.close-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const popup = button.closest('.popup-container');
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+});
+
+// === Click outside content to close ===
+window.addEventListener('click', (event) => {
+  if (event.target.classList.contains('popup-container')) {
+    event.target.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+});
+
+});
+
+</script>
 <script src="./popup.js"></script>
 </body>
 </html>
