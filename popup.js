@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-  // === Open Popup ===
-  document.querySelectorAll('.slide img').forEach(img => {
+  // Open Popup
+  document.querySelectorAll('.popup-trigger').forEach(img => {
     img.addEventListener('click', () => {
       const popupId = img.getAttribute('data-popup');
       document.querySelectorAll('.popup-container').forEach(popup => {
@@ -14,22 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  
-  // === Hover image effect ===
-  document.querySelectorAll('.slide img').forEach(img => {
-    const originalSrc = img.src;
-    const hoverSrc = img.getAttribute('data-hover-src');
-  
-    img.addEventListener('mouseover', () => {
-      if (hoverSrc) img.src = hoverSrc;
-    });
-  
-    img.addEventListener('mouseout', () => {
-      img.src = originalSrc;
-    });
+
+  // Hover image change
+  document.querySelectorAll('.hover-image').forEach(img => {
+    const original = img.src;
+    const hover = img.getAttribute('data-hover-src');
+    if (hover) {
+      img.addEventListener('mouseover', () => img.src = hover);
+      img.addEventListener('mouseout', () => img.src = original);
+    }
   });
-  
-  // === Close buttons ===
+
+  // Close popup on button
   document.querySelectorAll('.close-button').forEach(button => {
     button.addEventListener('click', () => {
       const popup = button.closest('.popup-container');
@@ -37,16 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = 'auto';
     });
   });
-  
-  // === Click outside content to close ===
-  window.addEventListener('click', (event) => {
+
+  // Close when clicking outside popup-content
+  window.addEventListener('click', event => {
     if (event.target.classList.contains('popup-container')) {
       event.target.style.display = 'none';
       document.body.style.overflow = 'auto';
     }
   });
-  
-  });
+});
+
 
 // === TABS & SLIDESHOW FUNCTIONALITY ===
 
