@@ -168,6 +168,9 @@ body {
     overflow: hidden;
     padding: 1rem;
 }
+.popup-container.active {
+    display: flex; /* activates visibility when .active is added */
+  }
   
   /* Pop-up Content */
   .popup-content {

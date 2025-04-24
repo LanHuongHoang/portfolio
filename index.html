@@ -57,16 +57,18 @@
                               <img 
                                 src="images/thanhma.png" 
                                 alt="Original"
-                                onmouseover="this.src='images/thanhma-hi.png'" 
-                                onmouseout="this.src='images/thanhma.png'"
+                                class="hover-img"
+                                data-hover-src="images/thanhma-hi.png"
+                                data-original-src="images/thanhma.png"
                                 data-popup-target="popup1">
                               <div class="slide-caption">Fintech Character Design</div>
                             </div>
                             <!-- Slide 2 -->
                             <div class="slide">
-                              <img src="images/coffee.png" alt="Original" 
-                              onmouseover="this.src='images/phinblend.png'" 
-                              onmouseout="this.src='images/coffee.png'"
+                              <img src="images/coffee.png" alt="Original"
+                              class="hover-img"
+                              data-hover-src="this.src='images/phinblend.png'" 
+                              data-original-src="this.src='images/coffee.png'"
                               data-popup-target="popup2">
                               <div class="slide-caption">Coffee Packaging Redesign</div>
                           </div>
@@ -795,42 +797,41 @@ Sources:
 </div>
 </footer>
 <script>
-// === Popup Trigger Logic ===
-document.querySelectorAll('[data-popup-target]').forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const popupId = trigger.getAttribute('data-popup-target');
-    
-    // Hide all popups first
-    document.querySelectorAll('.popup-container').forEach(popup => {
-      popup.style.display = 'none';
-    });
+// Image hover effect using classList and data attributes
+document.querySelectorAll('.hover-img').forEach(img => {
+  img.addEventListener('mouseover', () => {
+    img.src = img.dataset.hoverSrc;
+  });
+  img.addEventListener('mouseout', () => {
+    img.src = img.dataset.originalSrc;
+  });
 
-    // Show only the targeted popup
-    const targetPopup = document.getElementById(popupId);
-    if (targetPopup) {
-      targetPopup.style.display = 'flex';
+  // Popup functionality using classList
+  img.addEventListener('click', () => {
+    const popupId = img.dataset.popupTarget;
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.classList.add('active'); // Using 'active' instead of directly setting styles
       document.body.style.overflow = 'hidden';
     }
   });
 });
 
-// === Close Button Logic ===
-document.querySelectorAll('.close-button').forEach(button => {
-  button.addEventListener('click', (event) => {
-    const popup = event.target.closest('.popup-container');
-    popup.style.display = 'none';
+// Popup Close Logic (using classList)
+document.querySelectorAll('.close-button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.popup-container').classList.remove('active');
     document.body.style.overflow = 'auto';
   });
 });
 
-// === Click Outside to Close ===
+// Close when clicking outside
 window.addEventListener('click', (event) => {
   if (event.target.classList.contains('popup-container')) {
-    event.target.style.display = 'none';
+    event.target.classList.remove('active');
     document.body.style.overflow = 'auto';
   }
 });
-
 </script>
 <script type="module" src="./main.js"></script>
 <script src="./popup.js"></script>
