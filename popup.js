@@ -46,6 +46,19 @@ document.querySelectorAll('.hover-image').forEach(img => {
     if (originalSrc) img.src = originalSrc;
   });
 });
+document.querySelectorAll('.slide img').forEach(img => {
+  const originalSrc = img.getAttribute('src');
+  const hoverSrc = img.getAttribute('data-hover-src');
+
+  if (hoverSrc) {
+    img.addEventListener('mouseenter', () => {
+      img.src = hoverSrc;
+    });
+    img.addEventListener('mouseleave', () => {
+      img.src = originalSrc;
+    });
+  }
+});
 
 // === TABS & SLIDESHOW FUNCTIONALITY ===
 
