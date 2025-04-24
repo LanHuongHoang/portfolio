@@ -51,29 +51,31 @@
                     <div class="content">
 
                     <!-- Image Slider Section -->
+                     
                     <section class="slider-container">
-                            <!-- Slide 1 -->
-                            <div class="slide">
-                              <img 
-                                src="images/thanhma.png" 
-                                alt="Original"
-                                data-hover-src="images/thanhma-hi.png"
-                                data-original-src="images/thanhma.png"
-                                data-popup-target="popup1"
-                                class="popup-trigger hover-image"
-                                >
-                              <div class="slide-caption">Fintech Character Design</div>
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="slide">
-                              <img src="images/coffee.png" alt="Original"
-                              data-hover-src="this.src='images/phinblend.png'" 
-                              data-original-src="this.src='images/coffee.png'"
-                              data-popup-target="popup2"
-                              class="popup-trigger hover-image"
-                              >
-                              <div class="slide-caption">Coffee Packaging Redesign</div>
-                          </div>
+                      <!-- Slide 1 -->
+                      <div class="slide">
+                        <img 
+                          src="images/thanhma.png"
+                          data-hover-src="images/thanhma-hi.png"
+                          data-original-src="images/thanhma.png"
+                          data-popup="popup1"
+                          class="popup-trigger hover-image"
+                        >
+                        <div class="slide-caption">Fintech Character Design</div>
+                      </div>
+                      <!-- Slide 2 -->
+                      <div class="slide">
+                        <img 
+                          src="images/coffee.png"
+                          data-hover-src="images/phinblend.png"
+                          data-original-src="images/coffee.png"
+                          data-popup="popup2"
+                          class="popup-trigger hover-image"
+                        >
+                        <div class="slide-caption">Coffee Packaging Redesign</div>
+                      </div>
+                      
                             <!-- Slide 3 -->
   <div class="slide">
   <img src="images/3dfoodstall.png" alt="Original" 
@@ -798,7 +800,98 @@ Sources:
     </div>
 </div>
 </footer>
-<script type="module" src="./main.js"></script>
-<script src="./popup.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => {
+
+  // Open popup logic
+  document.querySelectorAll('.popup-trigger').forEach(img => {
+    img.addEventListener('click', () => {
+      const popupID = img.getAttribute('data-popup');
+      const popup = document.getElementById(popupID);
+      
+      if (popup) {
+        document.querySelectorAll('.popup-container').forEach(p => p.classList.remove('active')); // Close others
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Close popup logic (button & outside click)
+  document.querySelectorAll('.close-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.popup-container').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('popup-container')) {
+      e.target.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Image hover effect (no conflicts)
+  document.querySelectorAll('.hover-image').forEach(img => {
+    const originalSrc = img.dataset.originalSrc;
+    const hoverSrc = img.dataset.hoverSrc;
+
+    img.addEventListener('mouseover', () => img.src = hoverSrc);
+    img.addEventListener('mouseout', () => img.src = originalSrc);
+  });
+
+  // Tabs logic within popups
+  document.querySelectorAll('.popup-container').forEach(popup => {
+    const tabs = popup.querySelectorAll('.tab-button');
+    const contents = popup.querySelectorAll('.tab-content');
+    const slideshows = popup.querySelectorAll('.tab-slideshow');
+
+    let slideIndex = 0;
+
+    const updateSlide = (slideshow, index) => {
+      const images = slideshow.querySelectorAll('.slide-img');
+      images.forEach((img, i) => img.classList.toggle('active', i === index));
+    };
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+
+        tabs.forEach(t => t.classList.toggle('active', t === tab));
+        contents.forEach(c => c.classList.toggle('active', c.id === target));
+        slideshows.forEach(s => {
+          const isActive = s.id === `slideshow-${target}`;
+          s.classList.toggle('active', isActive);
+          if (isActive) {
+            slideIndex = 0;
+            updateSlide(s, slideIndex);
+          }
+        });
+      });
+    });
+
+    popup.querySelectorAll('.next-slide').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const slideshow = popup.querySelector('.tab-slideshow.active');
+        const images = slideshow.querySelectorAll('.slide-img');
+        slideIndex = (slideIndex + 1) % images.length;
+        updateSlide(slideshow, slideIndex);
+      });
+    });
+
+    popup.querySelectorAll('.prev-slide').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const slideshow = popup.querySelector('.tab-slideshow.active');
+        const images = slideshow.querySelectorAll('.slide-img');
+        slideIndex = (slideIndex - 1 + images.length) % images.length;
+        updateSlide(slideshow, slideIndex);
+      });
+    });
+
+    // Initialize first tab and slideshow properly
+    tabs[0]?.click();
+  });
+});
+</script>
 </body>
 </html>
