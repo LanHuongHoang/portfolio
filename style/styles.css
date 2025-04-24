@@ -170,7 +170,7 @@ body {
     inset: 0;
 }
 .popup-container.active {
-    display: block; /* activates visibility when .active is added */
+    display: flex; /* activates visibility when .active is added */
   }
   
   /* Pop-up Content */

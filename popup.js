@@ -1,94 +1,87 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Popup Logic
-  document.querySelectorAll('.popup-trigger').forEach(trigger => {
-    trigger.addEventListener('click', event => {
-      const popupId = event.currentTarget.getAttribute('data-popup-target');
-      const popup = document.getElementById(popupId);
-      if (popup) {
-        popup.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    });
+// Open Popup
+document.querySelectorAll('.popup-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const popupId = trigger.getAttribute('data-popup');
+    const popup = document.getElementById(popupId);
+    if (popup) popup.style.display = 'flex';
   });
+});
 
-  // Close popup (button & outside)
-  document.querySelectorAll('.close-button').forEach(btn => {
-    btn.addEventListener('click', event => {
-      const popup = event.currentTarget.closest('.popup-container');
-      popup.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    });
+// Close Popup
+document.querySelectorAll('.close-button').forEach(button => {
+  button.addEventListener('click', () => {
+    button.closest('.popup-container').style.display = 'none';
   });
+});
 
-  window.addEventListener('click', event => {
-    if (event.target.classList.contains('popup-container')) {
-      event.target.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-  });
+// For each popup independently:
+document.querySelectorAll('.popup-container').forEach(popup => {
+  
+  // Scoped selections (tabs, contents, slides)
+  const tabButtons = popup.querySelectorAll('.tab-button');
+  const tabContents = popup.querySelectorAll('.tab-content');
+  const tabSlideshows = popup.querySelectorAll('.tab-slideshow');
 
-  // Image hover logic
-  document.querySelectorAll('.hover-image').forEach(img => {
-    const originalSrc = img.getAttribute('data-original-src');
-    const hoverSrc = img.getAttribute('data-hover-src');
+  // Tabs Logic (Scoped)
+  tabButtons.forEach(tabButton => {
+    tabButton.addEventListener('click', () => {
 
-    img.addEventListener('mouseover', () => img.src = hoverSrc);
-    img.addEventListener('mouseout', () => img.src = originalSrc);
-  });
+      // Tabs active state
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabButton.classList.add('active');
 
-  // Tab switching logic (assume tab buttons are inside popups)
-  document.querySelectorAll('.popup-container').forEach(popup => {
-    const tabButtons = popup.querySelectorAll('.tab-button');
-    const tabContents = popup.querySelectorAll('.tab-content');
-    const tabSlideshows = popup.querySelectorAll('.tab-slideshow');
-    let currentSlideIndex = 0;
+      const targetId = tabButton.getAttribute('data-tab');
 
-    const updateSlides = (slideshow) => {
-      const slides = slideshow.querySelectorAll('.slide-img');
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === currentSlideIndex);
+      // Content active state
+      tabContents.forEach(content => {
+        content.classList.toggle('active', content.id === targetId);
       });
-    };
 
-    tabButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetTab = btn.getAttribute('data-tab');
-
-        tabButtons.forEach(button => button.classList.toggle('active', button === btn));
-        tabContents.forEach(content => content.classList.toggle('active', content.id === targetTab));
-        tabSlideshows.forEach(show => {
-          const isActive = show.id === `slideshow-${targetTab}`;
-          show.classList.toggle('active', isActive);
-          if (isActive) {
-            currentSlideIndex = 0;
-            updateSlides(show);
-          }
-        });
+      // Slideshow active state
+      tabSlideshows.forEach(slideshow => {
+        slideshow.classList.toggle('active', slideshow.id === `slideshow-${targetId}`);
+        
+        // Reset slideshow to first slide on tab change
+        resetSlideshow(slideshow);
       });
-    });
 
-    popup.querySelectorAll('.next-slide').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const activeSlideshow = popup.querySelector('.tab-slideshow.active');
-        const slides = activeSlideshow.querySelectorAll('.slide-img');
-        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-        updateSlides(activeSlideshow);
-      });
     });
-
-    popup.querySelectorAll('.prev-slide').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const activeSlideshow = popup.querySelector('.tab-slideshow.active');
-        const slides = activeSlideshow.querySelectorAll('.slide-img');
-        currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-        updateSlides(activeSlideshow);
-      });
-    });
-
-    // Initialize the first slide correctly
-    const initialSlideshow = popup.querySelector('.tab-slideshow.active');
-    if (initialSlideshow) {
-      updateSlides(initialSlideshow);
-    }
   });
+
+  // Slideshow Logic (Scoped)
+  const prevButtons = popup.querySelectorAll('.prev-slide');
+  const nextButtons = popup.querySelectorAll('.next-slide');
+
+  prevButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      navigateSlide(button, -1);
+    });
+  });
+
+  nextButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      navigateSlide(button, 1);
+    });
+  });
+
+  // Slideshow helper functions (Scoped)
+  function navigateSlide(button, direction) {
+    const slideWrapper = button.closest('.slideshow-row').querySelector('.slide-wrapper');
+    const slides = slideWrapper.querySelectorAll('.slide-img');
+    const currentSlide = slideWrapper.querySelector('.slide-img.active');
+    let currentIndex = Array.from(slides).indexOf(currentSlide);
+
+    currentSlide.classList.remove('active');
+    let newIndex = (currentIndex + direction + slides.length) % slides.length;
+    slides[newIndex].classList.add('active');
+  }
+
+  function resetSlideshow(slideshow) {
+    const slides = slideshow.querySelectorAll('.slide-img');
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === 0));
+  }
+
+  // Initialize the first tab and slideshow active when popup is opened
+  tabButtons[0]?.click();
+
 });
