@@ -116,8 +116,11 @@ body {
     scroll-behavior: smooth;
 }
 .slide {
-    min-width: 25%;
-    box-sizing: content-box;
+    display: flex;
+  justify-content: center; /* center image horizontally */
+  align-items: center;     /* center image vertically */
+  min-width: 26%;          /* keep this if you want horizontal scroll */
+  box-sizing: border-box;
 }
 
 /* Image */
