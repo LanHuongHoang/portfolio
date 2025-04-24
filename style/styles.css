@@ -167,6 +167,7 @@ body {
     z-index: 9999;
     overflow: hidden;
     padding: 1rem;
+    inset: 0;
 }
 .popup-container.active {
     display: flex; /* activates visibility when .active is added */
@@ -185,6 +186,7 @@ body {
     position: relative;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
+  
   .popup-content a{
     text-decoration: none;
   }
@@ -413,7 +415,6 @@ body {
     z-index: 10000;
     transition: background-color 0.3s ease;
 }
-
 .close-button:hover {
     background-color: #ff6b6b;
     color: #fdfff0;
