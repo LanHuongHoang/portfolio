@@ -1,60 +1,94 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // Popup Logic
+  document.querySelectorAll('.popup-trigger').forEach(trigger => {
+    trigger.addEventListener('click', event => {
+      const popupId = event.currentTarget.getAttribute('data-popup-target');
+      const popup = document.getElementById(popupId);
+      if (popup) {
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
 
-// === Tab and Slideshow Sync Logic ===
-let currentSlideIndex = 0;
+  // Close popup (button & outside)
+  document.querySelectorAll('.close-button').forEach(btn => {
+    btn.addEventListener('click', event => {
+      const popup = event.currentTarget.closest('.popup-container');
+      popup.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+  });
 
-const tabButtons = document.querySelectorAll('.tab-button');
-const tabContents = document.querySelectorAll('.tab-content');
-const tabSlideshows = document.querySelectorAll('.tab-slideshow');
+  window.addEventListener('click', event => {
+    if (event.target.classList.contains('popup-container')) {
+      event.target.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
 
-tabButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const target = button.dataset.tab;
+  // Image hover logic
+  document.querySelectorAll('.hover-image').forEach(img => {
+    const originalSrc = img.getAttribute('data-original-src');
+    const hoverSrc = img.getAttribute('data-hover-src');
 
-    // Activate the current tab
-    tabButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
+    img.addEventListener('mouseover', () => img.src = hoverSrc);
+    img.addEventListener('mouseout', () => img.src = originalSrc);
+  });
 
-    // Show correct text content
-    tabContents.forEach(content => {
-      content.classList.toggle('active', content.id === target);
+  // Tab switching logic (assume tab buttons are inside popups)
+  document.querySelectorAll('.popup-container').forEach(popup => {
+    const tabButtons = popup.querySelectorAll('.tab-button');
+    const tabContents = popup.querySelectorAll('.tab-content');
+    const tabSlideshows = popup.querySelectorAll('.tab-slideshow');
+    let currentSlideIndex = 0;
+
+    const updateSlides = (slideshow) => {
+      const slides = slideshow.querySelectorAll('.slide-img');
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlideIndex);
+      });
+    };
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-tab');
+
+        tabButtons.forEach(button => button.classList.toggle('active', button === btn));
+        tabContents.forEach(content => content.classList.toggle('active', content.id === targetTab));
+        tabSlideshows.forEach(show => {
+          const isActive = show.id === `slideshow-${targetTab}`;
+          show.classList.toggle('active', isActive);
+          if (isActive) {
+            currentSlideIndex = 0;
+            updateSlides(show);
+          }
+        });
+      });
     });
 
-    // Show correct slideshow
-    tabSlideshows.forEach(show => {
-      show.classList.toggle('active', show.id === `slideshow-${target}`);
+    popup.querySelectorAll('.next-slide').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const activeSlideshow = popup.querySelector('.tab-slideshow.active');
+        const slides = activeSlideshow.querySelectorAll('.slide-img');
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        updateSlides(activeSlideshow);
+      });
     });
 
-    currentSlideIndex = 0;
-    updateActiveSlide();
-  });
-});
+    popup.querySelectorAll('.prev-slide').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const activeSlideshow = popup.querySelector('.tab-slideshow.active');
+        const slides = activeSlideshow.querySelectorAll('.slide-img');
+        currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+        updateSlides(activeSlideshow);
+      });
+    });
 
-// === Update Slide by Index ===
-function updateActiveSlide() {
-  const activeSlideshow = document.querySelector('.tab-slideshow.active');
-  if (!activeSlideshow) return;
-  const slides = activeSlideshow.querySelectorAll('.slide-img');
-
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === currentSlideIndex);
-  });
-}
-
-// === Manual Prev/Next Navigation ===
-document.querySelectorAll('.prev-slide').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const activeSlideshow = btn.closest('.tab-slideshow.active');
-    const slides = activeSlideshow.querySelectorAll('.slide-img');
-    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-    updateActiveSlide();
-  });
-});
-
-document.querySelectorAll('.next-slide').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const activeSlideshow = btn.closest('.tab-slideshow.active');
-    const slides = activeSlideshow.querySelectorAll('.slide-img');
-    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-    updateActiveSlide();
+    // Initialize the first slide correctly
+    const initialSlideshow = popup.querySelector('.tab-slideshow.active');
+    if (initialSlideshow) {
+      updateSlides(initialSlideshow);
+    }
   });
 });

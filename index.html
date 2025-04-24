@@ -57,19 +57,21 @@
                               <img 
                                 src="images/thanhma.png" 
                                 alt="Original"
-                                class="hover-img"
                                 data-hover-src="images/thanhma-hi.png"
                                 data-original-src="images/thanhma.png"
-                                data-popup-target="popup1">
+                                data-popup-target="popup1"
+                                class="popup-trigger hover-image"
+                                >
                               <div class="slide-caption">Fintech Character Design</div>
                             </div>
                             <!-- Slide 2 -->
                             <div class="slide">
                               <img src="images/coffee.png" alt="Original"
-                              class="hover-img"
                               data-hover-src="this.src='images/phinblend.png'" 
                               data-original-src="this.src='images/coffee.png'"
-                              data-popup-target="popup2">
+                              data-popup-target="popup2"
+                              class="popup-trigger hover-image"
+                              >
                               <div class="slide-caption">Coffee Packaging Redesign</div>
                           </div>
                             <!-- Slide 3 -->
@@ -796,43 +798,6 @@ Sources:
     </div>
 </div>
 </footer>
-<script>
-// Image hover effect using classList and data attributes
-document.querySelectorAll('.hover-img').forEach(img => {
-  img.addEventListener('mouseover', () => {
-    img.src = img.dataset.hoverSrc;
-  });
-  img.addEventListener('mouseout', () => {
-    img.src = img.dataset.originalSrc;
-  });
-
-  // Popup functionality using classList
-  img.addEventListener('click', () => {
-    const popupId = img.dataset.popupTarget;
-    const popup = document.getElementById(popupId);
-    if (popup) {
-      popup.classList.add('active'); // Using 'active' instead of directly setting styles
-      document.body.style.overflow = 'hidden';
-    }
-  });
-});
-
-// Popup Close Logic (using classList)
-document.querySelectorAll('.close-button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.closest('.popup-container').classList.remove('active');
-    document.body.style.overflow = 'auto';
-  });
-});
-
-// Close when clicking outside
-window.addEventListener('click', (event) => {
-  if (event.target.classList.contains('popup-container')) {
-    event.target.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
-});
-</script>
 <script type="module" src="./main.js"></script>
 <script src="./popup.js"></script>
 </body>
