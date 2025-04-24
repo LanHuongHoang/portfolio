@@ -1,3 +1,33 @@
+   // Select all pop-up triggers
+   const popupTriggers = document.querySelectorAll('.popup-trigger');
+  
+   // Add event listeners to each trigger
+   popupTriggers.forEach(trigger => {
+     trigger.addEventListener('click', () => {
+       const popupId = trigger.getAttribute('data-popup');
+       const popup = document.getElementById(popupId);
+       if (popup) {
+         popup.style.display = 'flex';
+       }
+     });
+   });
+   
+   // Close buttons functionality
+   const closeButtons = document.querySelectorAll('.close-button');
+   closeButtons.forEach(button => {
+     button.addEventListener('click', (event) => {
+       const popup = event.target.closest('.popup-container');
+       popup.style.display = 'none';
+     });
+   });
+   
+   // Close pop-up when clicking outside the content
+   window.addEventListener('click', (event) => {
+     if (event.target.classList.contains('popup-container')) {
+       event.target.style.display = 'none';
+     }
+   });
+   
   let currentSlideIndex = 0;
 
   // Switch tab content and slideshow section
