@@ -113,15 +113,17 @@ body {
     margin-top: 0;
     display: flex;
     height: 60vh;
-    padding: 10px;
     scroll-behavior: smooth;
 }
 .slide {
+    min-width: 26%;          /* keep this if you want horizontal scroll */
     display: flex;
-  justify-content: center; /* center image horizontally */
-  align-items: center;     /* center image vertically */
-  min-width: 26%;          /* keep this if you want horizontal scroll */
-  box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center; /* center image horizontally */
+    align-items: center;     /* center image vertically */
+    text-align: center;
+    gap: 10px; /* optional: adds spacing between image and caption */
+  
 }
 
 /* Image */
