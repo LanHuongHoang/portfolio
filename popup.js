@@ -1,30 +1,43 @@
-// Handle popup opening
-document.querySelectorAll('.popup-trigger').forEach(trigger => {
+// Select all pop-up triggers
+const popupTriggers = document.querySelectorAll('.popup-trigger');
+
+// Add event listeners to each trigger
+popupTriggers.forEach(trigger => {
   trigger.addEventListener('click', () => {
     const popupId = trigger.getAttribute('data-popup');
     const popup = document.getElementById(popupId);
+
+    // First, hide all popups before showing the target
+    document.querySelectorAll('.popup-container').forEach(p => {
+      p.style.display = 'none';
+    });
+
+    // Then display the intended popup
     if (popup) {
       popup.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'; // optional: prevent background scrolling
     }
   });
 });
 
-// Close Popup
-document.querySelectorAll('.close-button').forEach(button => {
-  button.addEventListener('click', () => {
-    button.closest('.popup-container').style.display = 'none';
-    document.body.style.overflow = 'auto';
+// Close buttons functionality
+const closeButtons = document.querySelectorAll('.close-button');
+closeButtons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    const popup = event.target.closest('.popup-container');
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto'; // optional: restore scrolling
   });
 });
 
-// Close popup on outside click
+// Close pop-up when clicking outside the content
 window.addEventListener('click', (event) => {
   if (event.target.classList.contains('popup-container')) {
     event.target.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto'; // optional: restore scrolling
   }
 });
+
 
 // Hover image swap functionality
 document.querySelectorAll('.hover-image').forEach(img => {
