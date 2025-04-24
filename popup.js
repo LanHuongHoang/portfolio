@@ -33,6 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+// Handle hover image swap
+document.querySelectorAll('.hover-image').forEach(img => {
+  const originalSrc = img.getAttribute('data-original-src');
+  const hoverSrc = img.getAttribute('data-hover-src');
+
+  img.addEventListener('mouseover', () => {
+    if (hoverSrc) img.src = hoverSrc;
+  });
+
+  img.addEventListener('mouseout', () => {
+    if (originalSrc) img.src = originalSrc;
+  });
+});
 
 // === TABS & SLIDESHOW FUNCTIONALITY ===
 

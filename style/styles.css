@@ -116,7 +116,7 @@ body {
     scroll-behavior: smooth;
 }
 .slide {
-    min-width: 26%;
+    min-width: 25%;
     box-sizing: content-box;
 }
 
