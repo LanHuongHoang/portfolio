@@ -51,48 +51,39 @@
                     <div class="content">
 
                     <!-- Image Slider Section -->
-                     
                     <section class="slider-container">
-                      <!-- Slide 1 -->
-                      <div class="slide">
-                        <img 
-                          src="images/thanhma.png"
-                          data-hover-src="images/thanhma-hi.png"
-                          data-original-src="images/thanhma.png"
-                          data-popup="popup1"
-                          class="popup-trigger hover-image"
-                        >
-                        <div class="slide-caption">Fintech Character Design</div>
-                      </div>
-                      <!-- Slide 2 -->
-                      <div class="slide">
-                        <img 
-                          src="images/coffee.png"
-                          data-hover-src="images/phinblend.png"
-                          data-original-src="images/coffee.png"
-                          data-popup="popup2"
-                          class="popup-trigger hover-image"
-                        >
-                        <div class="slide-caption">Coffee Packaging Redesign</div>
-                      </div>
-                      
-                            <!-- Slide 3 -->
-  <div class="slide">
-  <img src="images/3dfoodstall.png" alt="Original" 
-       onmouseover="this.src='images/3dfoodstall-full.png'" 
-       onmouseout="this.src='images/3dfoodstall.png'"
-       data-popup-target="popup3"> 
-  <div class="slide-caption">Nystagmus and 3D Model Design for Accessibility</div>
-</div>
-
-<!-- Slide 4 -->
-<div class="slide">
-  <img src="images/foodwaste.png" alt="Original" 
-       onmouseover="this.src='images/foodwaste-hi.png'" 
-       onmouseout="this.src='images/foodwaste.png'"
-       data-popup-target="popup4"> 
-  <div class="slide-caption">Food Waste Management Research</div>
-</div>
+                    <!-- Slide 1 -->
+                    <div class="slide">
+                      <img src="images/thanhma-.png" alt="Original" 
+                      onmouseover="this.src='images/thanhma-hi.png'" 
+                      onmouseout="this.src='images/thanhma-.png'"
+                      onclick="document.getElementById('popup1').style.display='block'">
+                      <div class="slide-caption">Fintech Character Design</div>
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="slide">
+                    <img src="images/coffee-.png" alt="Original" 
+                    onmouseover="this.src='images/phinblend.png'" 
+                    onmouseout="this.src='images/coffee-.png'"
+                    onclick="document.getElementById('popup2').style.display='block'">
+                    <div class="slide-caption">Coffee Packaging Design</div>
+                </div>
+                  <!-- Slide 3 -->
+                  <div class="slide">
+                    <img src="images/3dfoodstall-.png" alt="Original" 
+                    onmouseover="this.src='images/3dfoodstall-full.png'" 
+                    onmouseout="this.src='images/3dfoodstall-.png'"
+                    onclick="document.getElementById('popup3').style.display='block'">
+                    <div class="slide-caption">Nystagmus and 3D Model Design for Accessibility</div>
+                </div>
+                  <!-- Slide 4 -->
+                  <div class="slide">
+                    <img src="images/foodwaste-.png" alt="Original" 
+                    onmouseover="this.src='images/foodwaste-hi.png'" 
+                    onmouseout="this.src='images/foodwaste-.png'"
+                    onclick="document.getElementById('popup4').style.display='block'">
+                    <div class="slide-caption">Food Waste Management Research</div>
+                </div>
                     </section>
                 </div>
             </div>
@@ -798,6 +789,37 @@ Sources:
     </div>
 </div>
 </footer>
+<scrip>
+  // Select all pop-up triggers
+  const popupTriggers = document.querySelectorAll('.popup-trigger');
+  
+  // Add event listeners to each trigger
+  popupTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const popupId = trigger.getAttribute('data-popup');
+      const popup = document.getElementById(popupId);
+      if (popup) {
+        popup.style.display = 'flex';
+      }
+    });
+  });
+  
+  // Close buttons functionality
+  const closeButtons = document.querySelectorAll('.close-button');
+  closeButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      const popup = event.target.closest('.popup-container');
+      popup.style.display = 'none';
+    });
+  });
+  
+  // Close pop-up when clicking outside the content
+  window.addEventListener('click', (event) => {
+    if (event.target.classList.contains('popup-container')) {
+      event.target.style.display = 'none';
+    }
+  });
+</scrip>
 <script src="./popup.js"></script>
 </body>
 </html>
