@@ -114,6 +114,7 @@ body {
 }
 .slide {
     min-width: 26%;
+    flex-direction: column;
     display: flex;
     justify-content: center; /* center image horizontally */
     align-items: center;     /* center image vertically */
