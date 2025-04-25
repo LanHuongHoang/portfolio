@@ -92,34 +92,32 @@ body {
 }
 
 .slider-container {
-    flex: 1;
-    justify-content: flex-start;
-    align-items: center;
-    scroll-snap-type: x mandatory;
-    overflow-x: none;
-    cursor: grab;
+    display: flex;
+    align-items: center; /* items vertically */
+    justify-content: center; /* Centers items horizontally */
+    height: 50vh;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: none;
+    height: fit-content;
     scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
-    
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    position: relative; /* Ensure alignment control */
+    gap: 35px;
+    padding-top: 30px;
+    margin: 0 30px;
+    cursor: pointer;
 }
-
 .slider-container::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Opera */
 }
-.slider-container {
-    margin-top: 0;
-    display: flex;
-    height: 60vh;
-    scroll-behavior: smooth;
-}
 .slide {
-    min-width: 26%;
-    flex-direction: column;
-    display: flex;
-    justify-content: center; /* center image horizontally */
-    align-items: center;     /* center image vertically */
+    display: flex; /* Make the slide a flex container */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     text-align: center;
-    gap: 10px; /* optional: adds spacing between image and caption */
+    width: 100%;
 }
 
 /* Image */
