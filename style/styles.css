@@ -116,7 +116,7 @@ body {
     scroll-behavior: smooth;
 }
 .slide {
-    min-width: 26%;          /* keep this if you want horizontal scroll */
+    min-width: 27%; 
     display: flex;
     flex-direction: column;
     justify-content: center; /* center image horizontally */
