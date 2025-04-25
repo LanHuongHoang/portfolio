@@ -117,6 +117,9 @@ body {
 }
 .slide {
     min-width: 26%; 
+    justify-content: center; /* center image horizontally */
+    align-items: center;     /* center image vertically */
+    text-align: center;
     gap: 10px; /* optional: adds spacing between image and caption */
 }
 
