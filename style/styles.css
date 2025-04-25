@@ -89,9 +89,6 @@ body {
 }
 .contain-slide{
     width: 100%;
-    margin-top: -10px;
-    align-items: flex;
-    position: flex;
 }
 
 .slider-container {
@@ -116,7 +113,8 @@ body {
     scroll-behavior: smooth;
 }
 .slide {
-    min-width: 26%; 
+    min-width: 26%;
+    display: flex;
     justify-content: center; /* center image horizontally */
     align-items: center;     /* center image vertically */
     text-align: center;
