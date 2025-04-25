@@ -111,13 +111,15 @@ body {
 .slider-container::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Opera */
 }
+}
 .slide {
-    display: flex; /* Make the slide a flex container */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    min-width: 26%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center; /* center image horizontally */
+    align-items: center;     /* center image vertically */
     text-align: center;
-    width: 100%;
+    gap: 10px; /* optional: adds spacing between image and caption */
 }
 
 /* Image */
