@@ -83,8 +83,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin: auto;
     max-width: 100%;
 }
 .contain-slide{
@@ -113,7 +111,7 @@ body {
     scroll-behavior: smooth;
 }
 .slide {
-    min-width: 26%;
+    min-width: 25%;
     flex-direction: column;
     display: flex;
     justify-content: center; /* center image horizontally */
