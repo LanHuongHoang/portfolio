@@ -124,6 +124,7 @@ body {
     text-align: center;
     gap: 10px; /* optional: adds spacing between image and caption */
     margin-left: 10px;
+    margin-right: 10px;
   
 }
 
