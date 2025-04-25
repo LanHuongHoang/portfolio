@@ -114,6 +114,7 @@ body {
     display: flex;
     height: 60vh;
     scroll-behavior: smooth;
+    margin-right: 5px;
 }
 .slide {
     min-width: 26%; 
@@ -123,9 +124,6 @@ body {
     align-items: center;     /* center image vertically */
     text-align: center;
     gap: 10px; /* optional: adds spacing between image and caption */
-    margin-left: 10px;
-    margin-right: 10px;
-  
 }
 
 /* Image */
