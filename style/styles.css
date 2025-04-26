@@ -337,7 +337,11 @@ body {
     justify-content: center;
     gap: 15px;
   }
-  
+  .slide-video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
   .slide-wrapper {
     flex: 1;
     position: relative;
