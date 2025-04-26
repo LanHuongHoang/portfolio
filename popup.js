@@ -117,3 +117,19 @@ document.querySelectorAll('.slideshow-row').forEach(row => {
 });
 
 });
+
+// After showing tab content and slideshow
+// Stop video when switching tabs
+const allVideos = document.querySelectorAll('video');
+allVideos.forEach(video => {
+  video.pause();
+  video.currentTime = 0;
+});
+
+// You can also do this for iframes (e.g., YouTube embeds)
+const iframes = document.querySelectorAll('iframe');
+iframes.forEach(iframe => {
+  const src = iframe.src;
+  iframe.src = src; // resets the iframe
+});
+
