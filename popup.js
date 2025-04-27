@@ -104,3 +104,13 @@ document.querySelectorAll('.prev-slide').forEach(button => {
     slides[(currentIndex - 1 + slides.length) % slides.length].classList.add('active');
   });
 });
+
+document.querySelectorAll('.next-slide').forEach(button => {
+  button.addEventListener('click', () => {
+    const wrapper = button.parentElement.querySelector('.slide-wrapper');
+    const slides = wrapper.querySelectorAll('.slide-img');
+    const currentIndex = [...slides].findIndex(slide => slide.classList.contains('active'));
+    slides[currentIndex].classList.remove('active');
+    slides[(currentIndex + 1) % slides.length].classList.add('active');
+  });
+});
