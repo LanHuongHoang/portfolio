@@ -118,18 +118,42 @@ document.querySelectorAll('.slideshow-row').forEach(row => {
 
 });
 
-// After showing tab content and slideshow
-// Stop video when switching tabs
-const allVideos = document.querySelectorAll('video');
-allVideos.forEach(video => {
-  video.pause();
-  video.currentTime = 0;
+tabButtons.forEach(tabButton => {
+  tabButton.addEventListener('click', () => {
+    // Remove the active class on all tabs
+    tabButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    tabButton.classList.add('active');
+
+    // Remove the active class on all content
+    const allTabContents = document.querySelectorAll('.tab-content');
+    allTabContents.forEach(content => {
+      content.classList.remove('active');
+    });
+
+    // Remove the active class on all slideshow
+    const allSlideshows = document.querySelectorAll('.tab-slideshow');
+    allSlideshows.forEach(content => {
+      content.classList.remove('active');
+
+      // STOP videos inside inactive slideshows
+      const iframe = content.querySelector('iframe');
+      if (iframe) {
+        const src = iframe.src;
+        iframe.src = '';  // Clear it first
+        iframe.src = src; // Reload it fresh
+      }
+    });
+
+    // Now activate the target tab and slideshow
+    const targetId = tabButton.getAttribute('data-tab');
+    const targetTabContent = document.getElementById(targetId);
+    targetTabContent.classList.add('active');
+
+    const targetSlideshow = document.getElementById(`slideshow-${targetId}`);
+    targetSlideshow.classList.add('active');
+  });
 });
 
-// You can also do this for iframes (e.g., YouTube embeds)
-const iframes = document.querySelectorAll('iframe');
-iframes.forEach(iframe => {
-  const src = iframe.src;
-  iframe.src = src; // resets the iframe
-});
 
