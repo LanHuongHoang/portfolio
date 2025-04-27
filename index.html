@@ -53,35 +53,39 @@
                     <!-- Image Slider Section -->
                     <section class="slider-container">
                       <div class="slide">
-                        <img src="images/thanhma.png"
-                             data-hover-src="images/thanhma-hi.png"
-                             data-popup="popup1"
-                             class="popup-trigger hover-image">
+                        <img 
+                          src="images/thanhma.png" 
+                          onmouseover="this.src='images/thanhma-hi.png'" 
+                          onmouseout="this.src='images/thanhma.png'" 
+                          onclick="openPopup('popup1')">
                         <div class="slide-caption">Character Design</div>
                       </div>
                       
                       <div class="slide">
-                        <img src="images/coffee.png"
-                             data-hover-src="images/phinblend.png"
-                             data-popup="popup2"
-                             class="popup-trigger hover-image">
+                        <img 
+                          src="images/coffee.png" 
+                          onmouseover="this.src='images/phinblend.png'" 
+                          onmouseout="this.src='images/coffee.png'" 
+                          onclick="openPopup('popup2')">
                         <div class="slide-caption">Packaging reDesign</div>
                       </div>
                       
                   <!-- Slide 3 -->
                   <div class="slide">
-                    <img src="images/ar3d.png"
-                         data-hover-src="images/ar3d-f.png"
-                         data-popup="popup3"
-                         class="popup-trigger hover-image">
+                    <img 
+                          src="images/ar3d.png" 
+                          onmouseover="this.src='images/ar3d-f.png'" 
+                          onmouseout="this.src='images/ar3d.png'" 
+                          onclick="openPopup('popup3')">
                     <div class="slide-caption">3D & AR</div>
                   </div>
                   <!-- Slide 4 -->
                   <div class="slide">
-                    <img src="images/card.png"
-                         data-hover-src="images/card-f.png"
-                         data-popup="popup4"
-                         class="popup-trigger hover-image">
+                    <img 
+                          src="images/card.png" 
+                          onmouseover="this.src='images/card-f.png'" 
+                          onmouseout="this.src='images/card.png'" 
+                          onclick="openPopup('popup4')">
                     <div class="slide-caption">Board Game & Promotion</div>
                   </div>
                     </section>
