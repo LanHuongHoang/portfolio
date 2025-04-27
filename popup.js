@@ -120,25 +120,27 @@ document.querySelectorAll('.slideshow-row').forEach(row => {
 //video stop when change tab
 tabButtons.forEach(tabButton => {
   tabButton.addEventListener('click', () => {
-    // Get target ID
     const targetId = tabButton.getAttribute('data-tab');
 
-    // Deactivate all tabs, contents, and slideshows
     tabButtons.forEach(btn => btn.classList.remove('active'));
     tabContents.forEach(content => content.classList.remove('active'));
+
     tabSlideshows.forEach(slideshow => {
       slideshow.classList.remove('active');
 
-      // Reset iframe inside each inactive slideshow
+      // Reset iframes ONLY inside hidden tabs
       const iframe = slideshow.querySelector('iframe');
       if (iframe) {
-        iframe.src = iframe.src; // Simply reset the video
+        const src = iframe.src;
+        iframe.src = '';    // 🔥 Clear src to really stop video
+        iframe.src = src;   // 🔄 Re-assign src to reset when needed later
       }
     });
 
-    // Activate clicked tab and corresponding slideshow
+    // Activate selected tab + corresponding slideshow
     tabButton.classList.add('active');
     document.getElementById(targetId).classList.add('active');
     document.getElementById(`slideshow-${targetId}`).classList.add('active');
   });
 });
+
