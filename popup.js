@@ -13,26 +13,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // === POPUP CLOSE LOGIC ===
-  const closeButtons = document.querySelectorAll('.close-button');
-  closeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const popup = button.closest('.popup-container');
-      if (popup) {
-        popup.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-    });
-  });
-
-  // === CLICK OUTSIDE TO CLOSE ===
-  window.addEventListener('click', event => {
-    if (event.target.classList.contains('popup-container')) {
-      event.target.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
+  // === CLOSE POPUP + RESET ===
+document.querySelectorAll('.close-button').forEach(button => {
+  button.addEventListener('click', (event) => {
+    const popup = event.target.closest('.popup-container');
+    closeAndResetPopup(popup);
   });
 });
+
+window.addEventListener('click', (event) => {
+  if (event.target.classList.contains('popup-container')) {
+    closeAndResetPopup(event.target);
+  }
+});
+
+function closeAndResetPopup(popup) {
+  popup.style.display = 'none';
+  document.body.style.overflow = 'auto';
+
+  // Reset tabs
+  popup.querySelectorAll('.tab-button').forEach((btn, index) => {
+    btn.classList.toggle('active', index === 0);
+  });
+
+  // Reset content
+  popup.querySelectorAll('.tab-content').forEach((content, index) => {
+    content.classList.toggle('active', index === 0);
+  });
+
+  // Reset iframe videos
+  popup.querySelectorAll('iframe').forEach(iframe => {
+    const src = iframe.src;
+    iframe.src = '';
+    iframe.src = src;
+  });
+
+  // Reset slides
+  popup.querySelectorAll('.slide-wrapper').forEach(wrapper => {
+    const slides = wrapper.querySelectorAll('.slide-img');
+    slides.forEach((img, i) => {
+      img.classList.toggle('active', i === 0);
+    });
+  });
+}
 // Handle hover image swap
 document.querySelectorAll('.hover-image').forEach(img => {
   const originalSrc = img.getAttribute('data-original-src');
@@ -117,30 +140,3 @@ document.querySelectorAll('.slideshow-row').forEach(row => {
 });
 
 });
-//video stop when change tab
-tabButtons.forEach(tabButton => {
-  tabButton.addEventListener('click', () => {
-    const targetId = tabButton.getAttribute('data-tab');
-
-    tabButtons.forEach(btn => btn.classList.remove('active'));
-    tabContents.forEach(content => content.classList.remove('active'));
-
-    tabSlideshows.forEach(slideshow => {
-      slideshow.classList.remove('active');
-
-      // Reset iframes ONLY inside hidden tabs
-      const iframe = slideshow.querySelector('iframe');
-      if (iframe) {
-        const src = iframe.src;
-        iframe.src = '';    // 🔥 Clear src to really stop video
-        iframe.src = src;   // 🔄 Re-assign src to reset when needed later
-      }
-    });
-
-    // Activate selected tab + corresponding slideshow
-    tabButton.classList.add('active');
-    document.getElementById(targetId).classList.add('active');
-    document.getElementById(`slideshow-${targetId}`).classList.add('active');
-  });
-});
-
