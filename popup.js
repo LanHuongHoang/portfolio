@@ -117,43 +117,28 @@ document.querySelectorAll('.slideshow-row').forEach(row => {
 });
 
 });
-
+//video stop when change tab
 tabButtons.forEach(tabButton => {
   tabButton.addEventListener('click', () => {
-    // Remove the active class on all tabs
-    tabButtons.forEach(btn => {
-      btn.classList.remove('active');
-    });
-    tabButton.classList.add('active');
+    // Get target ID
+    const targetId = tabButton.getAttribute('data-tab');
 
-    // Remove the active class on all content
-    const allTabContents = document.querySelectorAll('.tab-content');
-    allTabContents.forEach(content => {
-      content.classList.remove('active');
-    });
+    // Deactivate all tabs, contents, and slideshows
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    tabContents.forEach(content => content.classList.remove('active'));
+    tabSlideshows.forEach(slideshow => {
+      slideshow.classList.remove('active');
 
-    // Remove the active class on all slideshow
-    const allSlideshows = document.querySelectorAll('.tab-slideshow');
-    allSlideshows.forEach(content => {
-      content.classList.remove('active');
-
-      // STOP videos inside inactive slideshows
-      const iframe = content.querySelector('iframe');
+      // Reset iframe inside each inactive slideshow
+      const iframe = slideshow.querySelector('iframe');
       if (iframe) {
-        const src = iframe.src;
-        iframe.src = '';  // Clear it first
-        iframe.src = src; // Reload it fresh
+        iframe.src = iframe.src; // Simply reset the video
       }
     });
 
-    // Now activate the target tab and slideshow
-    const targetId = tabButton.getAttribute('data-tab');
-    const targetTabContent = document.getElementById(targetId);
-    targetTabContent.classList.add('active');
-
-    const targetSlideshow = document.getElementById(`slideshow-${targetId}`);
-    targetSlideshow.classList.add('active');
+    // Activate clicked tab and corresponding slideshow
+    tabButton.classList.add('active');
+    document.getElementById(targetId).classList.add('active');
+    document.getElementById(`slideshow-${targetId}`).classList.add('active');
   });
 });
-
-
