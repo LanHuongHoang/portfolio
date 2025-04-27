@@ -1,5 +1,4 @@
 
-document.addEventListener('DOMContentLoaded', () => {
 // === OPEN POPUP ===
 function openPopup(id) {
   const popup = document.getElementById(id);
@@ -8,8 +7,8 @@ function openPopup(id) {
     document.body.style.overflow = 'hidden';
   }
 }
-});
-  // === CLOSE POPUP + RESET ===
+
+// === CLOSE POPUP + RESET ===
 document.querySelectorAll('.close-button').forEach(button => {
   button.addEventListener('click', (event) => {
     const popup = event.target.closest('.popup-container');
@@ -52,32 +51,6 @@ function closeAndResetPopup(popup) {
     });
   });
 }
-// Handle hover image swap
-document.querySelectorAll('.hover-image').forEach(img => {
-  const originalSrc = img.getAttribute('data-original-src');
-  const hoverSrc = img.getAttribute('data-hover-src');
-
-  img.addEventListener('mouseover', () => {
-    if (hoverSrc) img.src = hoverSrc;
-  });
-
-  img.addEventListener('mouseout', () => {
-    if (originalSrc) img.src = originalSrc;
-  });
-});
-document.querySelectorAll('.slide img').forEach(img => {
-  const originalSrc = img.getAttribute('src');
-  const hoverSrc = img.getAttribute('data-hover-src');
-
-  if (hoverSrc) {
-    img.addEventListener('mouseenter', () => {
-      img.src = hoverSrc;
-    });
-    img.addEventListener('mouseleave', () => {
-      img.src = originalSrc;
-    });
-  }
-});
 
 // === TABS ===
 document.querySelectorAll('.tab-button').forEach(button => {
@@ -114,3 +87,31 @@ document.querySelectorAll('.next-slide').forEach(button => {
     slides[(currentIndex + 1) % slides.length].classList.add('active');
   });
 });
+
+// Handle hover image swap
+document.querySelectorAll('.hover-image').forEach(img => {
+  const originalSrc = img.getAttribute('data-original-src');
+  const hoverSrc = img.getAttribute('data-hover-src');
+
+  img.addEventListener('mouseover', () => {
+    if (hoverSrc) img.src = hoverSrc;
+  });
+
+  img.addEventListener('mouseout', () => {
+    if (originalSrc) img.src = originalSrc;
+  });
+});
+document.querySelectorAll('.slide img').forEach(img => {
+  const originalSrc = img.getAttribute('src');
+  const hoverSrc = img.getAttribute('data-hover-src');
+
+  if (hoverSrc) {
+    img.addEventListener('mouseenter', () => {
+      img.src = hoverSrc;
+    });
+    img.addEventListener('mouseleave', () => {
+      img.src = originalSrc;
+    });
+  }
+});
+
