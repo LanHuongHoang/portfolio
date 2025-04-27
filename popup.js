@@ -1,18 +1,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  // === POPUP OPEN LOGIC ===
-  const triggers = document.querySelectorAll('.popup-trigger');
-  triggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const popupId = trigger.getAttribute('data-popup');
-      const popup = document.getElementById(popupId);
-      if (popup) {
-        popup.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  });
-
+// === OPEN POPUP ===
+function openPopup(id) {
+  const popup = document.getElementById(id);
+  if (popup) {
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+}
+});
   // === CLOSE POPUP + RESET ===
 document.querySelectorAll('.close-button').forEach(button => {
   button.addEventListener('click', (event) => {
@@ -83,60 +79,28 @@ document.querySelectorAll('.slide img').forEach(img => {
   }
 });
 
-// === TABS & SLIDESHOW FUNCTIONALITY ===
+// === TABS ===
+document.querySelectorAll('.tab-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const target = button.dataset.tab;
+    const popup = button.closest('.popup-container');
 
-document.querySelectorAll('.popup-container').forEach(container => {
-  const tabButtons = container.querySelectorAll('.tab-button');
-  const tabContents = container.querySelectorAll('.tab-content');
-  const tabSlideshows = container.querySelectorAll('.tab-slideshow');
+    popup.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
 
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const target = button.dataset.tab;
-
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      tabContents.forEach(content => {
-        content.classList.toggle('active', content.id === target);
-      });
-
-      tabSlideshows.forEach(show => {
-        show.classList.toggle('active', show.id === `slideshow-${target}`);
-      });
-
-      // Reset slideshow index to first slide
-      const activeSlides = container.querySelectorAll('.tab-slideshow.active .slide-img');
-      activeSlides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === 0);
-      });
+    popup.querySelectorAll('.tab-content').forEach(content => {
+      content.classList.toggle('active', content.id === target);
     });
   });
-
-  // === SLIDE NAVIGATION LOGIC ===
-document.querySelectorAll('.slideshow-row').forEach(row => {
-  const slides = row.querySelectorAll('.slide-wrapper .slide-img');
-  if (slides.length <= 1) return; // Skip if only one image
-
-  let current = 0;
-
-  function updateSlide() {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === current);
-    });
-  }
-
-  row.querySelector('.prev-slide')?.addEventListener('click', () => {
-    current = (current - 1 + slides.length) % slides.length;
-    updateSlide();
-  });
-
-  row.querySelector('.next-slide')?.addEventListener('click', () => {
-    current = (current + 1) % slides.length;
-    updateSlide();
-  });
-
-  updateSlide(); // Initial call to show the first slide
 });
 
+// === SLIDES ===
+document.querySelectorAll('.prev-slide').forEach(button => {
+  button.addEventListener('click', () => {
+    const wrapper = button.parentElement.querySelector('.slide-wrapper');
+    const slides = wrapper.querySelectorAll('.slide-img');
+    const currentIndex = [...slides].findIndex(slide => slide.classList.contains('active'));
+    slides[currentIndex].classList.remove('active');
+    slides[(currentIndex - 1 + slides.length) % slides.length].classList.add('active');
+  });
 });
