@@ -155,10 +155,29 @@
     <div class="slideshow tab-slideshow" id="slideshow-section2">
       <div class="slideshow-row">
         <div class="slide-wrapper">
-  
-            <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/4031_RC01/embed_loader.js"></script>
-            <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"/m/0gt407","geo":"VN","time":"2019-12-01 2020-09-30"}],"category":0,"property":""}, {"exploreQuery":"date=2019-12-01%202020-09-30&geo=VN&q=%2Fm%2F0gt407&hl=en","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
-          
+          <div id="trends-widget" class="responsive-embed">
+
+          <script src="https://ssl.gstatic.com/trends_nrtr/4031_RC01/embed_loader.js"></script>
+          <script>
+            window.addEventListener('load', function() {
+              trends.embed.renderExploreWidgetTo(
+                document.getElementById('trends-widget'), 
+                "TIMESERIES", 
+                {
+                  "comparisonItem": [
+                    { "keyword": "/m/0gt407", "geo": "VN", "time": "2019-12-01 2020-09-30" }
+                  ],
+                  "category": 0,
+                  "property": ""
+                }, 
+                {
+                  "exploreQuery": "date=2019-12-01%202020-09-30&geo=VN&q=%2Fm%2F0gt407&hl=en",
+                  "guestPath": "https://trends.google.com:443/trends/embed/"
+                }
+              );
+            });
+          </script>
+          </div>
         </div>
       </div>
     </div>
