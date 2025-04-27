@@ -719,6 +719,9 @@ footer {
       margin: 5px;
       margin-top: 100px;
   }
+  .responsive-embed {
+    padding-bottom: 75%; /* Taller on small screens */
+  }
 }
 
 @media (max-width: 480px) {
@@ -874,6 +877,9 @@ footer {
   footer {
       display: none;
   }
+    .responsive-embed {
+      padding-bottom: 90%; /* Even taller */
+    }
 }
 .trends-iframe {
     width: 100%;
