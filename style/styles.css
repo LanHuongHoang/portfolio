@@ -875,19 +875,19 @@ footer {
       display: none;
   }
 }
-.trends-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  .responsive-embed {
+.responsive-embed {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
     height: 0;
     overflow: hidden;
+    margin: 20px 0;
   }
-  .responsive-embed iframe {
+  
+  .responsive-embed iframe, 
+  .responsive-embed embed, 
+  .responsive-embed object,
+  .responsive-embed script {
     position: absolute;
     top: 0;
     left: 0;
