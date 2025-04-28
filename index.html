@@ -156,6 +156,27 @@
       <div class="slideshow-row">
         <div class="slide-wrapper">
           <div id="trends-widget" class="responsive-embed"></div>
+
+          <script src="https://ssl.gstatic.com/trends_nrtr/4031_RC01/embed_loader.js"></script>
+          <script>
+            window.addEventListener('load', function() {
+              trends.embed.renderExploreWidgetTo(
+                document.getElementById('trends-widget'), 
+                "TIMESERIES", 
+                {
+                  "comparisonItem": [
+                    { "keyword": "/m/0gt407", "geo": "VN", "time": "2019-12-01 2020-09-30" }
+                  ],
+                  "category": 0,
+                  "property": ""
+                }, 
+                {
+                  "exploreQuery": "date=2019-12-01%202020-09-30&geo=VN&q=%2Fm%2F0gt407&hl=en",
+                  "guestPath": "https://trends.google.com:443/trends/embed/"
+                }
+              );
+            });
+          </script>
           
         </div>
       </div>
@@ -521,78 +542,6 @@
     </div>
 </div>
 </footer>
-<script>
-// Load Google Trends dynamically
-function loadGoogleTrendsWidget() {
-  const container = document.getElementById('trends-widget');
-  if (!container) return;
-
-  container.innerHTML = ''; // Clear previous iframe (important)
-  
-  trends.embed.renderExploreWidgetTo(
-    container,
-    "TIMESERIES",
-    {
-      "comparisonItem": [
-        { "keyword": "/m/0gt407", "geo": "VN", "time": "2019-12-01 2020-09-30" }
-      ],
-      "category": 0,
-      "property": ""
-    },
-    {
-      "exploreQuery": "date=2019-12-01%202020-09-30&geo=VN&q=%2Fm%2F0gt407&hl=en",
-      "guestPath": "https://trends.google.com:443/trends/embed/"
-    }
-  );
-}
-
-// Open popup
-document.querySelectorAll('.popup-trigger').forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const popupId = trigger.getAttribute('data-popup');
-    const popup = document.getElementById(popupId);
-    if (popup) {
-      popup.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-
-      if (popupId === 'popup1') { 
-        loadGoogleTrendsWidget(); 
-      }
-    }
-  });
-});
-
-// Close popup
-document.querySelectorAll('.close-button').forEach(button => {
-  button.addEventListener('click', (event) => {
-    const popup = event.target.closest('.popup-container');
-    if (popup) {
-      popup.style.display = 'none';
-      document.body.style.overflow = 'auto';
-
-      // Remove iframe inside trends-widget (stop iframe memory!)
-      const trendsContainer = popup.querySelector('#trends-widget');
-      if (trendsContainer) {
-        trendsContainer.innerHTML = '';
-      }
-    }
-  });
-});
-
-// Close popup if click outside
-window.addEventListener('click', (event) => {
-  if (event.target.classList.contains('popup-container')) {
-    event.target.style.display = 'none';
-    document.body.style.overflow = 'auto';
-
-    const trendsContainer = event.target.querySelector('#trends-widget');
-    if (trendsContainer) {
-      trendsContainer.innerHTML = '';
-    }
-  }
-});
-
-</script>
 <script src="./popup.js"></script>
 </body>
 </html>
