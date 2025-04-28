@@ -786,6 +786,10 @@ footer {
   .tab-button.active{
     font-size: 1rem;
   }
+  .tab-content{
+    flex: 1;
+    width: 100%;
+  }
   .popup-grid {
       flex-direction: column;
       gap: 30px;
@@ -809,6 +813,9 @@ footer {
   .project-title {
       font-size: 1.5rem;
       
+  }
+  .slide-wrapper{
+    flex: 1;
   }
   .slide-img {
       width: 100%;
