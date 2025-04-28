@@ -749,25 +749,30 @@ footer {
       height: 25vh;
   }
   .popup-content {
-      width: 100%;
-      overflow-x: none;
-      display:flex;
-      flex-direction: column;
-      border-radius: 5px;
-      max-width: 90vw;
-      max-height: 85vh;
-      padding: 10px;
-      margin: 0;
-  }
-  .popup-inner{
-      width: 100%;
-      padding: 15px;
-      overflow-y: auto;
-      flex-direction: column;
-  }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    max-width: 90vw;
+    max-height: 85vh;
+    padding: 10px;
+    margin: 0;
+    overflow: hidden; /* important to control overflow */
+}
+
+.popup-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    overflow-y: auto;
+    overflow-x: hidden; /* use 'hidden', not 'none' */
+    box-sizing: border-box;
+}
+
   .popup-tabs {
       display: flex;
-      gap: 15px;
+      gap: 10px;
       margin-bottom: 20px;
       justify-content: center;
       flex-wrap: wrap;
