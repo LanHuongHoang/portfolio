@@ -4,10 +4,6 @@ function openPopup(id) {
   if (popup) {
     popup.style.display = 'flex';
     document.body.style.overflow = 'hidden'; // Prevent background scroll
-
-    // Hide navigation when popup opens
-    const nav = document.querySelector('.nav-container');
-    if (nav) nav.style.display = 'none';
   }
 }
 
@@ -18,12 +14,8 @@ document.querySelectorAll('.close-button').forEach(button => {
     if (popup) {
       popup.style.display = 'none';
       document.body.style.overflow = 'auto';
-
-      // Show navigation again when popup closes
-      const nav = document.querySelector('.nav-container');
-      if (nav) nav.style.display = 'flex';
-
-      // Reset popup content if needed
+      
+      // When closing, reset everything inside popup:
       resetPopup(popup);
     }
   });
@@ -34,15 +26,10 @@ window.addEventListener('click', (event) => {
   if (event.target.classList.contains('popup-container')) {
     event.target.style.display = 'none';
     document.body.style.overflow = 'auto';
-
-    // Show navigation again when popup closes
-    const nav = document.querySelector('.nav-container');
-    if (nav) nav.style.display = 'flex';
-
+    
     resetPopup(event.target);
   }
 });
-
 
 // === RESET POPUP STATE WHEN CLOSED ===
 function resetPopup(popup) {
