@@ -997,12 +997,11 @@ text-align: center;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 27, 41, 0.9);
+  background-color:#8BC4E7;
   z-index: 10000;
   padding: 0.5rem 2rem;
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #8BC4E7;
   backdrop-filter: blur(5px);
 }
 
@@ -1013,7 +1012,7 @@ text-align: center;
 }
 
 .nav-container nav ul li a {
-  color: #FDF1D8;
+  color: #001B29;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
@@ -1022,7 +1021,7 @@ text-align: center;
 
 .nav-container nav ul li a:hover,
 .nav-container nav ul li a.active {
-  color: #8BC4E7;
+  color: #ff6b6b;
 }
 
 body {
