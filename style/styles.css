@@ -909,6 +909,7 @@ footer {
   font-size: 3rem;
   color: #FDF1D8;
   margin-bottom: 0.3rem;
+text-align: center;
 }
 
 .footer-subtitle {
@@ -916,6 +917,7 @@ footer {
   font-size: 1rem;
   margin-bottom: 1.5rem;
   color: #B8D0E0;
+    text-align: center;
 }
 
 .footer-section {
@@ -926,17 +928,20 @@ footer {
   color: #8BC4E7;
   font-size: 1.2rem;
   margin-bottom: 0.3rem;
+    text-align: center;
 }
 
 .footer-section p {
   margin: 0.3rem 0;
   font-size: 0.95rem;
   line-height: 1.5;
+    text-align: center;
 }
 
 .footer-section.contact a {
   color: #FDF1D8;
   text-decoration: underline;
+    text-align: center;
 }
 
 .footer-section.contact a:hover {
@@ -971,7 +976,6 @@ footer {
     align-items: center;
     justify-content: center;
     width: 82%;
-    margin-top: 10px;
     font-size: 1.2em;
     font-style: normal;
     font-weight: 400;
