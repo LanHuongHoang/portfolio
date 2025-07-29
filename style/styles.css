@@ -927,19 +927,14 @@ text-align: center;
 .footer-section h4 {
   color: #8BC4E7;
   font-size: 1.2rem;
-    font-weight: 400;
+      font-weight: 400;
   margin-bottom: 0.3rem;
-    text-align: center;
-}
-.footer-section span {
-    font-size: 1.2 rem;
-    font-weight: 400;
     text-align: center;
 }
 
 .footer-section p {
   margin: 0.3rem 0;
-  font-size: 1 rem;
+  font-size: 1.2 rem;
   line-height: 1.5;
     text-align: center;
 }
