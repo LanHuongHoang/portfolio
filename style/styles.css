@@ -896,8 +896,7 @@ footer {
   color: #FDF1D8;
   padding: 2rem;
   margin-top: 100px;
-  background: none; /* remove background */
-  text-align: left; /* left alignment */
+  background: none;
 }
 
 .footer-container {
@@ -908,9 +907,8 @@ footer {
 .footer-title {
   font-family: 'Commerce', sans-serif;
   font-size: 3rem;
-  color: #8BC4E7;
+  color: #FDF1D8;
   margin-bottom: 0.3rem;
-  text-align: left;
 }
 
 .footer-subtitle {
@@ -918,12 +916,10 @@ footer {
   font-size: 1rem;
   margin-bottom: 1.5rem;
   color: #B8D0E0;
-  text-align: left;
 }
 
 .footer-section {
   margin-bottom: 1.5rem;
-  text-align: left;
 }
 
 .footer-section h4 {
@@ -975,7 +971,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 82%;
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 1.2em;
     font-style: normal;
     font-weight: 400;
