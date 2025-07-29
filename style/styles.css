@@ -931,9 +931,10 @@ text-align: center;
   margin-bottom: 0.3rem;
     text-align: center;
 }
-.footer-section h5 {
+.footer-section span {
     font-size: 1.2 rem;
     font-weight: 400;
+    text-align: center;
 }
 
 .footer-section p {
