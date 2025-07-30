@@ -722,157 +722,85 @@ footer {
 }
 
 @media (max-width: 480px) {
-  *{
-      font-size: 0.9rem;
-      margin-right: -10px;
+  * {
+    font-size: 0.9rem;
+    margin-right: 0; /* remove negative margin */
   }
+
+  /* Container adjustments */
   .contain-slide {
-      margin-top: -10px;
-      flex-direction: column;
-      overflow-x: scroll;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+    margin-top: 0;
+    flex-direction: column;
+    overflow-x: hidden;
+    width: 100%;
   }
+
   .slider-container {
-      height: 40vh;
-      gap: 80px;
+    height: auto;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
   }
-  .slide-caption {
-      font-size: 1rem;
-      width: 100%;
-  }
+
+  /* Slide images take full width */
   .slide {
-      width: 80%;
-      flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
   }
+
   .slide img {
-      height: 25vh;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
   }
-  .popup-content {
-      width: 100%;
-      overflow-x: none;
-      display:flex;
-      flex-direction: column;
-      border-radius: 5px;
-      max-width: 90vw;
-      max-height: 85vh;
-      padding: 10px;
-      margin: 0;
-  }
-  .popup-inner{
-      width: 100%;
-      padding: 15px;
-      overflow-y: auto;
-      flex-direction: column;
-  }
-  .popup-tabs {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-  }
-  .tab-button {
-      padding: 10px;
-      font-size: 0.9rem;
-      box-shadow: none;
-      border-bottom: #7FACC7;
-  }
-  .tab-button.active{
+
+  /* Captions fit nicely under images */
+  .slide-caption {
     font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
   }
+
+  /* Popup adjustments remain */
+  .popup-content {
+    width: 100%;
+    max-width: 95vw;
+    max-height: 85vh;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+  }
+
+  .popup-inner {
+    width: 100%;
+    padding: 15px;
+    overflow-y: auto;
+    flex-direction: column;
+  }
+
+  /* Keep other popup and typography rules */
   .popup-grid {
-      flex-direction: column;
-      gap: 30px;
+    flex-direction: column;
+    gap: 20px;
   }
-  .popup-col,
-  .popup-col2 {
-      flex: 1;
-      min-width:unset;
-      width: 100%;
-  }
-  .popup-description .tab-content {
-      display: none;
-  }
-  .popup-description .tab-content.active {
-      display: block;
-  }
-  .popup-title-group {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-  .project-title {
-      font-size: 1.5rem;
-      
-  }
-  .slide-img {
-      width: 100%;
-      height: auto;
-      display: none;
-  }
-  .slide-img.active {
-      display: block;
-  }
-  .slide-nav {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-      gap: 20px;
-  }
-  .slide-nav button {
-      padding: 6px 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-  }
+
   .site-name {
-      margin-top: 20px;
-      font-size: 2.5rem;
-      margin-right: 10px;
+    margin-top: 20px;
+    font-size: 2.2rem;
   }
+
   .site-title {
-      font-size: 2rem;
-      margin-left: 5px;
+    font-size: 1.8rem;
   }
-  .site-description {
-      margin-right: 10px;
-      font-size: 1rem;
-      padding-left: 0.8rem;
-      padding-right: 0.8rem;
-  }
-  .container h1{
-      margin-top: 70px;
-      font-size: 2rem;
-  }
-  .grid-container ul{
-      font-size: 0.8rem;
-  }
-  .popup-content text{
-      font-size: 0.7rem;
-      text-align: center;
-  }
-  .popup-content a{
-      font-size: 0.7rem;
-      padding-right: 10px;
-  }
-  .popup-content h2{
-      font-size: 1.4rem;
-  }
-  .popup-content h3{
-      font-size: 1.1rem;
-  }
-  .popup-content h4{
-      font-size: 0.9rem;
-  }
-  .image-row{
-      width: 100%;
-      gap: 15px;
-  }
-  .model-table th, .model-table td{
-      font-size: 0.65rem;
-  }
-  footer {
-      display: none;
+
+  .container h1 {
+    margin-top: 40px;
+    font-size: 1.8rem;
   }
 }
 .responsive-embed {
