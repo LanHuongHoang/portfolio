@@ -752,6 +752,7 @@ footer {
   }
 
   .slide img {
+    margin-top: 5px;
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -763,7 +764,7 @@ footer {
     font-size: 1rem;
     width: 100%;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   /* Popup adjustments remain */
