@@ -179,8 +179,8 @@ body {
     color: #00293D;
     border-radius: 10px;
     width: 100%;
-    max-width: 1250px;
-    max-height: 97vh;
+    max-width: 13000px;
+    max-height: 100vh;
     overflow: hidden; /* prevent scrolling here */
     position: relative;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
@@ -956,4 +956,20 @@ text-align: center;
 body {
   scroll-behavior: smooth;
   padding-top: 60px; /* offset for fixed nav */
+}
+.view-more-link {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.view-more-link a {
+  color: #8BC4E7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.view-more-link a:hover {
+  color: #ff6b6b;
 }
