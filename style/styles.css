@@ -179,7 +179,7 @@ body {
     color: #00293D;
     border-radius: 10px;
     width: 100%;
-    max-width: 13000px;
+    max-width: 1300px;
     max-height: 100vh;
     overflow: hidden; /* prevent scrolling here */
     position: relative;
