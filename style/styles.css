@@ -180,7 +180,7 @@ body {
     border-radius: 10px;
     width: 100%;
     max-width: 1300px;
-    max-height: 100vh;
+    max-height: 110vh;
     overflow: hidden; /* prevent scrolling here */
     position: relative;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
