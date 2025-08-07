@@ -877,6 +877,10 @@ text-align: center;
 .footer-section.contact a:hover {
   color: #ff6b6b;
 }
+.experience-block {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
 
 @media (max-width: 768px) {
   .footer-title {
