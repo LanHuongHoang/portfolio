@@ -16,7 +16,7 @@ body {
 
 .site-name {
     font-family: 'Commerce', sans-serif;
-    font-size: 10rem;
+    font-size: 12rem;
     line-height: 1;
     font-weight: 600;
     color: #8BC4E7;
@@ -28,7 +28,7 @@ body {
     text-align: center;
     font-weight: 400;
     color: #8BC4E7;
-    font-size: 3.5rem;
+    font-size: 4rem;
     line-height: 1;
     margin-right: 25px;
 }
