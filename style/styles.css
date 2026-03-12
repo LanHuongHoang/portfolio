@@ -16,19 +16,19 @@ body {
 
 .site-name {
     font-family: 'Commerce', sans-serif;
-    font-size: 11rem;
+    font-size: 10rem;
     line-height: 1;
     font-weight: 600;
     color: #8BC4E7;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 90px;
 }
 .site-title {
     font-family: 'Commerce', sans-serif;
     text-align: center;
     font-weight: 400;
     color: #8BC4E7;
-    font-size: 3.5rem;
+    font-size: 3rem;
     line-height: 1;
     margin-right: 25px;
 }
